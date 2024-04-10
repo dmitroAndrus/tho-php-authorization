@@ -1,0 +1,25 @@
+{
+    "title": "Tho PHP Authorization",
+    "name": "tho-php-authorization",
+    "version": "1.0.0",
+    "description": "User authorization library. Includes code to manage users: sign up, sign in, sign out.",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/dmitroAndrus/tho-php-authorization"
+    },
+    "keywords": [
+        "php",
+        "mysql",
+        "user",
+        "sign in",
+        "sign out",
+        "sign up",
+        "authorization"
+    ],
+    "author": {
+        "name": "Dmitro Andrus",
+        "email": "dmitro.andrus.dev@gmail.com"
+    },
+    "license": "GNU/GPLv3",
+    "dependencies": {}
+}
