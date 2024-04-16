@@ -14,35 +14,35 @@
  */
 
 // UUID service.
-require_once(THOAUTHORIZE_AUTOLOAD . 'Service/UUID.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/UUID.php');
 
 // HTTP/Session service.
-require_once(THOAUTHORIZE_AUTOLOAD . 'Service/HTTPService.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/HTTPService.php');
 
 // Data parts.
-require_once(THOAUTHORIZE_AUTOLOAD . 'Data/Name/StrictNameTrait.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'Data/ID/HasIDInterface.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'Data/ID/OnceIDTrait.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'Data/Name/HasNameInterface.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'Data/Name/NameTrait.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'Data/Password/HasPasswordInterface.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'Data/Password/PasswordTrait.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'Data/Password/BcryptPasswordTrait.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Name/StrictNameTrait.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/ID/HasIDInterface.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/ID/OnceIDTrait.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Name/HasNameInterface.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Name/NameTrait.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Password/HasPasswordInterface.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Password/PasswordTrait.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Password/BcryptPasswordTrait.php');
 
 // Database service.
-require_once(THOAUTHORIZE_AUTOLOAD . 'Service/DBServiceInterface.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'Service/MySQLiService.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/DBServiceInterface.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/MySQLiService.php');
 
 // User.
-require_once(THOAUTHORIZE_AUTOLOAD . 'User/UserInterface.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'User/AbstractUser.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'User/BasicUser.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'User/UserInterface.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'User/AbstractUser.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'User/BasicUser.php');
 
 // Users source.
-require_once(THOAUTHORIZE_AUTOLOAD . 'Source/UserSourceInterface.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'Source/UserKeepInterface.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'Source/AbstractUserDBSource.php');
-require_once(THOAUTHORIZE_AUTOLOAD . 'Source/BasicUserMySQLiSource.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Source/UserSourceInterface.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Source/UserKeepInterface.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Source/AbstractUserDBSource.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Source/BasicUserMySQLiSource.php');
 
 // Users service.
-require_once(THOAUTHORIZE_AUTOLOAD . 'Service/UserService.php');
+require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/UserService.php');

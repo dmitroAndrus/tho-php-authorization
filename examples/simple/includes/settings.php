@@ -34,4 +34,4 @@ define('DB_CHARSET', null);
 
 // Doesn't need to be changed.
 // Path to the ThoPHPAuthorization library includes (classes).
-define('THOAUTHORIZE_AUTOLOAD', AUTH_LIB_PATH . 'includes/');
+define('THOPHPAUTHORIZATION_AUTOLOAD', AUTH_LIB_PATH . 'includes/');
