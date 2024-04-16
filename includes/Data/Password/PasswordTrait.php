@@ -53,12 +53,15 @@ trait PasswordTrait
      * Set password.
      *
      * @param string $password - Password.
+     * @param boolean $encrypt - Encrypt password.
      *
      * @return self.
      */
-    public function setPassword($password)
+    public function setPassword($password, $encrypt = true)
     {
-        $this->password = $this->encryptPassword($password);
+        $this->password = $encrypt
+            ? $this->encryptPassword($password)
+            : $password;
         return $this;
     }
 

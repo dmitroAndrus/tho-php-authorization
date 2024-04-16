@@ -17,6 +17,7 @@ use ThoPHPAuthorization\Service\UUID;
 use ThoPHPAuthorization\User\UserInterface;
 use ThoPHPAuthorization\User\BasicUser;
 use ThoPHPAuthorization\Source\DBSourceTrait;
+use ThoPHPAuthorization\Source\UserKeepInterface;
 
 /**
  * BasicUserMySQLiSource is a class, that contains basic methods to get/store/edit user in MySQL Database.
@@ -158,9 +159,9 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
         }
         // Set User security key directly or password (convert to security key).
         if (isset($data['security']) && !empty($data['security'])) {
-            $this->password = $data['security'];
+            $this->setPassword($data['security'], false);
         } elseif (isset($data['password']) && !empty($data['password'])) {
-            $this->setPassword($data['password']);
+            $user->setPassword($data['password']);
         }
         return true;
     }

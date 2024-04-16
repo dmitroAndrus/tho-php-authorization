@@ -38,10 +38,11 @@ interface HasPasswordInterface
      * Set password.
      *
      * @param string $password - Password.
+     * @param boolean $encrypt - Encrypt password.
      *
      * @return self.
      */
-    public function setPassword($password);
+    public function setPassword($password, $encrypt = true);
 
     /**
      * Check password.
