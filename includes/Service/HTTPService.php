@@ -19,13 +19,13 @@ namespace ThoPHPAuthorization\Service;
 class HTTPService
 {
     /**
-     * Initialize session.
+     * Check if session is started.
      *
      * @return void
      */
     public static function isSessionStarted()
     {
-        return session_status() === PHP_SESSION_NONE;
+        return session_status() === PHP_SESSION_ACTIVE;
     }
 
     /**
@@ -35,7 +35,7 @@ class HTTPService
      */
     public static function initSession()
     {
-        if (static::isSessionStarted()) {
+        if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
     }
@@ -47,7 +47,7 @@ class HTTPService
      */
     public static function endSession()
     {
-        if (session_status() !== PHP_SESSION_NONE) {
+        if (static::isSessionStarted()) {
             session_unset();
             session_destroy();
         }
@@ -108,7 +108,7 @@ class HTTPService
     public static function redirectToPage($page)
     {
         if (headers_sent()) {
-            false;
+            return false;
         }
         $url = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'
             ? "https://"
