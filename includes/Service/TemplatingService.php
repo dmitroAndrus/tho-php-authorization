@@ -26,13 +26,14 @@ class TemplatingService
      *
      * @var string
      */
-    public const SIMPLE_REGEXP = '(?:\{(.*?)\})';
+    public const SIMPLE_REGEXP = '/(?:\\{(.*?)\\})/im';
 
     /**
      * Parse simple template.
      *
      * Template example:
      * My name is {name}. I live on planet {planet_name}.
+     *
      * Data example:
      * [
      *      'name' => 'Hugo',
@@ -48,12 +49,29 @@ class TemplatingService
     {
         return preg_replace_callback(
             static::SIMPLE_REGEXP,
-            function ($match) {
-                if (isset($data[$match[0]])) {
-                    return $data[$match[0]];
+            function ($match) use ($data) {
+                if (isset($data[$match[1]])) {
+                    return $data[$match[1]];
                 }
             },
             $template
         );
+    }
+
+    /**
+     * Validate HTML.
+     *
+     * @param string $html - HTML to validate.
+     *
+     * @return boolean.
+     */
+    public static function validateHTML($html)
+    {
+        if (!is_string($html) || empty($html)) {
+            return false;
+        }
+        $dom = new DOMDocument();
+        $dom->loadHTML($html);
+        return $dom->validate();
     }
 }
