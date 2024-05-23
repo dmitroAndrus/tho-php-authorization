@@ -22,16 +22,24 @@ use ThoPHPAuthorization\Data\Phone\HasPhoneInterface;
 use ThoPHPAuthorization\Data\Phone\PhoneTrait;
 use ThoPHPAuthorization\Data\Address\HasAddressInterface;
 use ThoPHPAuthorization\Data\Address\AddressTrait;
+use ThoPHPAuthorization\Data\DateTime\HasBirthdayInterface;
+use ThoPHPAuthorization\Data\DateTime\BirthdayTrait;
 
 /**
  * BasicUser is an class that provides all basic User data.
  */
-class User extends BasicUser implements HasFirstLastNameInterface, HasEmailInterface, HasPhoneInterface, HasAddressInterface
+class User extends BasicUser implements
+    HasFirstLastNameInterface,
+    HasEmailInterface,
+    HasPhoneInterface,
+    HasAddressInterface,
+    HasBirthdayInterface
 {
     use FirstLastNameTrait;
     use EmailTrait;
     use PhoneTrait;
     use AddressTrait;
+    use BirthdayTrait;
 
     /**
      * Can identify by name.
@@ -52,7 +60,70 @@ class User extends BasicUser implements HasFirstLastNameInterface, HasEmailInter
      *
      * @var boolean
      */
-    public static $canIdentifyByPhone = true;
+    public static $canIdentifyByPhone = false;
+
+    /**
+     * Constructor.
+     *
+     * @param array $data - User data.
+     *
+     * @return void.
+     */
+    public function __construct(array $data = [])
+    {
+        parent::__construct($data);
+        // Set First name.
+        if (isset($data['first_name']) && !empty($data['first_name'])) {
+            $this->setFirstName($data['first_name']);
+        } elseif (isset($data['firstName']) && !empty($data['firstName'])) {
+            $this->setFirstName($data['firstName']);
+        }
+        // Set Last name.
+        if (isset($data['last_name']) && !empty($data['last_name'])) {
+            $this->setLastName($data['last_name']);
+        } elseif (isset($data['lastName']) && !empty($data['lastName'])) {
+            $this->setFirstName($data['lastName']);
+        }
+        // Set Email.
+        if (isset($data['email']) && !empty($data['email'])) {
+            $this->setEmail($data['email']);
+        }
+        // Set Phone.
+        if (isset($data['phone']) && !empty($data['phone'])) {
+            $this->setPhone($data['phone']);
+        }
+        // Set Country.
+        if (isset($data['country']) && !empty($data['country'])) {
+            $this->setCountry($data['country']);
+        }
+        // Set State.
+        if (isset($data['state']) && !empty($data['state'])) {
+            $this->setState($data['state']);
+        }
+        // Set City.
+        if (isset($data['city']) && !empty($data['city'])) {
+            $this->setCity($data['city']);
+        }
+        // Set Address.
+        if (isset($data['address']) && !empty($data['address'])) {
+            $this->setAddress($data['address']);
+        }
+        // Set ZIP.
+        if (isset($data['zip']) && !empty($data['zip'])) {
+            $this->setZIP($data['zip']);
+        }
+        // Set Birthday.
+        if (isset($data['birthday']) && !empty($data['birthday'])) {
+            $this->setBirthday(
+                $data['birthday'],
+                isset($data['birthday_format'])
+                    ? $data['birthday_format']
+                    : (isset($data['birthdayFormat'])
+                        ? $data['birthdayFormat']
+                        : null)
+            );
+        }
+    }
 
     /**
      * {@inheritdoc}
