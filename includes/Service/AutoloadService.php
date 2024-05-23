@@ -17,7 +17,8 @@ namespace ThoPHPAuthorization\Service;
  * AutoloadService is a class, that contains functionality to autoload required classes.
  *
  * Example:
- * require_once('<path to the root ThoPHPAuthorization lib folder>/includes/ThoPHPAuthorization/Service/AutoloadService.php');
+ * $path_to_lib = '<path to the root ThoPHPAuthorization lib folder>';
+ * require_once($path_to_lib . '/includes/ThoPHPAuthorization/Service/AutoloadService.php');
  * spl_autoload_register('ThoPHPAuthorization\Service\AutoloadService::autoload');
  *
  */

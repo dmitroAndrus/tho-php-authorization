@@ -4,7 +4,7 @@
  * This file contains UserKeepInterface interface.
  * php version 7.4
  *
- * @category Data
+ * @category User
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3

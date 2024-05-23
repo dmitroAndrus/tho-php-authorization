@@ -45,8 +45,16 @@ class MySQLiService implements DBServiceInterface
      *
      * @return void
      */
-    public function __construct($hostname, $database, $username, $password = '', $port = null, $socket = null, $charset = null, $prefix = null)
-    {
+    public function __construct(
+        $hostname,
+        $database,
+        $username,
+        $password = '',
+        $port = null,
+        $socket = null,
+        $charset = null,
+        $prefix = null
+    ) {
         $connection = new \mysqli($hostname, $username, $password, $database, $port, $socket);
         if ($connection->connect_errno) {
             throw new \RuntimeException('Connection error mysqli: ' . $connection->connect_error);
