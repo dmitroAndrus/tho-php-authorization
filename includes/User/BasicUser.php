@@ -40,7 +40,7 @@ class BasicUser extends AbstractUser implements HasNameInterface, HasPasswordInt
     public function __construct(array $data = [])
     {
         // Set User ID.
-        if (isset($data['id']) && !empty($data['name'])) {
+        if (isset($data['id']) && !empty($data['id'])) {
             $this->setID($data['id']);
         }
         // Set User Name.
@@ -49,10 +49,18 @@ class BasicUser extends AbstractUser implements HasNameInterface, HasPasswordInt
         }
         // Set User security key directly or password (convert to security key).
         if (isset($data['security']) && !empty($data['security'])) {
-            $this->password = $data['security'];
+            $this->setSecurity($data['security']);
         } elseif (isset($data['password']) && !empty($data['password'])) {
             $this->setPassword($data['password']);
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setIdentity($identity)
+    {
+        return $this->setName($identity);
     }
 
     /**
@@ -68,7 +76,7 @@ class BasicUser extends AbstractUser implements HasNameInterface, HasPasswordInt
      */
     public function setSecurity($security)
     {
-        return $this->password = $security;
+        return $this->setPassword($security, false);
     }
 
     /**

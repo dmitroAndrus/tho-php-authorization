@@ -21,6 +21,18 @@ use ThoPHPAuthorization\Data\ID\HasIDInterface;
 interface UserInterface extends HasIDInterface
 {
     /**
+     * Set user identity.
+     *
+     * Can be used to identify user, i.e. on sign in, store/restore from session, etc.
+     * Can be name, nickname, email, phone, etc.
+     *
+     * @param mixed $identity - User identity.
+     *
+     * @return self.
+     */
+    public function setIdentity($identity);
+
+    /**
      * Get user identity.
      *
      * Can be used to identify user, i.e. on sign in, store/restore from session, etc.
@@ -31,14 +43,14 @@ interface UserInterface extends HasIDInterface
     public function getIdentity();
 
     /**
-     * Set user identity.
+     * Set user security key.
      *
      * Can be used to identify user, i.e. on sign in, store/restore from session, etc.
      * Can be encoded password, some service security key, etc.
      *
      * @param mixed $security - User security data.
      *
-     * @return mixed User security data.
+     * @return self.
      */
     public function setSecurity($security);
 

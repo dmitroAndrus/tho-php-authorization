@@ -4,7 +4,7 @@
  * This file contains AbstractUserDBSource interface.
  * php version 7.4
  *
- * @category Data
+ * @category User
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
@@ -52,9 +52,21 @@ abstract class AbstractUserDBSource implements UserSourceInterface
      *
      * @param UserInterface $user - User object.
      *
-     * @return array|null - data to store in database.
+     * @return array|null - data to store user in database.
      */
     abstract public function getStoreData(UserInterface &$user);
+
+    /**
+     * Get data to edit user.
+     *
+     * @param UserInterface $user - User object.
+     *
+     * @return array|null - data to edit user in database.
+     */
+    public function getEditData(UserInterface &$user)
+    {
+        return $this->getStoreData();
+    }
 
     /**
      * Edit user data.
@@ -67,6 +79,15 @@ abstract class AbstractUserDBSource implements UserSourceInterface
     abstract public function editData(UserInterface &$user, $data = null);
 
     /**
+     * Get user data from DB by User ID.
+     *
+     * @param integer|string $id - User ID.
+     *
+     * @return array|null - User data.
+     */
+    abstract protected function getDataByID($id);
+
+    /**
      * Renew user data.
      *
      * @param UserInterface $user - User object.
@@ -74,7 +95,35 @@ abstract class AbstractUserDBSource implements UserSourceInterface
      *
      * @return boolean - successful or not.
      */
-    abstract public function renew(UserInterface &$user, $id = null);
+    public function renew(UserInterface &$user, $id = null)
+    {
+        $user_id = $user->getID();
+        if (!($id || $user_id) || ($user_id && $id != $user_id)) {
+            return false;
+        }
+        if (is_null($user_id)) {
+            $user_id = $id;
+        }
+        if ($id) {
+            if (!$user_id) {
+                $user->setID($id);
+                $user_id = $id;
+            } elseif ($user_id != $id) {
+                // User ID and provided ID missmatch.
+                return false;
+            }
+        }
+        if (!$user_id) {
+            // No User ID provided.
+            return false;
+        }
+        $data = $this->getDataByID($user_id);
+        if (empty($data)) {
+            // User with provided ID not found.
+            return false;
+        }
+        return $this->editData($user, $data);
+    }
 
     /**
      * ${@inheritdoc}
@@ -85,7 +134,7 @@ abstract class AbstractUserDBSource implements UserSourceInterface
             return false;
         }
         $store_data = $this->getStoreData($user);
-        if ($store_data && $this->dbService->insert($this->tableName, $store_data)) {
+        if ($this->validateData($store_data) && $this->dbService->insert($this->tableName, $store_data)) {
             return $this->renew($user, $this->dbService->getLastID());
         }
         return false;
@@ -99,8 +148,11 @@ abstract class AbstractUserDBSource implements UserSourceInterface
         if (!$this->editData($user, $data)) {
             return false;
         }
-        $store_data = $this->getStoreData($user);
-        if ($store_data && $this->dbService->update($this->tableName, $user->getID(), $store_data)) {
+        $store_data = $this->getEditData($user);
+        if (
+            $this->validateData($store_data)
+            && $this->dbService->update($this->tableName, $user->getID(), $store_data)
+        ) {
             return $this->renew($user);
         }
         return false;

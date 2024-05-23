@@ -4,7 +4,7 @@
  * This file contains BasicUserMySQLiSource interface.
  * php version 7.4
  *
- * @category Data
+ * @category User
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
@@ -126,7 +126,7 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
             WHERE " . implode(' OR ', $where) . "
             LIMIT 1
         ");
-        return $result;
+        return !!$result;
     }
 
     /**
@@ -134,14 +134,6 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
      */
     public function getStoreData(UserInterface &$user)
     {
-        $data = [];
-        if (
-            $user->getID()
-            || empty($user->getName())
-            || empty($user->getPassword())
-        ) {
-            return false;
-        }
         return [
             'name' => $user->getName(),
             'security' => $user->getPassword(),
@@ -159,44 +151,11 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
         }
         // Set User security key directly or password (convert to security key).
         if (isset($data['security']) && !empty($data['security'])) {
-            $this->setPassword($data['security'], false);
+            $user->setSecurity($data['security']);
         } elseif (isset($data['password']) && !empty($data['password'])) {
             $user->setPassword($data['password']);
         }
         return true;
-    }
-
-    /**
-     * ${@inheritdoc}
-     */
-    public function renew(UserInterface &$user, $id = null)
-    {
-        $user_id = $user->getID();
-        if (!($id || $user_id) || ($user_id && $id != $user_id)) {
-            return false;
-        }
-        if (is_null($user_id)) {
-            $user_id = $id;
-        }
-        if ($id) {
-            if (!$user_id) {
-                $user->setID($id);
-                $user_id = $id;
-            } elseif ($user_id != $id) {
-                // User ID and provided ID missmatch.
-                return false;
-            }
-        }
-        if (!$user_id) {
-            // No User ID provided.
-            return false;
-        }
-        $data = $this->getDataByID($user_id);
-        if (empty($data)) {
-            // User with provided ID not found.
-            return false;
-        }
-        return $this->editData($user, $data);
     }
 
     /**

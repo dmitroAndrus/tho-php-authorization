@@ -220,9 +220,7 @@ class UserService
         }
         if (static::$keepSession) {
             // Remove only user indentifier.
-            if (HTTPService::isSessionStarted() && isset($_SESSION["{$this->getName()}_uath"])) {
-                unset($_SESSION["{$this->getName()}_uath"]);
-            }
+            HTTPService::removeSessionValue("{$this->getName()}_uath");
         } else {
             // Terminate session and all session data.
             HTTPService::endSession();
