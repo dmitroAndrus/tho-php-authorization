@@ -74,4 +74,16 @@ class TemplatingService
         $dom->loadHTML($html);
         return $dom->validate();
     }
+
+    /**
+     * Output text line.
+     *
+     * @param mixed $value - Value to output.
+     *
+     * @return void.
+     */
+    public static function outLine($value = '')
+    {
+        echo $value . "<br/>";
+    }
 }
