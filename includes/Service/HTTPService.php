@@ -84,6 +84,18 @@ class HTTPService
     }
 
     /**
+     * Has SESSION value.
+     *
+     * @param string $name - Variable name.
+     *
+     * @return boolean
+     */
+    public static function hasSessionValue($name)
+    {
+        return static::isSessionStarted() && isset($_SESSION[$name]);
+    }
+
+    /**
      * Get SESSION value.
      *
      * @param string $name - Variable name.
@@ -99,6 +111,60 @@ class HTTPService
     }
 
     /**
+     * Remove SESSION value.
+     *
+     * @param string $name - Variable name.
+     *
+     * @return boolean
+     */
+    public static function removeSessionValue($name)
+    {
+        if (static::hasSessionValue($name)) {
+            unset($_SESSION[$name]);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Convert local path to URL.
+     *
+     * @param string $path - Local path.
+     *
+     * @return mixed
+     */
+    public static function localToURL($path)
+    {
+        // Try to get SRC.
+        try {
+            $real = realpath($path);
+            $real_root = $_SERVER['DOCUMENT_ROOT'];
+            if (str_starts_with($real, $real_root)) {
+                return $this->relativeToURL(substr($real, strlen($real_root)));
+            }
+        } catch (Exception $e) {
+            // Failed to get SRC.
+        }
+        return null;
+    }
+
+    /**
+     * Convert relative path to URL.
+     *
+     * @param string $path - Relative path.
+     *
+     * @return mixed
+     */
+    public static function relativeToURL($path)
+    {
+        $url = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'
+            ? "https://"
+            : "http://";
+        // Append the host(domain name, ip) to the URL.
+        return $_SERVER['HTTP_HOST'] . $path;
+    }
+
+    /**
      * Redirect to internal page.
      *
      * @param string $page - page to redirect.
@@ -110,11 +176,7 @@ class HTTPService
         if (headers_sent()) {
             return false;
         }
-        $url = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on'
-            ? "https://"
-            : "http://";
-        // Append the host(domain name, ip) to the URL.
-        $url .= $_SERVER['HTTP_HOST'] . $page;
+        $url = $this->relativeToURL($page);
         header("Location: {$url}");
         die();
     }
