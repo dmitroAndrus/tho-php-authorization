@@ -67,7 +67,7 @@ trait AddressesTrait
     {
         $addresses = [];
         foreach ($this->addresses as $address) {
-            if ($address->isAddressType($type)) {
+            if ($address->isOfType($type)) {
                 $addresses[] = $address;
             }
         }
@@ -86,7 +86,7 @@ trait AddressesTrait
     public function getFirstAddressByType($type)
     {
         foreach ($this->addresses as $address) {
-            if ($address->isAddressType($type)) {
+            if ($address->isOfType($type)) {
                 return $address;
             }
         }
@@ -105,7 +105,7 @@ trait AddressesTrait
     public function hasAddressType($type)
     {
         foreach ($this->addresses as $address) {
-            if ($address->isAddressType($type)) {
+            if ($address->isOfType($type)) {
                 return true;
             }
         }

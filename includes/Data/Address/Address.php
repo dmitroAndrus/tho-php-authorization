@@ -14,45 +14,27 @@
 namespace ThoPHPAuthorization\Data\Address;
 
 use ThoPHPAuthorization\Data\Address\AddressInterface;
+use ThoPHPAuthorization\Data\Address\AddressTrait;
+use ThoPHPAuthorization\Data\Type\TypeTrait;
 
 /**
  * Address is a class to manipulate address data.
+ *
+ * Provides access to country, state, city, address, zip code and address type data.
+ * Possible address types: home, delivery, billing, work, etc.
  */
 class Address implements AddressInterface
 {
     use AddressTrait;
+    use TypeTrait;
 
     /**
-     * Address type.
+     * Get a string representation of the object.
      *
-     * Possible types: home, delivery, billing, work, etc.
-     *
-     * @var string
+     * @return string.
      */
-    protected $addressType;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setAddressType($type)
+    public function __toString()
     {
-        $this->addressType = $type;
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getAddressType()
-    {
-        return $this->addressType;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isAddressType($type)
-    {
-        return $this->getAddressType() === $type;
+        return $this->getFullAddress();
     }
 }

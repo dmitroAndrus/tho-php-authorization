@@ -14,45 +14,28 @@
 namespace ThoPHPAuthorization\Data\Phone;
 
 use ThoPHPAuthorization\Data\Phone\PhoneInterface;
+use ThoPHPAuthorization\Data\Phone\PhoneTrait;
+use ThoPHPAuthorization\Data\Type\TypeTrait;
 
 /**
  * Phone is a class to manipulate phone data.
+ *
+ * Provides access to phone number and phone type data.
+ * Possible phone types: mobile, fax, work phone, etc.
  */
 class Phone implements PhoneInterface
 {
     use PhoneTrait;
+    use TypeTrait;
 
     /**
-     * Phone type.
+     * Get a string representation of the object.
      *
-     * Possible types: mobile, fax, work phone, etc.
-     *
-     * @var string
+     * @return string.
      */
-    protected $phoneType;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setPhoneType($type)
+    public function __toString()
     {
-        $this->phoneType = $type;
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getPhoneType()
-    {
-        return $this->phoneType;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isPhoneType($type)
-    {
-        return $this->getPhoneType() === $type;
+        $phone = $this->getPhone();
+        return $phone ? (string) $phone : '';
     }
 }

@@ -14,38 +14,14 @@
 namespace ThoPHPAuthorization\Data\Address;
 
 use ThoPHPAuthorization\Data\Address\HasAddressInterface;
+use ThoPHPAuthorization\Data\Type\HasTypeInterface;
 
 /**
  * AddressInterface is an interface to maintain and manipulate address data.
+ *
+ * Should provide access to country, state, city, address, zip code and address type data.
+ * Possible address types: home, delivery, billing, work, etc.
  */
-interface AddressInterface extends HasAddressInterface
+interface AddressInterface extends HasAddressInterface, HasTypeInterface
 {
-    /**
-     * Set address type.
-     *
-     * Possible types: home, delivery, billing, work, etc.
-     *
-     * @param mixed $type - Address type.
-     *
-     * @return self.
-     */
-    public function setAddressType($type);
-
-    /**
-     * Get address type.
-     *
-     * @return string.
-     */
-    public function getAddressType();
-
-    /**
-     * Check address type.
-     *
-     * Possible types: home, delivery, billing, work, etc.
-     *
-     * @param string $type - Address type.
-     *
-     * @return boolean.
-     */
-    public function isAddressType($type);
 }

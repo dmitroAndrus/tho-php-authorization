@@ -14,40 +14,14 @@
 namespace ThoPHPAuthorization\Data\Phone;
 
 use ThoPHPAuthorization\Data\Phone\HasPhoneInterface;
+use ThoPHPAuthorization\Data\Type\HasTypeInterface;
 
 /**
  * PhoneInterface is an interface to maintain and manipulate phone data.
+ *
+ * Should provide access to phone number and phone type data.
+ * Possible phone types: mobile, fax, work phone, etc.
  */
-interface PhoneInterface extends HasPhoneInterface
+interface PhoneInterface extends HasPhoneInterface, HasTypeInterface
 {
-    /**
-     * Set phone type.
-     *
-     * Type of phone: mobile, fax, work phone, etc.
-     *
-     * @param string $type - Phone type.
-     *
-     * @return self.
-     */
-    public function setPhoneType($type);
-
-    /**
-     * Get phone type.
-     *
-     * Type of phone: home, mobile, fax, work phone, etc.
-     *
-     * @return string.
-     */
-    public function getPhoneType();
-
-    /**
-     * Check phone type.
-     *
-     * Type of phone: mobile, fax, work phone, etc.
-     *
-     * @param string $type - Phone type.
-     *
-     * @return boolean.
-     */
-    public function isPhoneType($type);
 }

@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\Phone;
 use ThoPHPAuthorization\Service\TemplatingService;
 
 /**
- * PhoneTrait is a trait, it contains basic methods to manipulate address data.
+ * PhoneTrait is a trait, it contains basic methods to manipulate phone data.
  *
  * Implements everything from ThoPHPAuthorization\Data\Phone\HasPhoneInterface.
  */
