@@ -14,40 +14,14 @@
 namespace ThoPHPAuthorization\Data\Email;
 
 use ThoPHPAuthorization\Data\Email\HasEmailInterface;
+use ThoPHPAuthorization\Data\Type\HasTypeInterface;
 
 /**
  * EmailInterface is an interface to maintain and manipulate email data.
+ *
+ * Should provides access to email and email type data.
+ * Possible email types: personal, work, private, etc.
  */
-interface EmailInterface extends HasEmailInterface
+interface EmailInterface extends HasEmailInterface, HasTypeInterface
 {
-    /**
-     * Set email type.
-     *
-     * Type of email: personal, work, private, etc.
-     *
-     * @param string $type - Email type.
-     *
-     * @return self.
-     */
-    public function setEmailType($type);
-
-    /**
-     * Get email type.
-     *
-     * Type of email: home, personal, work, private, etc.
-     *
-     * @return string.
-     */
-    public function getEmailType();
-
-    /**
-     * Check email type.
-     *
-     * Type of email: personal, work, private, etc.
-     *
-     * @param string $type - Email type.
-     *
-     * @return boolean.
-     */
-    public function isEmailType($type);
 }

@@ -14,45 +14,28 @@
 namespace ThoPHPAuthorization\Data\Email;
 
 use ThoPHPAuthorization\Data\Email\EmailInterface;
+use ThoPHPAuthorization\Data\Email\EmailTrait;
+use ThoPHPAuthorization\Data\Type\TypeTrait;
 
 /**
  * Email is a class to manipulate email data.
+ *
+ * Provides access to email and email type data.
+ * Possible email types: personal, work, private, etc.
  */
 class Email implements EmailInterface
 {
     use EmailTrait;
+    use TypeTrait;
 
     /**
-     * Email type.
+     * Get a string representation of the object.
      *
-     * Possible types: personal, work, private, etc.
-     *
-     * @var string
+     * @return string.
      */
-    protected $emailType;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setEmailType($type)
+    public function __toString()
     {
-        $this->emailType = $type;
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getEmailType()
-    {
-        return $this->emailType;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isEmailType($type)
-    {
-        return $this->getEmailType() === $type;
+        $email = $this->getEmail();
+        return $email ? (string) $email : '';
     }
 }

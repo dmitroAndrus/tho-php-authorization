@@ -67,7 +67,7 @@ trait EmailsTrait
     {
         $emails = [];
         foreach ($this->emails as $email) {
-            if ($email->isEmailType($type)) {
+            if ($email->isOfType($type)) {
                 $emails[] = $email;
             }
         }
@@ -86,7 +86,7 @@ trait EmailsTrait
     public function getFirstEmailByType($type)
     {
         foreach ($this->emails as $email) {
-            if ($email->isEmailType($type)) {
+            if ($email->isOfType($type)) {
                 return $email;
             }
         }
@@ -105,7 +105,7 @@ trait EmailsTrait
     public function hasEmailType($type)
     {
         foreach ($this->emails as $email) {
-            if ($email->isEmailType($type)) {
+            if ($email->isOfType($type)) {
                 return true;
             }
         }
