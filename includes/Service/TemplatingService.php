@@ -70,9 +70,9 @@ class TemplatingService
         if (!is_string($html) || empty($html)) {
             return false;
         }
-        $dom = new DOMDocument();
+        $dom = new \DOMDocument();
         $dom->loadHTML($html);
-        return $dom->validate();
+        return empty(libxml_get_errors());
     }
 
     /**
@@ -85,5 +85,30 @@ class TemplatingService
     public static function outLine($value = '')
     {
         echo $value . "<br/>";
+    }
+
+    protected static $allowedTemplateExtensions = ['txt', 'html'];
+
+    /**
+     * Read template file.
+     * You can provide $data for use in static::parseSimpleTemplate.
+     *
+     * @param string $path - Template path.
+     * @param string $data - Template data.
+     *
+     * @return string|null - Template content or null on failure.
+     */
+    public static function readTemplateFile(string $path, array $data = null)
+    {
+        $real = realpath($path);
+        // Check file exsists and if file extension is allowed.
+        if (!$real || !in_array(pathinfo($real, PATHINFO_EXTENSION), static::$allowedTemplateExtensions)) {
+            return null;
+        }
+        ob_start();
+        readfile($real);
+        $result = ob_get_contents();
+        ob_end_clean();
+        return $data ? static::parseSimpleTemplate($result, $data) : $result;
     }
 }
