@@ -17,6 +17,8 @@ use ThoPHPAuthorization\Source\MessagesSourceInterface;
 
 /**
  * MessagesSource is a class, it declares a possibility to work with messages.
+ *
+ * Stores messages in object itself.
  */
 class MessagesSource implements MessagesSourceInterface
 {

@@ -21,6 +21,8 @@ use ThoPHPAuthorization\Data\Type\DefaultTypeTrait;
 
 /**
  * TypeMessagesSource is a class, it declares a possibility to work with messages.
+ *
+ * Stores messages in object itself.
  */
 class TypeMessagesSource extends MessagesSource implements TypeMessagesSourceInterface
 {
