@@ -180,4 +180,48 @@ class HTTPService
         header("Location: {$url}");
         die();
     }
+
+    /**
+     * Output file content for download.
+     *
+     * @param string $basename - File basename.
+     * @param string $content - File content.
+     *
+     * @return void
+     */
+    public static function outDownloadFileContent($basename, $content)
+    {
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename="' . $basename . '"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . strlen($content));
+        echo $content;
+        exit();
+    }
+
+    /**
+     * Output file content.
+     *
+     * $content_type examples:
+     * 'image/jpeg'
+     * 'image/png'
+     * 'image/jpeg'
+     * 'video/mpeg'
+     * etc.
+     *
+     * @param string $content_type - File content type.
+     * @param string $content - File content.
+     *
+     * @return void
+     */
+    public static function outFileContent($content_type, $content)
+    {
+        header('Content-Type: ' . $content_type);
+        header('Content-Length: ' . strlen($content));
+        echo $content;
+        exit();
+    }
 }
