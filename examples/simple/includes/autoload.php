@@ -13,6 +13,9 @@
  * @link     https://github.com/dmitroAndrus/tho-php-authorization
  */
 
+// Path to the ThoPHPAuthorization library includes (classes).
+define('THOPHPAUTHORIZATION_AUTOLOAD', AUTH_LIB_PATH . 'includes/');
+
 // UUID service.
 require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/AutoloadService.php');
 

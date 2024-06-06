@@ -21,17 +21,13 @@ define('DB_PORT', '3306');
 // Database socket or null.
 define('DB_SOCKET', null);
 // Database user name.
-define('DB_USER', 'root');
+define('DB_USER', 'username');
 // Database user password.
-define('DB_PASSWORD', 'qwerty');
+define('DB_PASSWORD', 'password');
 
 // Database name.
-define('DB_DATABASE', 'simple_login');
+define('DB_DATABASE', 'tho_authorization');
 // Database tables prefix.
-define('DB_PREFIX', 'tho_');
+define('DB_PREFIX', 'tho_simple_');
 // Database charset or null.
 define('DB_CHARSET', null);
-
-// Doesn't need to be changed.
-// Path to the ThoPHPAuthorization library includes (classes).
-define('THOPHPAUTHORIZATION_AUTOLOAD', AUTH_LIB_PATH . 'includes/');

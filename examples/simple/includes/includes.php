@@ -13,36 +13,39 @@
  * @link     https://github.com/dmitroAndrus/tho-php-authorization
  */
 
+// Path to the ThoPHPAuthorization library includes (classes).
+define('THOPHPAUTHORIZATION_CLASSES', AUTH_LIB_PATH . 'includes/');
+
 // UUID service.
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/UUID.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Service/UUID.php');
 
 // HTTP/Session service.
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/HTTPService.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Service/HTTPService.php');
 
 // Data parts.
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Name/StrictNameTrait.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/ID/HasIDInterface.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/ID/OnceIDTrait.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Name/HasNameInterface.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Name/NameTrait.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Password/HasPasswordInterface.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Password/PasswordTrait.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Data/Password/BcryptPasswordTrait.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Data/Name/StrictNameTrait.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Data/ID/HasIDInterface.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Data/ID/OnceIDTrait.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Data/Name/HasNameInterface.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Data/Name/NameTrait.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Data/Password/HasPasswordInterface.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Data/Password/PasswordTrait.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Data/Password/BcryptPasswordTrait.php');
 
 // Database service.
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/DBServiceInterface.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/MySQLiService.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Service/DBServiceInterface.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Service/MySQLiService.php');
 
 // User.
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'User/UserInterface.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'User/AbstractUser.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'User/BasicUser.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'User/UserInterface.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'User/AbstractUser.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'User/BasicUser.php');
 
 // Users source.
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Source/UserSourceInterface.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Source/UserKeepInterface.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Source/AbstractUserDBSource.php');
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Source/BasicUserMySQLiSource.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Source/UserSourceInterface.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Source/UserKeepInterface.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Source/AbstractUserDBSource.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Source/BasicUserMySQLiSource.php');
 
 // Users service.
-require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/UserService.php');
+require_once(THOPHPAUTHORIZATION_CLASSES . 'Service/UserService.php');
