@@ -140,7 +140,7 @@ class HTTPService
             $real = realpath($path);
             $real_root = $_SERVER['DOCUMENT_ROOT'];
             if (str_starts_with($real, $real_root)) {
-                return $this->relativeToURL(substr($real, strlen($real_root)));
+                return static::relativeToURL(substr($real, strlen($real_root)));
             }
         } catch (Exception $e) {
             // Failed to get SRC.
@@ -161,7 +161,7 @@ class HTTPService
             ? "https://"
             : "http://";
         // Append the host(domain name, ip) to the URL.
-        return $_SERVER['HTTP_HOST'] . $path;
+        return $url . $_SERVER['HTTP_HOST'] . $path;
     }
 
     /**
@@ -176,7 +176,7 @@ class HTTPService
         if (headers_sent()) {
             return false;
         }
-        $url = $this->relativeToURL($page);
+        $url = static::relativeToURL($page);
         header("Location: {$url}");
         die();
     }
