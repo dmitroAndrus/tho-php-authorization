@@ -13,6 +13,7 @@
 
 use ThoPHPAuthorization\Service\MySQLiService;
 use ThoPHPAuthorization\Service\HTTPService;
+use ThoPHPAuthorization\User\User;
 use ThoPHPAuthorization\Source\UserMySQLiSource;
 use ThoPHPAuthorization\Service\UserService;
 use ThoPHPAuthorization\Service\MailService;
@@ -31,6 +32,11 @@ $db_service = new MySQLiService(
     DB_CHARSET,
     DB_PREFIX
 );
+
+// Set available User identification types.
+User::$canIdentifyByName = true;
+User::$canIdentifyByEmail = true;
+User::$canIdentifyByPhone = true;
 
 // Create user source.
 $user_source = new UserMySQLiSource($db_service);
