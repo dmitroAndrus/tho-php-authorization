@@ -1,0 +1,20 @@
+Thank You for signing up.
+
+Your user has been created.
+
+
+User name: {name}
+Password: {password}
+First name: {first_name}
+Last name: {last_name}
+Birthday: {birthday}
+E-mail: {email}
+Phone: {phone}
+Country: {country}
+State: {state}
+City: {city}
+Address: {address}
+Zip code: {zip}
+
+
+Best regards
