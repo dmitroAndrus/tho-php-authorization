@@ -70,7 +70,7 @@ class MySQLiService implements DBServiceInterface
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function getTableName($table_name)
     {
@@ -94,7 +94,7 @@ class MySQLiService implements DBServiceInterface
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function insert(string $table_name, $data)
     {
@@ -107,7 +107,7 @@ class MySQLiService implements DBServiceInterface
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function update(string $table_name, $id, $data, $id_column = null)
     {
@@ -122,7 +122,7 @@ class MySQLiService implements DBServiceInterface
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function getLastID()
     {
@@ -130,7 +130,7 @@ class MySQLiService implements DBServiceInterface
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function escape($value)
     {
@@ -138,7 +138,7 @@ class MySQLiService implements DBServiceInterface
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function query($query)
     {
@@ -146,7 +146,7 @@ class MySQLiService implements DBServiceInterface
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function queryFirst($query)
     {
@@ -157,7 +157,7 @@ class MySQLiService implements DBServiceInterface
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function queryAll($query)
     {

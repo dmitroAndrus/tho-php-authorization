@@ -126,7 +126,7 @@ abstract class AbstractUserDBSource implements UserSourceInterface
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function store(UserInterface &$user)
     {
@@ -141,7 +141,7 @@ abstract class AbstractUserDBSource implements UserSourceInterface
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function edit(UserInterface &$user, $data = null)
     {

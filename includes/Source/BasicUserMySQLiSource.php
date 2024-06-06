@@ -70,7 +70,7 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function getByID($id)
     {
@@ -79,7 +79,7 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function getByIdentity($identity)
     {
@@ -88,7 +88,7 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function validateData($data)
     {
@@ -100,7 +100,7 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function create($data)
     {
@@ -110,7 +110,7 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function userExists(UserInterface &$user)
     {
@@ -130,7 +130,7 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function getStoreData(UserInterface &$user)
     {
@@ -141,7 +141,7 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function editData(UserInterface &$user, $data = null)
     {
@@ -182,7 +182,7 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function keep(UserInterface $user, $valid_until, $name = null)
     {
@@ -204,7 +204,7 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function restoreKeeped($security)
     {
@@ -219,7 +219,7 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function releaseKeeped($security)
     {

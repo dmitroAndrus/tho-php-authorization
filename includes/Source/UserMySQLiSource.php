@@ -25,7 +25,7 @@ use ThoPHPAuthorization\User\User;
 class UserMySQLiSource extends BasicUserMySQLiSource
 {
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function getByIdentity($identity)
     {
@@ -74,7 +74,7 @@ class UserMySQLiSource extends BasicUserMySQLiSource
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function validateData($data)
     {
@@ -87,7 +87,7 @@ class UserMySQLiSource extends BasicUserMySQLiSource
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function create($data)
     {
@@ -97,7 +97,7 @@ class UserMySQLiSource extends BasicUserMySQLiSource
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function userExists(UserInterface &$user)
     {
@@ -125,7 +125,7 @@ class UserMySQLiSource extends BasicUserMySQLiSource
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function getStoreData(UserInterface &$user)
     {
@@ -144,7 +144,7 @@ class UserMySQLiSource extends BasicUserMySQLiSource
     }
 
     /**
-     * ${@inheritdoc}
+     * {@inheritdoc}
      */
     public function editData(UserInterface &$user, $data = null)
     {
