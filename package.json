@@ -1,7 +1,7 @@
 {
     "title": "Tho PHP Authorization",
     "name": "tho-php-authorization",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "User authorization library. Includes code to manage users: sign up, sign in, sign out.",
     "repository": {
         "type": "git",
