@@ -23,74 +23,74 @@ interface DebugLogInterface extends ErrorLogInterface
     /**
      * Add notice log message.
      *
-     * @param mixed $message - Notice log message.
+     * @param mixed $message Notice log message.
      *
-     * @return self.
+     * @return self
      */
     public function notice($message);
 
     /**
      * Get notice messages.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getNotices();
 
     /**
      * Get last notice message.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getLastNotice();
 
     /**
      * Check if there were notice messages.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasNotices();
 
     /**
      * Count notice messages.
      *
-     * @return integer.
+     * @return integer
      */
     public function countNotices();
 
     /**
      * Add debug log message.
      *
-     * @param mixed $message - Debug log message.
+     * @param mixed $message Debug log message.
      *
-     * @return self.
+     * @return self
      */
     public function debug($message);
 
     /**
      * Get debug messages.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getDebugMessages();
 
     /**
      * Get last debug message.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getLastDebugMessage();
 
     /**
      * Check if there were debug messages.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasDebugMessages();
 
     /**
      * Count debug messages.
      *
-     * @return integer.
+     * @return integer
      */
     public function countDebugMessages();
 }

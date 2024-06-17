@@ -21,96 +21,96 @@ interface HasAddressInterface
     /**
      * Set country.
      *
-     * @param string $country - Country.
+     * @param string $country Country.
      *
-     * @return self.
+     * @return self
      */
     public function setCountry($country);
 
     /**
      * Get country.
      *
-     * @return string.
+     * @return string
      */
     public function getCountry();
 
     /**
      * Set state.
      *
-     * @param string $state - State.
+     * @param string $state State.
      *
-     * @return self.
+     * @return self
      */
     public function setState($state);
 
     /**
      * Get state.
      *
-     * @return string.
+     * @return string
      */
     public function getState();
 
     /**
      * Set city.
      *
-     * @param string $city - City.
+     * @param string $city City.
      *
-     * @return self.
+     * @return self
      */
     public function setCity($city);
 
     /**
      * Get city.
      *
-     * @return string.
+     * @return string
      */
     public function getCity();
 
     /**
      * Set address.
      *
-     * @param string $address - Address.
+     * @param string $address Address.
      *
-     * @return self.
+     * @return self
      */
     public function setAddress($address);
 
     /**
      * Get address.
      *
-     * @return string.
+     * @return string
      */
     public function getAddress();
 
     /**
-     * Set zip.
+     * Set zip code.
      *
-     * @param string $zip - ZIP.
+     * @param string $zip ZIP code.
      *
-     * @return self.
+     * @return self
      */
     public function setZIP($zip);
 
     /**
-     * Get zip.
+     * Get zip code.
      *
-     * @return string.
+     * @return string
      */
     public function getZIP();
 
     /**
      * Get formated address.
      *
-     * @param string $format - Address format.
+     * @param string $format Address format.
      *
-     * @return string.
+     * @return string
      */
     public function getFormatedAddress($format);
 
     /**
      * Get full address.
      *
-     * @return string.
+     * @return string
      */
     public function getFullAddress();
 }

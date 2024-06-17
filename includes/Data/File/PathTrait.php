@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\File;
 /**
  * PathTrait is a trait, it contains basic methods to manipulate path data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Path\HasPathInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Path\HasPathInterface}.
  */
 trait PathTrait
 {
@@ -28,11 +28,11 @@ trait PathTrait
     protected $path;
 
     /**
-     * Set source.
+     * Set path to the file.
      *
-     * @param string $source - Source.
+     * @param string $path Path.
      *
-     * @return self.
+     * @return self
      */
     public function setPath($path)
     {
@@ -43,7 +43,7 @@ trait PathTrait
     /**
      * Get path.
      *
-     * @return string.
+     * @return string
      */
     public function getPath()
     {

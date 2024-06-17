@@ -17,9 +17,11 @@ namespace ThoPHPAuthorization\Service;
  * AutoloadService is a class, that contains functionality to autoload required classes.
  *
  * Example:
+ * ```php
  * $path_to_lib = '<path to the root ThoPHPAuthorization lib folder>';
  * require_once($path_to_lib . '/includes/ThoPHPAuthorization/Service/AutoloadService.php');
  * spl_autoload_register('ThoPHPAuthorization\Service\AutoloadService::autoload');
+ * ```
  *
  */
 class AutoloadService
@@ -34,10 +36,10 @@ class AutoloadService
     /**
      * Add path for autoload.
      *
-     * @param string $name - Namespace root.
-     * @param string $path - Path to classes root directory.
+     * @param string $name Namespace root.
+     * @param string $path Path to classes root directory.
      *
-     * @return boolean - path added or not.
+     * @return boolean Path added or not.
      */
     public static function addPath(string $name, string $path)
     {
@@ -53,14 +55,16 @@ class AutoloadService
     /**
      * Add path for autoload from constant.
      *
-     * @param string $name - Namespace root.
+     * @param string $name Namespace root.
      *
      * For 'use <namespace root>\Service\HTTPService;' there should be defined constant
      * like 'define('<namespace root uppercase>_AUTOLOAD', '<path to classes root directories>');'.
      * Example for 'use ThoPHPAuthorization\Service\HTTPService;':
+     * ```php
      * define('THOPHPAUTHORIZATION_AUTOLOAD', __DIR__ . '/classes/');
+     * ```
      *
-     * @return boolean - path added or not.
+     * @return boolean Path added or not.
      */
     public static function addPathFromAutoloadConst(string $name)
     {
@@ -71,9 +75,9 @@ class AutoloadService
     /**
      * Check if path exists.
      *
-     * @param string $name - Namespace root.
+     * @param string $name Namespace root.
      *
-     * @return boolean - path exists.
+     * @return boolean Path exists.
      */
     public static function hasPath(string $name)
     {
@@ -84,9 +88,9 @@ class AutoloadService
     /**
      * Get path.
      *
-     * @param string $name - Namespace root.
+     * @param string $name Namespace root.
      *
-     * @return string|null - Path or null if not exists.
+     * @return string|null Path or null if not exists.
      */
     public static function getPath(string $name)
     {
@@ -100,10 +104,10 @@ class AutoloadService
     /**
      * Require once file from the path.
      *
-     * @param string $name - Namespace root.
-     * @param string $path - Path to the file.
+     * @param string $name Namespace root.
+     * @param string $path Path to the file.
      *
-     * @return boolean - path exists.
+     * @return boolean Path exists.
      */
     public static function loadPathOnce(string $name, string $path)
     {
@@ -120,9 +124,9 @@ class AutoloadService
     /**
      * Join path parts ignoring first element.
      *
-     * @param string $parts - Path parts.
+     * @param string $parts Path parts.
      *
-     * @return boolean - path exists.
+     * @return boolean Path exists.
      */
     public static function joinSubPath($parts)
     {
@@ -136,9 +140,9 @@ class AutoloadService
      * All paths to classes root directories should be added with `addPath` method of this class
      * or defined as constant. Check `addPathFromAutoloadConst` method for the constant format.
      *
-     * @param string $class - Class name.
+     * @param string $class Class name.
      *
-     * @return boolean - class found and loaded.
+     * @return boolean Class found and loaded.
      */
     public static function autoload($class)
     {

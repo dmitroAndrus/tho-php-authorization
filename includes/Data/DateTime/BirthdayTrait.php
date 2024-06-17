@@ -14,11 +14,12 @@
 namespace ThoPHPAuthorization\Data\DateTime;
 
 use ThoPHPAuthorization\Service\DateTimeService;
+use \DateTimeInterface as DateTimeInterface;
 
 /**
  * BirthdayTrait is a trait, it contains basic methods to manipulate birthday data.
  *
- * Implements everything from ThoPHPAuthorization\Data\DateTime\HasBirthdayInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\DateTime\HasBirthdayInterface}.
  */
 trait BirthdayTrait
 {
@@ -26,18 +27,19 @@ trait BirthdayTrait
      * Birthday date.
      *
      * @var DateTimeInterface
+     * @see https://www.php.net/manual/en/class.datetimeinterface.php
      */
     protected $birthday;
 
     /**
      * Set birthday.
      *
-     * Please check https://www.php.net/manual/en/datetime.format.php for format settings.
+     * Please check {@see https://www.php.net/manual/en/datetime.format.php} for the format settings.
      *
-     * @param string|DateTimeInterface $date - Birthday date.
-     * @param string $format - Birthday date format.
+     * @param string|DateTimeInterface $date Birthday date.
+     * @param string $format Birthday date format.
      *
-     * @return self.
+     * @return self
      */
     public function setBirthday($date, $format = null)
     {
@@ -57,11 +59,16 @@ trait BirthdayTrait
     /**
      * Get birthday.
      *
-     * Please check https://www.php.net/manual/en/datetime.format.php for format settings.
+     * * Returns {@link https://www.php.net/manual/en/class.datetimeinterface.php DateTimeInterface}
+     * when format is not provided.
+     * * Returns formated birthday string when $format is provided.
      *
-     * @param string $format - Birthday format, when not set returns DateTime object.
+     * Please check {@see https://www.php.net/manual/en/datetime.format.php} for the format settings.
      *
-     * @return string.
+     * @param string $format Birthday format, when not set returns
+     *                       {@link https://www.php.net/manual/en/class.datetime.php DateTime} object.
+     *
+     * @return DateTimeInterface|string
      */
     public function getBirthday($format = null)
     {

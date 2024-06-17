@@ -21,23 +21,24 @@ class PhoneService
     /**
      * Validate generic phone number.
      *
-     * Regexp taken from https://stackoverflow.com/a/20971688/23252561
-     * Matches:
-     *  - (+351) 282 43 50 50
-     *  - 90191919908
-     *  - 555-8909
-     *  - 001 6867684
-     *  - 001 6867684x1
-     *  - 1 (234) 567-8901
-     *  - 1-234-567-8901 x1234
-     *  - 1-234-567-8901 ext1234
-     *  - 1-234 567.89/01 ext.1234
-     *  - 1(234)5678901x1234
-     *  - (123)8575973
-     *  - (0055)(123)8575973
-     *  - +1 282 282 2828
+     * Regexp taken from {@see https://stackoverflow.com/a/20971688/23252561}
      *
-     * @param string $phone - Phone number.
+     * Matches:
+     * - (+351) 282 43 50 50
+     * - 90191919908
+     * - 555-8909
+     * - 001 6867684
+     * - 001 6867684x1
+     * - 1 (234) 567-8901
+     * - 1-234-567-8901 x1234
+     * - 1-234-567-8901 ext1234
+     * - 1-234 567.89/01 ext.1234
+     * - 1(234)5678901x1234
+     * - (123)8575973
+     * - (0055)(123)8575973
+     * - +1 282 282 2828
+     *
+     * @param string $phone Phone number.
      *
      * @return boolean Phone number is valid or not.
      */

@@ -18,7 +18,7 @@ use ThoPHPAuthorization\Data\Email\EmailInterface;
 /**
  * EmailsTrait is a trait, it contains basic methods to manipulate multiple emails data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Email\HasEmailsInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Email\HasEmailsInterface}.
  */
 trait EmailsTrait
 {
@@ -32,7 +32,7 @@ trait EmailsTrait
     /**
      * Add email.
      *
-     * @param mixed $email - Email.
+     * @param mixed $email Email.
      *
      * @return self
      */
@@ -47,7 +47,7 @@ trait EmailsTrait
     /**
      * Get all emails.
      *
-     * @return EmailInterface[]|null - List of all available emails or null when none found.
+     * @return EmailInterface[]|null List of all available emails or null when none found.
      */
     public function getEmails()
     {
@@ -61,7 +61,7 @@ trait EmailsTrait
      *
      * @param string $type - Email type.
      *
-     * @return EmailInterface[]|null - List of all emails with specified email type or null when none found.
+     * @return EmailInterface[]|null List of all emails with specified email type or null when none found.
      */
     public function getEmailsByType($type)
     {
@@ -79,9 +79,9 @@ trait EmailsTrait
      *
      * Possible types: personal, work, private, etc.
      *
-     * @param string $type - Email type.
+     * @param string $type Email type.
      *
-     * @return EmailInterface|null - Email object or null when none found.
+     * @return EmailInterface|null Email object or null when none found.
      */
     public function getFirstEmailByType($type)
     {
@@ -98,7 +98,7 @@ trait EmailsTrait
      *
      * Possible types: personal, work, private, etc.
      *
-     * @param string $type - Email type.
+     * @param string $type Email type.
      *
      * @return boolean
      */

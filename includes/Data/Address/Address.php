@@ -31,7 +31,7 @@ class Address implements AddressInterface
     /**
      * Get a string representation of the object.
      *
-     * @return string.
+     * @return string String representation of the object.
      */
     public function __toString()
     {

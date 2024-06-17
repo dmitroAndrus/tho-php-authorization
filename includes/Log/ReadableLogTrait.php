@@ -19,6 +19,7 @@ use ThoPHPAuthorization\Log\LogInterface;
  * ReadableLogTrait is a trait, that contains basic methods to get data from the log object.
  *
  * Used to provide read only access to log.
+ *
  * Log object should be set manualy, for example, in the constructor.
  */
 trait ReadableLogTrait
@@ -26,14 +27,14 @@ trait ReadableLogTrait
     /**
      * Log.
      *
-     * @var LogInterface.
+     * @var LogInterface
      */
     protected $log;
 
     /**
      * Get all log messages.
      *
-     * @return mixed|null - Messages or null, if there is no.
+     * @return mixed|null Messages or null, if there is no.
      */
     public function getAllLogMessages()
     {
@@ -43,7 +44,7 @@ trait ReadableLogTrait
     /**
      * Get last log message.
      *
-     * @return mixed|null - Last message or null, if there is no.
+     * @return mixed|null Last message or null, if there is no.
      */
     public function getLastLogMessage()
     {
@@ -53,7 +54,7 @@ trait ReadableLogTrait
     /**
      * Check if there are some log messages.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasEmptyLog()
     {
@@ -63,7 +64,7 @@ trait ReadableLogTrait
     /**
      * Count log messages.
      *
-     * @return integer.
+     * @return integer
      */
     public function countLogMessages()
     {

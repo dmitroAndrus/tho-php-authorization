@@ -56,8 +56,8 @@ class HTTPService
     /**
      * Get value.
      *
-     * @param string $name - Variable name.
-     * @param mixed|null $default - Default value.
+     * @param string $name Variable name.
+     * @param mixed|null $default Default value.
      *
      * @return mixed
      */
@@ -71,8 +71,8 @@ class HTTPService
     /**
      * Get POST value.
      *
-     * @param string $name - Variable name.
-     * @param mixed|null $default - Default value.
+     * @param string $name Variable name.
+     * @param mixed|null $default Default value.
      *
      * @return mixed
      */
@@ -86,7 +86,7 @@ class HTTPService
     /**
      * Has SESSION value.
      *
-     * @param string $name - Variable name.
+     * @param string $name Variable name.
      *
      * @return boolean
      */
@@ -98,8 +98,8 @@ class HTTPService
     /**
      * Get SESSION value.
      *
-     * @param string $name - Variable name.
-     * @param mixed|null $default - Default value.
+     * @param string $name Variable name.
+     * @param mixed|null $default Default value.
      *
      * @return mixed
      */
@@ -113,7 +113,7 @@ class HTTPService
     /**
      * Remove SESSION value.
      *
-     * @param string $name - Variable name.
+     * @param string $name Variable name.
      *
      * @return boolean
      */
@@ -129,7 +129,7 @@ class HTTPService
     /**
      * Convert local path to URL.
      *
-     * @param string $path - Local path.
+     * @param string $path Local path.
      *
      * @return mixed
      */
@@ -151,7 +151,7 @@ class HTTPService
     /**
      * Convert relative path to URL.
      *
-     * @param string $path - Relative path.
+     * @param string $path Relative path.
      *
      * @return mixed
      */
@@ -167,7 +167,7 @@ class HTTPService
     /**
      * Redirect to internal page.
      *
-     * @param string $page - page to redirect.
+     * @param string $page page to redirect.
      *
      * @return mixed
      */
@@ -184,8 +184,8 @@ class HTTPService
     /**
      * Output file content for download.
      *
-     * @param string $basename - File basename.
-     * @param string $content - File content.
+     * @param string $basename File basename.
+     * @param string $content File content.
      *
      * @return void
      */
@@ -206,14 +206,14 @@ class HTTPService
      * Output file content.
      *
      * $content_type examples:
-     * 'image/jpeg'
-     * 'image/png'
-     * 'image/jpeg'
-     * 'video/mpeg'
-     * etc.
+     * - 'image/jpeg'
+     * - 'image/png'
+     * - 'image/jpeg'
+     * - 'video/mpeg'
+     * - etc.
      *
-     * @param string $content_type - File content type.
-     * @param string $content - File content.
+     * @param string $content_type File content type.
+     * @param string $content File content.
      *
      * @return void
      */

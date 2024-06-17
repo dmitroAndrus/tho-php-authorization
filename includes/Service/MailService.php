@@ -37,7 +37,7 @@ class MailService
      *
      * @see https://www.regular-expressions.info/email.html
      *
-     * @param string $email - Email.
+     * @param string $email Email.
      *
      * @return boolean Email is valid or not.
      */
@@ -64,9 +64,9 @@ class MailService
     /**
      * Add transport.
      *
-     * @param string $name - Transport name.
-     * @param array|MailTransportInterface|null $transport - Transport config, MailTransportInterface instance or null.
-     * @param boolean $is_default - Set provided transport as default.
+     * @param string $name Transport name.
+     * @param array|MailTransportInterface|null $transport Transport config, MailTransportInterface instance or null.
+     * @param boolean $is_default Set provided transport as default.
      *
      * @return self
      */
@@ -99,9 +99,9 @@ class MailService
     /**
      * Send mail with default transport.
      *
-     * @param string|MailTransportInterface $transport - Transport name or MailTransportInterface instance.
+     * @param string|MailTransportInterface $transport Transport name or MailTransportInterface instance.
      *
-     * @return MailTransportInterface|null.
+     * @return MailTransportInterface|null
      */
     public function getTransport($transport)
     {
@@ -116,7 +116,7 @@ class MailService
     /**
      * Set default transport.
      *
-     * @param string|MailTransportInterface $transport - Default transport name or MailTransportInterface instance.
+     * @param string|MailTransportInterface $transport Default transport name or MailTransportInterface instance.
      *
      * @return self
      */
@@ -135,7 +135,7 @@ class MailService
     /**
      * Send mail with default transport.
      *
-     * @param array|MailInterface $mail - Mail to send.
+     * @param array|MailInterface $mail Mail to send.
      *
      * @return boolean Mail sending result.
      */
@@ -153,8 +153,8 @@ class MailService
     /**
      * Send mail with specified transport.
      *
-     * @param string $name - Mail transport name.
-     * @param array|MailInterface $mail - Mail to send.
+     * @param string $name Mail transport name.
+     * @param array|MailInterface $mail Mail to send.
      *
      * @return boolean Mail sending result.
      */

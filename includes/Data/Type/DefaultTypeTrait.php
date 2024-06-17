@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\Type;
 /**
  * DefaultTypeTrait is a trait, it contains basic methods to object default type data.
  *
- * Implements everything from ThoPHPAuthorization\Data\DefaultType\HasDefaultTypeInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\DefaultType\HasDefaultTypeInterface}.
  */
 trait DefaultTypeTrait
 {
@@ -30,9 +30,9 @@ trait DefaultTypeTrait
     /**
      * Set default type.
      *
-     * @param mixed $type - DefaultType default type.
+     * @param mixed $type DefaultType default type.
      *
-     * @return self.
+     * @return self
      */
     public function setDefaultType($type)
     {
@@ -43,7 +43,7 @@ trait DefaultTypeTrait
     /**
      * Get default type.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getDefaultType()
     {

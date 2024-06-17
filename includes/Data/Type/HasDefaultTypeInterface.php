@@ -21,16 +21,16 @@ interface HasDefaultTypeInterface
     /**
      * Set default type.
      *
-     * @param mixed $type - Default type default type.
+     * @param mixed $type Default type default type.
      *
-     * @return self.
+     * @return self
      */
     public function setDefaultType($type);
 
     /**
      * Get default type.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getDefaultType();
 }

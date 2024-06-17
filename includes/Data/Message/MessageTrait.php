@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\Message;
 /**
  * MessageTrait is a trait, it contains basic methods to manipulate message data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Message\HasMessageInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Message\HasMessageInterface}.
  */
 trait MessageTrait
 {
@@ -30,9 +30,9 @@ trait MessageTrait
     /**
      * Set message.
      *
-     * @param string $message - Message.
+     * @param string $text Message text.
      *
-     * @return self.
+     * @return self
      */
     public function setMessage($text)
     {
@@ -43,7 +43,7 @@ trait MessageTrait
     /**
      * Get message.
      *
-     * @return string.
+     * @return string
      */
     public function getMessage()
     {

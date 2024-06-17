@@ -21,6 +21,7 @@ use ThoPHPAuthorization\Data\Type\TypeTrait;
  * Phone is a class to manipulate phone data.
  *
  * Provides access to phone number and phone type data.
+ *
  * Possible phone types: mobile, fax, work phone, etc.
  */
 class Phone implements PhoneInterface
@@ -31,7 +32,7 @@ class Phone implements PhoneInterface
     /**
      * Get a string representation of the object.
      *
-     * @return string.
+     * @return string
      */
     public function __toString()
     {

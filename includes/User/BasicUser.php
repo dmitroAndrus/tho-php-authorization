@@ -33,9 +33,9 @@ class BasicUser extends AbstractUser implements HasNameInterface, HasPasswordInt
     /**
      * Constructor.
      *
-     * @param array $data - User data.
+     * @param array $data User data.
      *
-     * @return void.
+     * @return void
      */
     public function __construct(array $data = [])
     {

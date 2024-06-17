@@ -21,16 +21,16 @@ interface HasSRCInterface
     /**
      * Set source.
      *
-     * @param string $source - Source.
+     * @param string $source Source.
      *
-     * @return self.
+     * @return self
      */
     public function setSRC($source);
 
     /**
      * Get source.
      *
-     * @return string.
+     * @return string
      */
     public function getSRC();
 }

@@ -23,64 +23,64 @@ interface UserSourceInterface
     /**
      * Get user by ID.
      *
-     * @param mixed $id - User ID.
+     * @param mixed $id User ID.
      *
-     * @return UserInterface|null.
+     * @return UserInterface|null
      */
     public function getByID($id);
 
     /**
      * Get user by identity.
      *
-     * @param mixed $identity - User identity.
+     * @param mixed $identity User identity.
      *
-     * @return UserInterface|null.
+     * @return UserInterface|null
      */
     public function getByIdentity($identity);
 
     /**
      * Validate user data.
      *
-     * @param array $data - User data.
+     * @param array $data User data.
      *
-     * @return boolean - User is valid or not.
+     * @return boolean User is valid or not.
      */
     public function validateData($data);
 
     /**
      * Create user.
      *
-     * @param array $data - User data.
+     * @param array $data User data.
      *
-     * @return UserInterface|null.
+     * @return UserInterface|null
      */
     public function create($data);
 
     /**
      * Check if such user exists.
      *
-     * @param UserInterface $user - User object.
+     * @param UserInterface $user User object.
      *
-     * @return boolean - User exists or not.
+     * @return boolean User exists or not.
      */
     public function userExists(UserInterface &$user);
 
     /**
      * Store user.
      *
-     * @param UserInterface $user - User object.
+     * @param UserInterface $user User object.
      *
-     * @return boolean - storing successful or not.
+     * @return boolean Storing successful or not.
      */
     public function store(UserInterface &$user);
 
     /**
      * Edit user.
      *
-     * @param UserInterface $user - User object.
-     * @param array|null $data - User data.
+     * @param UserInterface $user User object.
+     * @param array|null $data User data.
      *
-     * @return boolean - editing successful or not.
+     * @return boolean Editing successful or not.
      */
     public function edit(UserInterface &$user, $data = null);
 }

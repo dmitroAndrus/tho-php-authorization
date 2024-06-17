@@ -21,16 +21,16 @@ interface HasPathInterface
     /**
      * Set file src.
      *
-     * @param string $source - File src.
+     * @param string $source File src.
      *
-     * @return self.
+     * @return self
      */
     public function setPath($source);
 
     /**
      * Get file src.
      *
-     * @return string.
+     * @return string
      */
     public function getPath();
 }

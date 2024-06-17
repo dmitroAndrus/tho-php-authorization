@@ -28,7 +28,7 @@ trait StrictNameTrait
     /**
      * Get name.
      *
-     * @return string.
+     * @return string
      */
     public function getName()
     {

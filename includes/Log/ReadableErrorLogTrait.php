@@ -28,7 +28,7 @@ trait ReadableErrorLogTrait
     /**
      * Get error messages.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getErrors()
     {
@@ -38,7 +38,7 @@ trait ReadableErrorLogTrait
     /**
      * Get last error message.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getLastError()
     {
@@ -48,7 +48,7 @@ trait ReadableErrorLogTrait
     /**
      * Check if there were error messages.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasErrors()
     {
@@ -58,7 +58,7 @@ trait ReadableErrorLogTrait
     /**
      * Count error messages.
      *
-     * @return integer.
+     * @return integer
      */
     public function countErrors()
     {
@@ -68,7 +68,7 @@ trait ReadableErrorLogTrait
     /**
      * Get warning messages.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getWarnings()
     {
@@ -78,7 +78,7 @@ trait ReadableErrorLogTrait
     /**
      * Get last warning message.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getLastWarning()
     {
@@ -88,7 +88,7 @@ trait ReadableErrorLogTrait
     /**
      * Check if there were warning messages.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasWarnings()
     {
@@ -98,7 +98,7 @@ trait ReadableErrorLogTrait
     /**
      * Count warning messages.
      *
-     * @return integer.
+     * @return integer
      */
     public function countWarnings()
     {

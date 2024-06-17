@@ -28,14 +28,14 @@ class Log implements LogInterface
     /**
      * Default log.
      *
-     * @var LogInterface.
+     * @var LogInterface
      */
     public static $defaultLog = null;
 
     /**
      * Messages source.
      *
-     * @var MessagesSourceInterface.
+     * @var MessagesSourceInterface
      */
     protected $source;
 
@@ -45,9 +45,9 @@ class Log implements LogInterface
      * MessagesSourceInterface object can be provided or it will create a MessagesSource object,
      * and will store log messages in it.
      *
-     * @param MessagesSourceInterface $source - Messages source.
+     * @param MessagesSourceInterface $source Messages source.
      *
-     * @return void.
+     * @return void
      */
     public function __construct(MessagesSourceInterface $source = null)
     {

@@ -28,7 +28,7 @@ trait ReadableDebugLogTrait
     /**
      * Get notice messages.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getNotices()
     {
@@ -38,7 +38,7 @@ trait ReadableDebugLogTrait
     /**
      * Get last notice message.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getLastNotice()
     {
@@ -48,7 +48,7 @@ trait ReadableDebugLogTrait
     /**
      * Check if there were notice messages.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasNotices()
     {
@@ -58,7 +58,7 @@ trait ReadableDebugLogTrait
     /**
      * Count notice messages.
      *
-     * @return integer.
+     * @return integer
      */
     public function countNotices()
     {
@@ -68,7 +68,7 @@ trait ReadableDebugLogTrait
     /**
      * Get debug messages.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getDebugMessages()
     {
@@ -78,7 +78,7 @@ trait ReadableDebugLogTrait
     /**
      * Get last debug message.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getLastDebugMessage()
     {
@@ -88,7 +88,7 @@ trait ReadableDebugLogTrait
     /**
      * Check if there were debug messages.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasDebugMessages()
     {
@@ -98,7 +98,7 @@ trait ReadableDebugLogTrait
     /**
      * Count debug messages.
      *
-     * @return integer.
+     * @return integer
      */
     public function countDebugMessages()
     {

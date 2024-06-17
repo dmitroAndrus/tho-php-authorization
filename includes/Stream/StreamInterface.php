@@ -21,39 +21,39 @@ interface StreamInterface
     /**
      * Try to open stream.
      *
-     * @param boolean $force - Try to forcefuly open/reopen stream.
+     * @param boolean $force Try to forcefuly open/reopen stream.
      *
-     * @return boolean - Stream opening status.
+     * @return boolean Stream opening status.
      */
     public function open($force = false);
 
     /**
      * Close stream.
      *
-     * @param boolean $force - Try to forcefuly close stream.
+     * @param boolean $force Try to forcefuly close stream.
      *
-     * @return boolean - Stream close status.
+     * @return boolean Stream close status.
      */
     public function close($force = false);
 
     /**
      * Check if stream is open.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function isOpen();
 
     /**
      * Check if stream is closed.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function isClosed();
 
     /**
      * Get stream status.
      *
-     * @return mixed - Stream status.
+     * @return mixed Stream status.
      */
     public function getStatus();
 }

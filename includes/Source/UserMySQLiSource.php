@@ -52,7 +52,7 @@ class UserMySQLiSource extends BasicUserMySQLiSource
     /**
      * Validate email.
      *
-     * @param string $email - Phone number.
+     * @param string $email Phone number.
      *
      * @return boolean Email is valid or not.
      */
@@ -64,7 +64,7 @@ class UserMySQLiSource extends BasicUserMySQLiSource
     /**
      * Validate phone number.
      *
-     * @param string $phone - Phone number.
+     * @param string $phone Phone number.
      *
      * @return boolean Phone number is valid or not.
      */

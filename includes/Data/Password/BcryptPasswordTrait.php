@@ -27,9 +27,9 @@ trait BcryptPasswordTrait
     /**
      * Encrypt password with MD5.
      *
-     * @param string $password - Password.
+     * @param string $password Password.
      *
-     * @return string.
+     * @return string
      */
     public function encryptPassword($password)
     {
@@ -43,7 +43,7 @@ trait BcryptPasswordTrait
     /**
      * Check password.
      *
-     * @param $password - Password.
+     * @param $password Password.
      *
      * @return boolen Passed or not password check.
      */

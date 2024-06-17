@@ -21,33 +21,33 @@ interface HasPasswordInterface
     /**
      * Get password.
      *
-     * @return string.
+     * @return string
      */
     public function getPassword();
 
     /**
      * Encrypt password.
      *
-     * @param string $password - Password.
+     * @param string $password Password.
      *
-     * @return string.
+     * @return string
      */
     public function encryptPassword($password);
 
     /**
      * Set password.
      *
-     * @param string $password - Password.
-     * @param boolean $encrypt - Encrypt password.
+     * @param string $password Password.
+     * @param boolean $encrypt Encrypt password.
      *
-     * @return self.
+     * @return self
      */
     public function setPassword($password, $encrypt = true);
 
     /**
      * Check password.
      *
-     * @param $password - Password.
+     * @param $password Password.
      *
      * @return boolen Passed or not password check.
      */

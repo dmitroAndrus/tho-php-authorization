@@ -18,7 +18,7 @@ use ThoPHPAuthorization\Data\Phone\PhoneInterface;
 /**
  * PhonesTrait is a trait, it contains basic methods to manipulate multiple phones data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Phone\HasPhonesInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Phone\HasPhonesInterface}.
  */
 trait PhonesTrait
 {
@@ -32,7 +32,7 @@ trait PhonesTrait
     /**
      * Add phone.
      *
-     * @param mixed $phone - Phone.
+     * @param mixed $phone Phone.
      *
      * @return self
      */
@@ -47,7 +47,7 @@ trait PhonesTrait
     /**
      * Get all phones.
      *
-     * @return PhoneInterface[]|null - List of all available phones or null when none found.
+     * @return PhoneInterface[]|null List of all available phones or null when none found.
      */
     public function getPhones()
     {
@@ -59,9 +59,9 @@ trait PhonesTrait
      *
      * Possible types: mobile, fax, work phone, etc.
      *
-     * @param string $type - Phone type.
+     * @param string $type Phone type.
      *
-     * @return PhoneInterface[]|null - List of all phones with specified phone type or null when none found.
+     * @return PhoneInterface[]|null List of all phones with specified phone type or null when none found.
      */
     public function getPhonesByType($type)
     {
@@ -79,9 +79,9 @@ trait PhonesTrait
      *
      * Possible types: mobile, fax, work phone, etc.
      *
-     * @param string $type - Phone type.
+     * @param string $type Phone type.
      *
-     * @return PhoneInterface|null - Phone object or null when none found.
+     * @return PhoneInterface|null Phone object or null when none found.
      */
     public function getFirstPhoneByType($type)
     {
@@ -98,7 +98,7 @@ trait PhonesTrait
      *
      * Possible types: mobile, fax, work phone, etc.
      *
-     * @param string $type - Phone type.
+     * @param string $type Phone type.
      *
      * @return boolean
      */

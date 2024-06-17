@@ -23,29 +23,29 @@ interface UserKeepInterface
     /**
      * Keep user.
      *
-     * @param UserInterface $user - User object.
-     * @param DateTime|timestamp $valid_until - Date and time until it should be valid.
-     * @param string $name - Unique name.
+     * @param UserInterface $user User object.
+     * @param DateTime|timestamp $valid_until Date and time until it should be valid.
+     * @param string $name Unique name.
      *
-     * @return string|boolean - Security key or false, when failed to keep.
+     * @return string|boolean Security key or false, when failed to keep.
      */
     public function keep(UserInterface $user, $valid_until, $name = null);
 
     /**
      * Restore keeped user.
      *
-     * @param string $security - Security key to keep the user.
+     * @param string $security Security key to keep the user.
      *
-     * @return UserInterface|null.
+     * @return UserInterface|null
      */
     public function restoreKeeped($security);
 
     /**
      * Release keeped user.
      *
-     * @param string $security - Security key to keep the user.
+     * @param string $security Security key to keep the user.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function releaseKeeped($security);
 }

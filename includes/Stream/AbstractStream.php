@@ -32,28 +32,28 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Stream open message.
      *
-     * @var string.
+     * @var string
      */
     public static $streamOpenMsg = 'Opened stream: {stream_name}';
 
     /**
      * Stream open error message.
      *
-     * @var string.
+     * @var string
      */
     public static $streamOpenErrorMsg = 'Error! Failed to open stream: {stream_name}';
 
     /**
      * Stream close error message.
      *
-     * @var string.
+     * @var string
      */
     public static $streamCloseErrorMsg = 'Error! Failed to close stream: {stream_name}';
 
     /**
      * Stream close message.
      *
-     * @var string.
+     * @var string
      */
     public static $streamCloseMsg = 'Closed stream: {stream_name}';
 
@@ -74,7 +74,7 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Constructor.
      *
-     * @param DebugLogInterface $log - Log.
+     * @param DebugLogInterface $log Log.
      *
      * @var void
      */
@@ -102,14 +102,14 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Get stream name.
      *
-     * @return string.
+     * @return string
      */
     abstract public function getName();
 
     /**
      * Check if stream can be opened.
      *
-     * @return self.
+     * @return self
      */
     public function canOpen()
     {
@@ -153,7 +153,7 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Check if stream can be closed.
      *
-     * @return self.
+     * @return self
      */
     public function canClose()
     {
@@ -212,9 +212,9 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Set stream status.
      *
-     * @param integer $status - New stream status.
+     * @param integer $status New stream status.
      *
-     * @return self.
+     * @return self
      */
     protected function setStatus($status)
     {
@@ -233,13 +233,13 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Log error message end throw ExitException.
      *
-     * @param string $message - Error message.
-     * @param array|null $data - Error data.
-     * @param integer $status - Error status.
+     * @param string $message Error message.
+     * @param array|null $data Error data.
+     * @param integer $status Error status.
      *
-     * @throws ExitException - Always throws ExitException.
+     * @throws ExitException Always throws ExitException.
      *
-     * @return void.
+     * @return void
      */
     protected function error($message, $data = null, $status = null)
     {
@@ -253,11 +253,11 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Log notice message.
      *
-     * @param string $message - Error message.
-     * @param array|null $data - Error data.
-     * @param integer $status - Error status.
+     * @param string $message Error message.
+     * @param array|null $data Error data.
+     * @param integer $status Error status.
      *
-     * @return self.
+     * @return self
      */
     protected function notice($message, $data = null)
     {
@@ -270,11 +270,11 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Log debug message.
      *
-     * @param string $message - Error message.
-     * @param array|null $data - Error data.
-     * @param integer $status - Error status.
+     * @param string $message Error message.
+     * @param array|null $data Error data.
+     * @param integer $status Error status.
      *
-     * @return self.
+     * @return self
      */
     protected function debug($message, $data = null)
     {
@@ -287,7 +287,7 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Do some thing before opening stream.
      *
-     * @return self.
+     * @return self
      */
     protected function beforeOpen()
     {
@@ -297,7 +297,7 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Do some thing after opening stream.
      *
-     * @return self.
+     * @return self
      */
     protected function afterOpen()
     {
@@ -307,14 +307,14 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Create stream.
      *
-     * @return mixed - Created stream.
+     * @return mixed Created stream.
      */
     abstract protected function createStream();
 
     /**
      * Do some thing before closing stream.
      *
-     * @return self.
+     * @return self
      */
     protected function beforeClose()
     {
@@ -324,7 +324,7 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Do some thing after closing stream.
      *
-     * @return self.
+     * @return self
      */
     protected function afterClose()
     {
@@ -335,9 +335,9 @@ abstract class AbstractStream implements StreamInterface
     /**
      * Terminate current stream.
      *
-     * @param boolean $force - Try to forcefuly termination stream.
+     * @param boolean $force Try to forcefuly termination stream.
      *
-     * @return boolean - Stream termination result.
+     * @return boolean Stream termination result.
      */
     abstract protected function terminateStream($force = false);
 }

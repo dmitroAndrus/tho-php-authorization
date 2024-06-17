@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\Email;
 /**
  * CCReceiversTrait is a trait, it contains basic methods to manipulate CC receivers emails data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Email\HasCCReceiversInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Email\HasCCReceiversInterface}.
  */
 trait CCReceiversTrait
 {
@@ -30,10 +30,10 @@ trait CCReceiversTrait
     /**
      * Add CC receiver email.
      *
-     * @param string $email - Receiver email.
-     * @param string $name - Receiver name.
+     * @param string $email Receiver email.
+     * @param string $name Receiver name.
      *
-     * @return self.
+     * @return self
      */
     public function addCCReceiver($email, $name = null)
     {
@@ -48,7 +48,7 @@ trait CCReceiversTrait
     /**
      * Has CC receivers.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasCCReceivers()
     {
@@ -58,7 +58,7 @@ trait CCReceiversTrait
     /**
      * Get CC receivers.
      *
-     * @return array.
+     * @return array
      */
     public function getCCReceivers()
     {
@@ -78,7 +78,7 @@ trait CCReceiversTrait
     /**
      * Get CC receivers emails.
      *
-     * @return array.
+     * @return array
      */
     public function getCCReceiversEmails()
     {
@@ -88,7 +88,7 @@ trait CCReceiversTrait
     /**
      * Get CC receivers names.
      *
-     * @return array.
+     * @return array
      */
     public function getCCReceiversNames()
     {

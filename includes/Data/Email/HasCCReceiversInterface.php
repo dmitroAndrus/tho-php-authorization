@@ -23,38 +23,38 @@ interface HasCCReceiversInterface
     /**
      * Add CC receiver email.
      *
-     * @param string $email - Receiver email.
-     * @param string $name - Receiver name.
+     * @param string $email Receiver email.
+     * @param string $name Receiver name.
      *
-     * @return self.
+     * @return self
      */
     public function addCCReceiver($email, $name = null);
 
     /**
      * Has CC receivers.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasCCReceivers();
 
     /**
      * Get CC receivers.
      *
-     * @return array.
+     * @return array
      */
     public function getCCReceivers();
 
     /**
      * Get CC receivers emails.
      *
-     * @return array.
+     * @return array
      */
     public function getCCReceiversEmails();
 
     /**
      * Get CC receivers names.
      *
-     * @return array.
+     * @return array
      */
     public function getCCReceiversNames();
 }

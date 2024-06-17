@@ -23,7 +23,23 @@ interface LocalFileInterface extends FileInterface, HasPathInterface
     /**
      * Get file base name.
      *
-     * @return string|null - File base name or null, when no file specified.
+     * @return string|null File base name or null, when no file specified.
      */
     public function getBaseName();
+
+    /**
+     * Set path to the file.
+     *
+     * @param string $path Path.
+     *
+     * @return self
+     */
+    public function setPath($path);
+
+    /**
+     * Get path.
+     *
+     * @return string
+     */
+    public function getPath();
 }

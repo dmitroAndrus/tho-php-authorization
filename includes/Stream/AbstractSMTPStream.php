@@ -28,35 +28,35 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * SMTP emprty From email address message.
      *
-     * @var string.
+     * @var string
      */
     public static $smtpEmptyFromMsg = 'SMTP ({stream_name}) empty From email address.';
 
     /**
      * SMTP error Receiver email address message.
      *
-     * @var string.
+     * @var string
      */
     public static $smtpEmptyReceiverMsg = 'SMTP ({stream_name}) empty Receiver email address.';
 
     /**
      * SMTP error message.
      *
-     * @var string.
+     * @var string
      */
     public static $smtpErrorMsg = 'Error! SMTP ({stream_name}) error: {details}: {code}';
 
     /**
      * SMTP time limit reached message.
      *
-     * @var string.
+     * @var string
      */
     public static $smtpTimelimitMsg = 'SMTP {command} timelimit reached "{timelimit}" sec. Stream: {stream_name}';
 
     /**
      * SMTP stream command contains line breaks error.
      *
-     * @var string.
+     * @var string
      */
     public static $smtpCommandLineBreaksErrorMsg = 'Error! Command "{command}" contained line breaks. ' .
         'Stream: {stream_name}';
@@ -64,14 +64,14 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * SMTP response message.
      *
-     * @var string.
+     * @var string
      */
     public static $smtpResponseMsg = 'SMTP ({stream_name}) command "{command}" response "{response}"';
 
     /**
      * SMTP command failed message.
      *
-     * @var string.
+     * @var string
      */
     public static $smtpCommandFailedMsg = 'Error! SMTP ({stream_name}) command "{command}" failed. ' .
         'Code {code} - {details}';
@@ -79,14 +79,14 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * SMTP authentification failed message.
      *
-     * @var string.
+     * @var string
      */
     public static $smtpAuthentificationErrorMsg = 'SMTP ({stream_name}) authentification failed.';
 
     /**
      * SMTP inbound message.
      *
-     * @var string.
+     * @var string
      */
     public static $smtpInboundMsg = 'SMTP ({stream_name}) inbound: {$text}';
 
@@ -102,6 +102,7 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
 
     /**
      * The maximum lenght of message sent.
+     *
      * According to rfc 821 we should not send more than 1000 including the CRLF.
      *
      * @var integer
@@ -117,6 +118,7 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
 
     /**
      * How long to wait for commands to complete, in seconds.
+     *
      * Default of 5 minutes (300sec) is from RFC2821 section 4.5.3.2.
      *
      * @var integer
@@ -178,8 +180,8 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Constructor
      *
-     * @param array|null $config - SMTP configurations.
-     * @param DebugLogInterface|null $log - Log.
+     * @param array|null $config SMTP configurations.
+     * @param DebugLogInterface|null $log Log.
      */
     public function __construct($config = null, DebugLogInterface $log = null)
     {
@@ -211,9 +213,9 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Do some thing after opening stream.
      *
-     * @throws ExitException - If some command or authentification fails.
+     * @throws ExitException If some command or authentification fails.
      *
-     * @return self.
+     * @return self
      */
     protected function afterOpen()
     {
@@ -245,11 +247,11 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Terminate current stream.
      *
-     * @param boolean $force - Try to forcefuly termination stream.
+     * @param boolean $force Try to forcefuly termination stream.
      *
-     * @throws ExitException - If not forced and QUIT command fails.
+     * @throws ExitException If not forced and QUIT command fails.
      *
-     * @return boolean - Stream termination result.
+     * @return boolean Stream termination result.
      */
     protected function terminateStream($force = false)
     {
@@ -267,8 +269,8 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Read data to from the server.
      *
-     * @param string $data - The data to send.
-     * @param string $command - The comand this is part of, only for tracking.
+     * @param string $data The data to send.
+     * @param string $command The comand this is part of, only for tracking.
      *
      * @return integer|boolean The number of bytes sent to the server or false on error.
      */
@@ -280,7 +282,7 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Check if can read stream.
      *
-     * @return self.
+     * @return self
      */
     public function canRead()
     {
@@ -291,10 +293,10 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
      * Get stream response.
      *
      * Time limit options:
-     * 0 - to no limit.
-     * null - to take time limit from the static::$timelimit.
+     * - 0 - to no limit.
+     * - null - to take time limit from the static::$timelimit.
      *
-     * @param integer|null $timelimit - Time limit.
+     * @param integer|null $timelimit Time limit.
      *
      * @return string|null
      */
@@ -354,8 +356,8 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Send data to the server.
      *
-     * @param string $data - The data to send.
-     * @param string $command - The comand this is part of, only for tracking.
+     * @param string $data The data to send.
+     * @param string $command The comand this is part of, only for tracking.
      *
      * @return integer|boolean The number of bytes sent to the server or false on error.
      */
@@ -367,14 +369,14 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Send a command to an SMTP server and check its return code.
      *
-     * @param string $command - The command name, not send to server, only to track.
-     * @param string $command_string - The actual command to send.
-     * @param integer|integer[] $expect - One or more expected integer success codes.
-     * @param integer $timelimit - Time limit to receive response from SMTP server.
+     * @param string $command The command name, not send to server, only to track.
+     * @param string $command_string The actual command to send.
+     * @param integer|integer[] $expect One or more expected integer success codes.
+     * @param integer $timelimit Time limit to receive response from SMTP server.
      *
-     * @throws ExitException - If command fails.
+     * @throws ExitException If command fails.
      *
-     * @return boolean - Command execution fail or success.
+     * @return boolean Command execution fail or success.
      */
     protected function sendCommand($command, $command_string, $expect, $timelimit = null)
     {
@@ -436,9 +438,9 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Start TLS.
      *
-     * @throws ExitException - If STARTTLS command fails.
+     * @throws ExitException If STARTTLS command fails.
      *
-     * @return boolean - TLS started.
+     * @return boolean TLS started.
      */
     protected function startTLS()
     {
@@ -453,9 +455,9 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Perform SMTP authentication.
      *
-     * @throws ExitException - If some of SMTP server commands fails.
+     * @throws ExitException If some of SMTP server commands fails.
      *
-     * @return boolean - Authentication success or failure.
+     * @return boolean Authentication success or failure.
      */
     protected function authenticate()
     {
@@ -481,10 +483,10 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
      * Part of the sendMail method.
      * Sends lines backwards.
      *
-     * @param string $line - Data line to send.
-     * @param string $prepend - Data to prepend to new line.
+     * @param string $line Data line to send.
+     * @param string $prepend Data to prepend to new line.
      *
-     * @return void.
+     * @return void
      */
     protected function sendDataLine($line, $prepend = '')
     {
@@ -520,9 +522,9 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
      *
      * Part of the sendMail method.
      *
-     * @param string|string[] $headers - Mail headers.
+     * @param string|string[] $headers Mail headers.
      *
-     * @return void.
+     * @return void
      */
     protected function sendHeadersData($headers)
     {
@@ -546,9 +548,9 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
      *
      * Part of the sendMail method.
      *
-     * @param string $message - Mail message.
+     * @param string $message Mail message.
      *
-     * @return void.
+     * @return void
      */
     protected function sendMessageData($message)
     {
@@ -570,12 +572,12 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Send mail.
      *
-     * @param string $from_email - From email address.
-     * @param string|string[] $receiver_email - Single or all receivers email addresses, including CC and BCC receivers.
-     * @param string $message - Mail message.
-     * @param string|string[]|null $headers - Additional mail headers.
+     * @param string $from_email From email address.
+     * @param string|string[] $receiver_email Single or all receivers email addresses, including CC and BCC receivers.
+     * @param string $message Mail message.
+     * @param string|string[]|null $headers Additional mail headers.
      *
-     * @return string - File content.
+     * @return string File content.
      */
     public function sendMail($from_email, $receiver_email, $message, $headers = null)
     {
@@ -619,7 +621,7 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Check if can send commands stream.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function canSend()
     {
@@ -629,7 +631,7 @@ abstract class AbstractSMTPStream extends AbstractStream implements SMTPStreamIn
     /**
      * Check if can send mail.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function canSendMail()
     {

@@ -23,74 +23,74 @@ interface DBServiceInterface
     /**
      * Get table name.
      *
-     * @param string $table_name - Database table name.
+     * @param string $table_name Database table name.
      *
-     * @return string - table name.
+     * @return string Table name
      */
     public function getTableName(string $table_name);
 
     /**
      * Insert new data to database.
      *
-     * @param string $table_name - Database table to insert data at.
-     * @param mixed $data - Data to insert.
+     * @param string $table_name Database table to insert data at.
+     * @param mixed $data Data to insert.
      *
-     * @return boolean - storing successful or not.
+     * @return boolean Storing successful or not.
      */
     public function insert(string $table_name, $data);
 
     /**
      * Edit/update existing data in database.
      *
-     * @param string $table_name - Database table to update data at.
-     * @param mixed $id - ID of the record to update.
-     * @param mixed $data - Data to update.
-     * @param string $id_column - ID column name.
+     * @param string $table_name Database table to update data at.
+     * @param mixed $id ID of the record to update.
+     * @param mixed $data Data to update.
+     * @param string $id_column ID column name.
      *
-     * @return boolean - edit/update is successful or not.
+     * @return boolean Edit/update is successful or not.
      */
     public function update(string $table_name, $id, $data, $id_column = null);
 
     /**
      * Get the value generated for an AUTO_INCREMENT column by the last query.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getLastID();
 
     /**
      * Escape value for database.
      *
-     * @param mixed $value - Value to escape.
+     * @param mixed $value Value to escape.
      *
-     * @return string.
+     * @return string
      */
     public function escape($value);
 
     /**
      * Performs a query on the database.
      *
-     * @param mixed $query - Query.
+     * @param mixed $query Query string.
      *
-     * @return mixed - query result.
+     * @return mixed Query result.
      */
     public function query($query);
 
     /**
      * Performs a query on the database, and returns first match.
      *
-     * @param mixed $query - Query.
+     * @param mixed $query Query string.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function queryFirst($query);
 
     /**
      * Performs a query on the database, and returns all matched record.
      *
-     * @param mixed $query - Query.
+     * @param mixed $query Query string.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function queryAll($query);
 }

@@ -23,7 +23,7 @@ interface HasAttachmentsInterface
     /**
      * Add attachment.
      *
-     * @param mixed $file - File attachment.
+     * @param mixed $file File attachment.
      *
      * @return self
      */
@@ -32,14 +32,14 @@ interface HasAttachmentsInterface
     /**
      * Get all attachments.
      *
-     * @return LocalFileInterface[]|null - List of all attachments or null when none found.
+     * @return LocalFileInterface[]|null List of all attachments or null when none found.
      */
     public function getAttachments();
 
     /**
      * Check if has atleast some attachments.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasAttachments();
 }

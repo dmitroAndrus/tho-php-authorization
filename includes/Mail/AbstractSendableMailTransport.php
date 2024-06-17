@@ -36,7 +36,7 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
      *
      * This text will be shown when email receiver's software doesn't support HTML emails.
      *
-     * @var string.
+     * @var string
      */
     public static $defaultHTMLMailtext = "This is a HTML email and unfortunately
         your email client software doesn\'t support HTML emails!";
@@ -47,14 +47,14 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
      * When $strict = false it will check if atleast one receiver email is valid,
      * otherwise mail data will be checked strictly.
      *
-     * @var boolean.
+     * @var boolean
      */
     public static $strictMail = false;
 
     /**
      * Mail new line.
      *
-     * @var string.
+     * @var string
      */
     public static $newline = "\n";
 
@@ -134,10 +134,10 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
      *
      * Please ensure that $mail is valid before creating message.
      *
-     * @param LocalFileInterface $file - Attachment file.
-     * @param string $boundary - Boundary.
+     * @param LocalFileInterface $file Attachment file.
+     * @param string $boundary Boundary.
      *
-     * @return string|null Message or null when failed.
+     * @return string|null Message or null when failed
      */
     public function createAttachmentMessage($file, $boundary)
     {
@@ -164,8 +164,8 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
      *
      * Please ensure that $mail is valid before creating message.
      *
-     * @param MailInterface $mail - Mail object.
-     * @param string $boundary - Boundary.
+     * @param MailInterface $mail Mail object.
+     * @param string $boundary Boundary.
      *
      * @return string|null Message or null when failed.
      */
@@ -191,8 +191,8 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
      *
      * Please ensure that $mail is valid before creating message.
      *
-     * @param MailInterface $mail - Mail object.
-     * @param string $boundary - Boundary.
+     * @param MailInterface $mail Mail object.
+     * @param string $boundary Boundary.
      *
      * @return string|null Message or null when failed.
      */
@@ -223,8 +223,8 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
      *
      * Please ensure that $mail is valid before creating message.
      *
-     * @param MailInterface $mail - Mail object.
-     * @param string $boundary - Boundary.
+     * @param MailInterface $mail Mail object.
+     * @param string $boundary Boundary.
      *
      * @return string|null Message or null when failed.
      */
@@ -269,8 +269,8 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
      *
      * Please ensure that $mail is valid before creating message.
      *
-     * @param MailInterface $mail - Mail object.
-     * @param string $boundary - Boundary.
+     * @param MailInterface $mail Mail object.
+     * @param string $boundary Boundary.
      *
      * @return string|null Message or null when failed.
      */
@@ -293,9 +293,9 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
     /**
      * Get From email address from the mail object.
      *
-     * @param MailInterface $mail - Mail object.
+     * @param MailInterface $mail Mail object.
      *
-     * @return string|null - If email is valid - return email, otherwise - null.
+     * @return string|null If email is valid - return email, otherwise - null.
      */
     public function getFromEmail(MailInterface $mail)
     {
@@ -305,9 +305,9 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
     /**
      * Get all receivers email addresses from the mail object.
      *
-     * @param MailInterface $mail - Mail object.
+     * @param MailInterface $mail Mail object.
      *
-     * @return string[]|null - List of valid emails or null.
+     * @return string[]|null List of valid emails or null.
      */
     public function getAllReceiversEmails(MailInterface $mail)
     {
@@ -347,8 +347,8 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
      *
      * Please ensure that $mail is valid before creating message.
      *
-     * @param MailInterface $mail - Mail object.
-     * @param string $boundary - Boundary.
+     * @param MailInterface $mail Mail object.
+     * @param string $boundary Boundary.
      *
      * @return array|null Mail headers or null when failed.
      */
@@ -406,7 +406,7 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
     /**
      * Join headers array.
      *
-     * @param array $headers - Headers.
+     * @param array $headers Headers.
      *
      * @return string|null Mail headers or null.
      */
@@ -453,9 +453,9 @@ abstract class AbstractSendableMailTransport extends AbstractMailTransport
     /**
      * Send raw mail.
      *
-     * @param MailInterface $mail - Mail object.
-     * @param mixed $message - Mail message.
-     * @param mixed $headers - Mail headers.
+     * @param MailInterface $mail Mail object.
+     * @param mixed $message Mail message.
+     * @param mixed $headers Mail headers.
      *
      * @return boolean Mail sending result.
      */

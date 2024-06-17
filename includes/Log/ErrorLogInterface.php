@@ -23,74 +23,74 @@ interface ErrorLogInterface extends LogInterface
     /**
      * Add error log message.
      *
-     * @param mixed $message - Error log message.
+     * @param mixed $message Error log message.
      *
-     * @return self.
+     * @return self
      */
     public function error($message);
 
     /**
      * Get error messages.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getErrors();
 
     /**
      * Get last error message.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getLastError();
 
     /**
      * Check if there were error messages.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasErrors();
 
     /**
      * Count error messages.
      *
-     * @return integer.
+     * @return integer
      */
     public function countErrors();
 
     /**
      * Add warning log message.
      *
-     * @param mixed $message - Warning log message.
+     * @param mixed $message Warning log message.
      *
-     * @return self.
+     * @return self
      */
     public function warning($message);
 
     /**
      * Get warning messages.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getWarnings();
 
     /**
      * Get last warning message.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getLastWarning();
 
     /**
      * Check if there were warning messages.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasWarnings();
 
     /**
      * Count warning messages.
      *
-     * @return integer.
+     * @return integer
      */
     public function countWarnings();
 }

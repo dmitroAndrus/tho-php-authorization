@@ -23,7 +23,7 @@ interface HasEmailsInterface
     /**
      * Add email.
      *
-     * @param mixed $email - Email.
+     * @param mixed $email Email.
      *
      * @return self
      */
@@ -32,7 +32,7 @@ interface HasEmailsInterface
     /**
      * Get all emails.
      *
-     * @return EmailInterface[]|null - List of all available emails or null when none found.
+     * @return EmailInterface[]|null List of all available emails or null when none found.
      */
     public function getEmails();
 
@@ -41,9 +41,9 @@ interface HasEmailsInterface
      *
      * Possible types: personal, work, private, etc.
      *
-     * @param string $type - Email type.
+     * @param string $type Email type.
      *
-     * @return EmailInterface[]|null - List of all emails with specified email type or null when none found.
+     * @return EmailInterface[]|null List of all emails with specified email type or null when none found.
      */
     public function getEmailsByType($type);
 
@@ -52,9 +52,9 @@ interface HasEmailsInterface
      *
      * Possible types: personal, work, private, etc.
      *
-     * @param string $type - Email type.
+     * @param string $type Email type.
      *
-     * @return EmailInterface|null - Email object or null when none found.
+     * @return EmailInterface|null Email object or null when none found.
      */
     public function getFirstEmailByType($type);
 
@@ -63,7 +63,7 @@ interface HasEmailsInterface
      *
      * Possible types: personal, work, private, etc.
      *
-     * @param string $type - Email type.
+     * @param string $type Email type.
      *
      * @return boolean
      */

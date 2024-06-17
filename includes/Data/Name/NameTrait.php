@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\Name;
 /**
  * NameTrait is a trait, it contains basic methods to manipulate name data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Name\HasNameInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Name\HasNameInterface}.
  */
 trait NameTrait
 {
@@ -30,7 +30,7 @@ trait NameTrait
     /**
      * Get name.
      *
-     * @return string.
+     * @return string
      */
     public function getName()
     {
@@ -40,9 +40,9 @@ trait NameTrait
     /**
      * Set name.
      *
-     * @param string $name - Name.
+     * @param string $name Name.
      *
-     * @return self.
+     * @return self
      */
     public function setName($name)
     {

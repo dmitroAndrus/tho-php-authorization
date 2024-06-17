@@ -21,38 +21,38 @@ interface HasReceiversInterface
     /**
      * Add receiver email.
      *
-     * @param string $email - Receiver email.
-     * @param string $name - Receiver name.
+     * @param string $email Receiver email.
+     * @param string $name Receiver name.
      *
-     * @return self.
+     * @return self
      */
     public function addReceiver($email, $name = null);
 
     /**
      * Has receivers.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasReceivers();
 
     /**
      * Get receivers.
      *
-     * @return array.
+     * @return array
      */
     public function getReceivers();
 
     /**
      * Get receivers emails.
      *
-     * @return array.
+     * @return array
      */
     public function getReceiversEmails();
 
     /**
      * Get receivers names.
      *
-     * @return array.
+     * @return array
      */
     public function getReceiversNames();
 }

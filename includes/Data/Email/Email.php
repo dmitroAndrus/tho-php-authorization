@@ -21,6 +21,7 @@ use ThoPHPAuthorization\Data\Type\TypeTrait;
  * Email is a class to manipulate email data.
  *
  * Provides access to email and email type data.
+ *
  * Possible email types: personal, work, private, etc.
  */
 class Email implements EmailInterface
@@ -31,7 +32,7 @@ class Email implements EmailInterface
     /**
      * Get a string representation of the object.
      *
-     * @return string.
+     * @return string
      */
     public function __toString()
     {

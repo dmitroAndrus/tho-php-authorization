@@ -38,9 +38,9 @@ abstract class AbstractUserDBSource implements UserSourceInterface
     /**
      * Constructor.
      *
-     * @param DBServiceInterface $db_service - Database service.
+     * @param DBServiceInterface $db_service Database service.
      *
-     * @return void.
+     * @return void
      */
     public function __construct(DBServiceInterface $db_service)
     {
@@ -50,18 +50,18 @@ abstract class AbstractUserDBSource implements UserSourceInterface
     /**
      * Get data to store user.
      *
-     * @param UserInterface $user - User object.
+     * @param UserInterface $user User object.
      *
-     * @return array|null - data to store user in database.
+     * @return array|null Data to store user in database.
      */
     abstract public function getStoreData(UserInterface &$user);
 
     /**
      * Get data to edit user.
      *
-     * @param UserInterface $user - User object.
+     * @param UserInterface $user User object.
      *
-     * @return array|null - data to edit user in database.
+     * @return array|null Data to edit user in database.
      */
     public function getEditData(UserInterface &$user)
     {
@@ -71,29 +71,29 @@ abstract class AbstractUserDBSource implements UserSourceInterface
     /**
      * Edit user data.
      *
-     * @param UserInterface $user - User object.
-     * @param array|null $data - User data.
+     * @param UserInterface $user User object.
+     * @param array|null $data User data.
      *
-     * @return boolean - editing successful or not.
+     * @return boolean Editing successful or not.
      */
     abstract public function editData(UserInterface &$user, $data = null);
 
     /**
      * Get user data from DB by User ID.
      *
-     * @param integer|string $id - User ID.
+     * @param integer|string $id User ID.
      *
-     * @return array|null - User data.
+     * @return array|null User data.
      */
     abstract protected function getDataByID($id);
 
     /**
      * Renew user data.
      *
-     * @param UserInterface $user - User object.
-     * @param string|integer $id - User id.
+     * @param UserInterface $user User object.
+     * @param string|integer $id User id.
      *
-     * @return boolean - successful or not.
+     * @return boolean Successful or not.
      */
     public function renew(UserInterface &$user, $id = null)
     {

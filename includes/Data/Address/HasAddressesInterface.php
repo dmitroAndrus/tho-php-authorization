@@ -23,7 +23,7 @@ interface HasAddressesInterface
     /**
      * Add address.
      *
-     * @param mixed $address - Address.
+     * @param mixed $address Address.
      *
      * @return self
      */
@@ -32,7 +32,7 @@ interface HasAddressesInterface
     /**
      * Get all addresses.
      *
-     * @return AddressInterface[]|null - List of all available addresses or null when none found.
+     * @return AddressInterface[]|null List of all available addresses or null when none found.
      */
     public function getAddresses();
 
@@ -41,9 +41,9 @@ interface HasAddressesInterface
      *
      * Possible types: home, delivery, billing, work, etc.
      *
-     * @param string $type - Address type.
+     * @param string $type Address type.
      *
-     * @return AddressInterface[]|null - List of all addresses with specified address type or null when none found.
+     * @return AddressInterface[]|null List of all addresses with specified address type or null when none found.
      */
     public function getAddressesByType($type);
 
@@ -52,9 +52,9 @@ interface HasAddressesInterface
      *
      * Possible types: home, delivery, billing, work, etc.
      *
-     * @param string $type - Address type.
+     * @param string $type Address type.
      *
-     * @return AddressInterface|null - Address object or null when none found.
+     * @return AddressInterface|null Address object or null when none found.
      */
     public function getFirstAddressByType($type);
 
@@ -63,7 +63,7 @@ interface HasAddressesInterface
      *
      * Possible types: home, delivery, billing, work, etc.
      *
-     * @param string $type - Address type.
+     * @param string $type Address type.
      *
      * @return boolean
      */

@@ -18,7 +18,7 @@ use ThoPHPAuthorization\Service\TemplatingService;
 /**
  * AddressTrait is a trait, it contains basic methods to manipulate address data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Address\HasAddressInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Address\HasAddressInterface}.
  */
 trait AddressTrait
 {
@@ -61,6 +61,7 @@ trait AddressTrait
      * Full address format.
      *
      * Format variables goes from the data received from 'getAddressData' method.
+     *
      * Format example: {address}, {city}, {state} {zip}, {country}.
      *
      * @var string
@@ -70,9 +71,9 @@ trait AddressTrait
     /**
      * Set country.
      *
-     * @param string $country - Country.
+     * @param string $country Country.
      *
-     * @return self.
+     * @return self
      */
     public function setCountry($country)
     {
@@ -83,7 +84,7 @@ trait AddressTrait
     /**
      * Get country.
      *
-     * @return string.
+     * @return string Country.
      */
     public function getCountry()
     {
@@ -93,9 +94,9 @@ trait AddressTrait
     /**
      * Set state.
      *
-     * @param string $state - State.
+     * @param string $state State.
      *
-     * @return self.
+     * @return self
      */
     public function setState($state)
     {
@@ -106,7 +107,7 @@ trait AddressTrait
     /**
      * Get state.
      *
-     * @return string.
+     * @return string
      */
     public function getState()
     {
@@ -116,9 +117,9 @@ trait AddressTrait
     /**
      * Set city.
      *
-     * @param string $city - City.
+     * @param string $city City.
      *
-     * @return self.
+     * @return self
      */
     public function setCity($city)
     {
@@ -129,7 +130,7 @@ trait AddressTrait
     /**
      * Get city.
      *
-     * @return string.
+     * @return string
      */
     public function getCity()
     {
@@ -139,9 +140,9 @@ trait AddressTrait
     /**
      * Set address.
      *
-     * @param string $address - Address.
+     * @param string $address Address.
      *
-     * @return self.
+     * @return self
      */
     public function setAddress($address)
     {
@@ -152,7 +153,7 @@ trait AddressTrait
     /**
      * Get address.
      *
-     * @return string.
+     * @return string
      */
     public function getAddress()
     {
@@ -160,11 +161,11 @@ trait AddressTrait
     }
 
     /**
-     * Set zip.
+     * Set ZIP code.
      *
-     * @param string $zip - ZIP.
+     * @param string $zip ZIP code.
      *
-     * @return self.
+     * @return self
      */
     public function setZIP($zip)
     {
@@ -173,9 +174,9 @@ trait AddressTrait
     }
 
     /**
-     * Get zip.
+     * Get ZIP code.
      *
-     * @return string.
+     * @return string
      */
     public function getZIP()
     {
@@ -185,9 +186,9 @@ trait AddressTrait
     /**
      * Set full address format.
      *
-     * @param string $format - Address.
+     * @param string $format Address format.
      *
-     * @return self.
+     * @return self
      */
     public function setAddressFormat($format)
     {
@@ -198,7 +199,7 @@ trait AddressTrait
     /**
      * Get full address format.
      *
-     * @return string.
+     * @return string
      */
     public function getAddressFormat()
     {
@@ -208,7 +209,7 @@ trait AddressTrait
     /**
      * Get all address data.
      *
-     * @return string.
+     * @return string
      */
     public function getAddressData()
     {
@@ -225,11 +226,12 @@ trait AddressTrait
      * Get formated address.
      *
      * Format variables goes from the data received from 'getAddressData' method.
+     *
      * Format example: {address}, {city}, {state} {zip}, {country}.
      *
      * @param string $format - Address format.
      *
-     * @return string.
+     * @return string
      */
     public function getFormatedAddress($format)
     {
@@ -247,7 +249,7 @@ trait AddressTrait
     /**
      * Get full address.
      *
-     * @return string.
+     * @return string
      */
     public function getFullAddress()
     {

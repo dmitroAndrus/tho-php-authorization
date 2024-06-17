@@ -19,7 +19,7 @@ use ThoPHPAuthorization\Data\File\LocalFile;
 /**
  * AttachmentsTrait is a trait, it contains basic methods to manipulate attachment files.
  *
- * Implements everything from ThoPHPAuthorization\Data\Email\HasAttachmentsInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Email\HasAttachmentsInterface}.
  */
 trait AttachmentsTrait
 {
@@ -33,7 +33,7 @@ trait AttachmentsTrait
     /**
      * Add attachment.
      *
-     * @param mixed $file - File attachment.
+     * @param LocalFileInterface|string $file File attachment.
      *
      * @return self
      */
@@ -50,7 +50,7 @@ trait AttachmentsTrait
     /**
      * Get all atachments.
      *
-     * @return EmailInterface[]|null - All available atachments or null when none found.
+     * @return EmailInterface[]|null All available atachments or null when none found.
      */
     public function getAttachments()
     {
@@ -60,7 +60,7 @@ trait AttachmentsTrait
     /**
      * Check if has atleast some attachments.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasAttachments()
     {

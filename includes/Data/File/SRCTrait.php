@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\File;
 /**
  * SRCTrait is a trait, it contains basic methods to manipulate SRC (source) data.
  *
- * Implements everything from ThoPHPAuthorization\Data\SRC\HasSRCInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\SRC\HasSRCInterface}.
  */
 trait SRCTrait
 {
@@ -30,9 +30,9 @@ trait SRCTrait
     /**
      * Set source.
      *
-     * @param string $source - Source.
+     * @param string $src Source.
      *
-     * @return self.
+     * @return self
      */
     public function setSRC($src)
     {
@@ -43,7 +43,7 @@ trait SRCTrait
     /**
      * Get src.
      *
-     * @return string.
+     * @return string
      */
     public function getSRC()
     {

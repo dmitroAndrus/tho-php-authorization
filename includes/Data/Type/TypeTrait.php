@@ -30,9 +30,9 @@ trait TypeTrait
     /**
      * Set type.
      *
-     * @param mixed $type - Type type.
+     * @param mixed $type Type type.
      *
-     * @return self.
+     * @return self
      */
     public function setType($type)
     {
@@ -43,7 +43,7 @@ trait TypeTrait
     /**
      * Get type.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getType()
     {
@@ -53,9 +53,9 @@ trait TypeTrait
     /**
      * Check type.
      *
-     * @param mixed $type - Type.
+     * @param mixed $type Type.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function isOfType($type)
     {

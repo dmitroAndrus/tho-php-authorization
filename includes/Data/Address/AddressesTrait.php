@@ -14,11 +14,12 @@
 namespace ThoPHPAuthorization\Data\Address;
 
 use ThoPHPAuthorization\Data\Address\AddressInterface;
+use ThoPHPAuthorization\Data\Address\HasAddressesInterface;
 
 /**
  * AddressesTrait is a trait, it contains basic methods to manipulate multiple addresses data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Address\HasAddressesInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Address\HasAddressesInterface}.
  */
 trait AddressesTrait
 {
@@ -32,7 +33,7 @@ trait AddressesTrait
     /**
      * Add address.
      *
-     * @param mixed $address - Address.
+     * @param AddressInterface|mixed $address Address.
      *
      * @return self
      */
@@ -45,9 +46,9 @@ trait AddressesTrait
     }
 
     /**
-     * Get all addresses.
+     * Get all available addresses.
      *
-     * @return AddressInterface[]|null - List of all available addresses or null when none found.
+     * @return AddressInterface[]|null List of all available addresses or null, when none found.
      */
     public function getAddresses()
     {
@@ -59,9 +60,9 @@ trait AddressesTrait
      *
      * Possible types: home, delivery, billing, work, etc.
      *
-     * @param string $type - Address type.
+     * @param string $type Address type.
      *
-     * @return AddressInterface[]|null - List of all addresses with specified address type or null when none found.
+     * @return AddressInterface[]|null List of all addresses with specified address type or null when none found.
      */
     public function getAddressesByType($type)
     {
@@ -79,9 +80,9 @@ trait AddressesTrait
      *
      * Possible types: home, delivery, billing, work, etc.
      *
-     * @param string $type - Address type.
+     * @param string $type Address type.
      *
-     * @return AddressInterface|null - Address object or null when none found.
+     * @return AddressInterface|null Address object or null when none found.
      */
     public function getFirstAddressByType($type)
     {
@@ -98,9 +99,9 @@ trait AddressesTrait
      *
      * Possible types: home, delivery, billing, work, etc.
      *
-     * @param string $type - Address type.
+     * @param string $type Address type.
      *
-     * @return boolean
+     * @return boolean Returns true - when address of such type exists, false - otherwise.
      */
     public function hasAddressType($type)
     {

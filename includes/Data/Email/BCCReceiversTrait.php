@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\Email;
 /**
  * BCCReceiversTrait is a trait, it contains basic methods to manipulate BCC receivers emails data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Email\HasBCCReceiversInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Email\HasBCCReceiversInterface}.
  */
 trait BCCReceiversTrait
 {
@@ -30,10 +30,10 @@ trait BCCReceiversTrait
     /**
      * Add BCC receiver email.
      *
-     * @param string $email - Receiver email.
-     * @param string $name - Receiver name.
+     * @param string $email Receiver email.
+     * @param string $name Receiver name.
      *
-     * @return self.
+     * @return self
      */
     public function addBCCReceiver($email, $name = null)
     {
@@ -48,7 +48,7 @@ trait BCCReceiversTrait
     /**
      * Has BCC receivers.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasBCCReceivers()
     {
@@ -58,7 +58,7 @@ trait BCCReceiversTrait
     /**
      * Get BCC receivers.
      *
-     * @return array.
+     * @return array
      */
     public function getBCCReceivers()
     {
@@ -78,7 +78,7 @@ trait BCCReceiversTrait
     /**
      * Get BCC receivers emails.
      *
-     * @return array.
+     * @return array
      */
     public function getBCCReceiversEmails()
     {
@@ -88,7 +88,7 @@ trait BCCReceiversTrait
     /**
      * Get BCC receivers names.
      *
-     * @return array.
+     * @return array
      */
     public function getBCCReceiversNames()
     {

@@ -20,6 +20,7 @@ use ThoPHPAuthorization\Data\Type\HasTypeInterface;
  * AddressInterface is an interface to maintain and manipulate address data.
  *
  * Should provide access to country, state, city, address, zip code and address type data.
+ *
  * Possible address types: home, delivery, billing, work, etc.
  */
 interface AddressInterface extends HasAddressInterface, HasTypeInterface

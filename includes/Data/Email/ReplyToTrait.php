@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\Email;
 /**
  * ReplyToTrait is a trait, it contains basic methods to manipulate sender email data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Email\HasReplyToInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Email\HasReplyToInterface}.
  */
 trait ReplyToTrait
 {
@@ -40,7 +40,7 @@ trait ReplyToTrait
      * @param string $email - Reply to email.
      * @param string $name - Reply to name.
      *
-     * @return self.
+     * @return self
      */
     public function setReplyTo($email, $name = null)
     {
@@ -56,7 +56,7 @@ trait ReplyToTrait
     /**
      * Has receiver.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasReplyTo()
     {
@@ -66,12 +66,15 @@ trait ReplyToTrait
     /**
      * Get reply to.
      *
+     * Returns:
+     * ```php
      * [
      *  'name' => 'Name',
      *  'email' => 'email@mail.com'
      * ]
+     * ```
      *
-     * @return array.
+     * @return array
      */
     public function getReplyTo()
     {
@@ -91,7 +94,7 @@ trait ReplyToTrait
     /**
      * Get reply to email.
      *
-     * @return string.
+     * @return string
      */
     public function getReplyToEmail()
     {
@@ -101,7 +104,7 @@ trait ReplyToTrait
     /**
      * Get reply to name.
      *
-     * @return string.
+     * @return string
      */
     public function getReplyToName()
     {

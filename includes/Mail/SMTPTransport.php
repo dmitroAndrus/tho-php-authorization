@@ -33,14 +33,14 @@ class SMTPTransport extends AbstractSendableMailTransport
     /**
      * SMTP stream availability.
      *
-     * @var boolean.
+     * @var boolean
      */
     protected $streamAvailable = null;
 
     /**
      * Constructor.
      *
-     * @param array|SMTPStreamInterface $smtp - SMTP stream or configuration for FsockSMTPStream.
+     * @param array|SMTPStreamInterface $smtp SMTP stream or configuration for FsockSMTPStream.
      *
      * @return void
      */
@@ -56,7 +56,7 @@ class SMTPTransport extends AbstractSendableMailTransport
     /**
      * Check if stream is available.
      *
-     * @return boolean.
+     * @return boolean
      */
     protected function checkStream()
     {

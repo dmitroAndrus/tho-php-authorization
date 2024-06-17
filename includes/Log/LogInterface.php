@@ -21,44 +21,44 @@ interface LogInterface
     /**
      * Cleanup log.
      *
-     * @return self.
+     * @return self
      */
     public function cleanup();
 
     /**
      * Add log message.
      *
-     * @param mixed $message - Log message.
+     * @param mixed $message Log message.
      *
-     * @return self.
+     * @return self
      */
     public function add($message);
 
     /**
      * Get all log messages.
      *
-     * @return mixed|null - Messages or null, if there is no.
+     * @return mixed|null Messages or null, if there is no.
      */
     public function getAll();
 
     /**
      * Get last log message.
      *
-     * @return mixed|null - Last message or null, if there is no.
+     * @return mixed|null Last message or null, if there is no.
      */
     public function getLast();
 
     /**
      * Check if there are some log messages.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function isEmpty();
 
     /**
      * Count log messages.
      *
-     * @return integer.
+     * @return integer
      */
     public function count();
 }

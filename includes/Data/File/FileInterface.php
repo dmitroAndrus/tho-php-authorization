@@ -23,14 +23,14 @@ interface FileInterface extends HasSRCInterface
     /**
      * Get file content.
      *
-     * @return string.
+     * @return string
      */
     public function getContent();
 
     /**
      * Check if file exists.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function exists();
 }

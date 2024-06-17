@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\Email;
 /**
  * ReceiverTrait is a trait, it contains basic methods to manipulate receiver email data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Email\HasReceiverInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Email\HasReceiverInterface}.
  */
 trait ReceiverTrait
 {
@@ -37,10 +37,10 @@ trait ReceiverTrait
     /**
      * Set receiver email.
      *
-     * @param string $email - Receiver email.
-     * @param string $name - Receiver name.
+     * @param string $email Receiver email.
+     * @param string $name Receiver name.
      *
-     * @return self.
+     * @return self
      */
     public function setReceiver($email, $name = null)
     {
@@ -56,7 +56,7 @@ trait ReceiverTrait
     /**
      * Has receiver.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasReceiver()
     {
@@ -66,12 +66,15 @@ trait ReceiverTrait
     /**
      * Get receiver.
      *
+     * Returns:
+     * ```php
      * [
      *  'name' => 'Name',
      *  'email' => 'email@mail.com'
      * ]
+     * ```
      *
-     * @return array.
+     * @return array
      */
     public function getReceiver()
     {
@@ -91,7 +94,7 @@ trait ReceiverTrait
     /**
      * Get receiver email.
      *
-     * @return string.
+     * @return string
      */
     public function getReceiverEmail()
     {
@@ -101,7 +104,7 @@ trait ReceiverTrait
     /**
      * Get receiver name.
      *
-     * @return string.
+     * @return string
      */
     public function getReceiverName()
     {

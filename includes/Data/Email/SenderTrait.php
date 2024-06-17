@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\Email;
 /**
  * SenderTrait is a trait, it contains basic methods to manipulate sender email data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Email\HasSenderInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Email\HasSenderInterface}.
  */
 trait SenderTrait
 {
@@ -37,10 +37,10 @@ trait SenderTrait
     /**
      * Set sender email.
      *
-     * @param string $name - Sender name.
-     * @param string $email - Sender email.
+     * @param string $name Sender name.
+     * @param string $email Sender email.
      *
-     * @return self.
+     * @return self
      */
     public function setSender($email, $name = null)
     {
@@ -56,7 +56,7 @@ trait SenderTrait
     /**
      * Has sender.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasSender()
     {
@@ -66,12 +66,15 @@ trait SenderTrait
     /**
      * Get sender.
      *
+     * Returns:
+     * ```php
      * [
      *  'name' => 'Name',
      *  'email' => 'email@mail.com'
      * ]
+     * ```
      *
-     * @return array.
+     * @return array
      */
     public function getSender()
     {
@@ -91,7 +94,7 @@ trait SenderTrait
     /**
      * Get sender email.
      *
-     * @return string.
+     * @return string
      */
     public function getSenderEmail()
     {
@@ -101,7 +104,7 @@ trait SenderTrait
     /**
      * Get sender name.
      *
-     * @return string.
+     * @return string
      */
     public function getSenderName()
     {

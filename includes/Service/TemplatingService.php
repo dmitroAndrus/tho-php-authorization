@@ -35,15 +35,17 @@ class TemplatingService
      * My name is {name}. I live on planet {planet_name}.
      *
      * Data example:
+     * ```php
      * [
-     *      'name' => 'Hugo',
-     *      'planet_name' => 'Earth',
+     *     'name' => 'Hugo',
+     *     'planet_name' => 'Earth',
      * ]
+     * ```
      *
-     * @param string $template - Template.
-     * @param array $data - Array with template data.
+     * @param string $template Template.
+     * @param array $data Array with template data.
      *
-     * @return string.
+     * @return string
      */
     public static function parseSimpleTemplate(string $template, array $data)
     {
@@ -61,9 +63,9 @@ class TemplatingService
     /**
      * Validate HTML.
      *
-     * @param string $html - HTML to validate.
+     * @param string $html HTML to validate.
      *
-     * @return boolean.
+     * @return boolean
      */
     public static function validateHTML($html)
     {
@@ -78,9 +80,9 @@ class TemplatingService
     /**
      * Output text line.
      *
-     * @param mixed $value - Value to output.
+     * @param mixed $value Value to output.
      *
-     * @return void.
+     * @return void
      */
     public static function outLine($value = '')
     {
@@ -91,12 +93,13 @@ class TemplatingService
 
     /**
      * Read template file.
+     *
      * You can provide $data for use in static::parseSimpleTemplate.
      *
-     * @param string $path - Template path.
-     * @param string $data - Template data.
+     * @param string $path Template path.
+     * @param string $data Template data.
      *
-     * @return string|null - Template content or null on failure.
+     * @return string|null Template content or null on failure.
      */
     public static function readTemplateFile(string $path, array $data = null)
     {

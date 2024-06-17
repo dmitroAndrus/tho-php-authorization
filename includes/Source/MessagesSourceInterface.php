@@ -21,44 +21,44 @@ interface MessagesSourceInterface
     /**
      * Cleanup messages.
      *
-     * @return self.
+     * @return self
      */
     public function cleanup();
 
     /**
      * Add message.
      *
-     * @param mixed $message - Message.
+     * @param mixed $message Message.
      *
-     * @return self.
+     * @return self
      */
     public function add($message);
 
     /**
      * Get all messages.
      *
-     * @return mixed|null - Messages or null, if there is no.
+     * @return mixed|null Messages or null, if there is no.
      */
     public function getAll();
 
     /**
      * Get last message.
      *
-     * @return mixed|null - Last message or null, if there is no.
+     * @return mixed|null Last message or null, if there is no.
      */
     public function getLast();
 
     /**
      * Check if there are some messages.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function isEmpty();
 
     /**
      * Count messages.
      *
-     * @return integer.
+     * @return integer
      */
     public function count();
 }

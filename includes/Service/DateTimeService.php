@@ -14,20 +14,20 @@
 namespace ThoPHPAuthorization\Service;
 
 /**
- * DateTimeService is a class, that contains methods to manipulate DateTime objects.
+ * DateTimeService is a class, that contains methods to manipulate DateTimeInterface objects.
  */
 class DateTimeService
 {
     /**
-     * Create DateTime object.
+     * Create DateTimeInterface object.
      *
-     * Please check https://www.php.net/manual/en/datetime.format.php for format settings.
+     * Please check {@see https://www.php.net/manual/en/datetime.format.php} for format settings.
      *
-     * @param string|DateTimeInterface $source - Datetime source.
-     * @param string $format - Datetime format.
-     * @param string|DateTimeZone $timezone - Datetime time zone.
+     * @param string|DateTimeInterface $source Datetime source.
+     * @param string $format Datetime format.
+     * @param string|DateTimeZone $timezone Datetime time zone.
      *
-     * @return DateTimeInterface|null.
+     * @return DateTimeInterface|null
      */
     public static function create($source = null, $format = null, $timezone = null)
     {
@@ -61,12 +61,12 @@ class DateTimeService
     /**
      * Get formated date and time string.
      *
-     * Please check https://www.php.net/manual/en/datetime.format.php for format settings.
+     * Please check {@see https://www.php.net/manual/en/datetime.format.php} for format settings.
      *
-     * @param DateTimeInterface $datetime - Datetime object.
-     * @param string $format - Datetime format.
+     * @param DateTimeInterface $datetime Datetime object.
+     * @param string $format Datetime format.
      *
-     * @return string|null.
+     * @return string|null
      */
     public static function format(\DateTimeInterface $datetime, $format)
     {
@@ -84,11 +84,11 @@ class DateTimeService
     /**
      * Create DateTimeZone object.
      *
-     * Please check https://www.php.net/manual/en/class.datetimezone.php for more details.
+     * Please check {@see https://www.php.net/manual/en/class.datetimezone.php} for more details.
      *
-     * @param string|DateTimeZone $source - Datetime zone source.
+     * @param string|DateTimeZone $source Datetime zone source.
      *
-     * @return DateTimeZone|null.
+     * @return DateTimeZone|null
      */
     public static function createTimeZone($source = null)
     {

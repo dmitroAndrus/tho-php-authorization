@@ -21,43 +21,46 @@ interface HasSenderInterface
     /**
      * Set sender email.
      *
-     * @param string $email - Sender email.
-     * @param string $name - Sender name.
+     * @param string $email Sender email.
+     * @param string $name Sender name.
      *
-     * @return self.
+     * @return self
      */
     public function setSender($email, $name = null);
 
     /**
      * Has sender.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasSender();
 
     /**
      * Get sender.
      *
+     * Returns:
+     * ```php
      * [
      *  'name' => 'Name',
      *  'email' => 'email@mail.com'
      * ]
+     * ```
      *
-     * @return array.
+     * @return array
      */
     public function getSender();
 
     /**
      * Get sender email.
      *
-     * @return string.
+     * @return string
      */
     public function getSenderEmail();
 
     /**
      * Get sender name.
      *
-     * @return string.
+     * @return string
      */
     public function getSenderName();
 }

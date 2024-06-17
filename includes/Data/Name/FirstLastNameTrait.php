@@ -18,7 +18,7 @@ use ThoPHPAuthorization\Service\TemplatingService;
 /**
  * FirstLastNameTrait is a trait, it contains basic methods to manipulate first and last name data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Name\HasFirstLastNameInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Name\HasFirstLastNameInterface}.
  */
 trait FirstLastNameTrait
 {
@@ -40,6 +40,7 @@ trait FirstLastNameTrait
      * Full name format.
      *
      * Format variables goes from the data received from 'getFullNameData' method.
+     *
      * Format example: {firstName} {lastName}.
      *
      * @var string
@@ -49,9 +50,9 @@ trait FirstLastNameTrait
     /**
      * Set first name.
      *
-     * @param string $firstName - First name.
+     * @param string $firstName First name.
      *
-     * @return self.
+     * @return self
      */
     public function setFirstName($firstName)
     {
@@ -62,7 +63,7 @@ trait FirstLastNameTrait
     /**
      * Get first name.
      *
-     * @return string.
+     * @return string
      */
     public function getFirstName()
     {
@@ -72,9 +73,9 @@ trait FirstLastNameTrait
     /**
      * Set last name.
      *
-     * @param string $lastName - Last name.
+     * @param string $lastName Last name.
      *
-     * @return self.
+     * @return self
      */
     public function setLastName($lastName)
     {
@@ -85,7 +86,7 @@ trait FirstLastNameTrait
     /**
      * Get last name.
      *
-     * @return string.
+     * @return string
      */
     public function getLastName()
     {
@@ -95,9 +96,9 @@ trait FirstLastNameTrait
     /**
      * Set full name format.
      *
-     * @param string $format - Address.
+     * @param string $format Address.
      *
-     * @return self.
+     * @return self
      */
     public function setFullNameFormat($format)
     {
@@ -108,7 +109,7 @@ trait FirstLastNameTrait
     /**
      * Get full name format.
      *
-     * @return string.
+     * @return string
      */
     public function getFullNameFormat()
     {
@@ -118,7 +119,7 @@ trait FirstLastNameTrait
     /**
      * Get all name data.
      *
-     * @return string.
+     * @return string
      */
     public function getNameData()
     {
@@ -131,9 +132,9 @@ trait FirstLastNameTrait
     /**
      * Get formated name data.
      *
-     * @param string $format - Name format.
+     * @param string $format Name format.
      *
-     * @return string.
+     * @return string
      */
     public function getFormatedName($format)
     {
@@ -151,7 +152,7 @@ trait FirstLastNameTrait
     /**
      * Get full name.
      *
-     * @return string.
+     * @return string
      */
     public function getFullName()
     {

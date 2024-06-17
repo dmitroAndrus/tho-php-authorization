@@ -21,43 +21,46 @@ interface HasFromInterface
     /**
      * Set from email.
      *
-     * @param string $email - From email.
-     * @param string $name - From name.
+     * @param string $email From email.
+     * @param string $name From name.
      *
-     * @return self.
+     * @return self
      */
     public function setFrom($email, $name = null);
 
     /**
      * Has from.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasFrom();
 
     /**
      * Get from.
      *
+     * Returns:
+     * ```php
      * [
      *  'name' => 'Name',
      *  'email' => 'email@mail.com'
      * ]
+     * ```
      *
-     * @return array.
+     * @return array
      */
     public function getFrom();
 
     /**
      * Get from email.
      *
-     * @return string.
+     * @return string
      */
     public function getFromEmail();
 
     /**
      * Get from name.
      *
-     * @return string.
+     * @return string
      */
     public function getFromName();
 }

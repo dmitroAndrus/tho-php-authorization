@@ -23,7 +23,7 @@ interface HasPhonesInterface
     /**
      * Add phone.
      *
-     * @param mixed $phone - Phone.
+     * @param mixed $phone Phone.
      *
      * @return self
      */
@@ -32,7 +32,7 @@ interface HasPhonesInterface
     /**
      * Get all phones.
      *
-     * @return PhoneInterface[]|null - List of all available phones or null when none found.
+     * @return PhoneInterface[]|null List of all available phones or null when none found.
      */
     public function getPhones();
 
@@ -41,9 +41,9 @@ interface HasPhonesInterface
      *
      * Possible types: mobile, fax, work phone, etc.
      *
-     * @param string $type - Phone type.
+     * @param string $type Phone type.
      *
-     * @return PhoneInterface[]|null - List of all phones with specified phone type or null when none found.
+     * @return PhoneInterface[]|null List of all phones with specified phone type or null when none found.
      */
     public function getPhonesByType($type);
 
@@ -52,9 +52,9 @@ interface HasPhonesInterface
      *
      * Possible types: mobile, fax, work phone, etc.
      *
-     * @param string $type - Phone type.
+     * @param string $type Phone type.
      *
-     * @return PhoneInterface|null - Phone object or null when none found.
+     * @return PhoneInterface|null Phone object or null when none found.
      */
     public function getFirstPhoneByType($type);
 
@@ -63,7 +63,7 @@ interface HasPhonesInterface
      *
      * Possible types: mobile, fax, work phone, etc.
      *
-     * @param string $type - Phone type.
+     * @param string $type Phone type.
      *
      * @return boolean
      */

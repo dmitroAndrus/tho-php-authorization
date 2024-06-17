@@ -47,11 +47,11 @@ abstract class AbstractMail implements MailInterface
     /**
      * Get email and name from value.
      *
-     * @param array $data - Array data.
-     * @param string|null $email - Email address, will be set in this variable.
-     * @param string|null $name - Email name, will be set in this variable.
+     * @param array $data Email data.
+     * @param string|null $email Email address, will be set in this variable.
+     * @param string|null $name Email name, will be set in this variable.
      *
-     * @return boolean - success when email or name was found, or false otherwise.
+     * @return boolean Success when email or name was found, or false otherwise.
      */
     public static function emailAndNameFrom($value, &$email = null, &$name = null)
     {
@@ -69,12 +69,12 @@ abstract class AbstractMail implements MailInterface
     /**
      * Get email and name from data array.
      *
-     * @param array $data - Array data.
-     * @param string $prop - Preperty name.
-     * @param string|null $email - Email address, will be set in this variable.
-     * @param string|null $name - Email name, will be set in this variable.
+     * @param array $data Array data.
+     * @param string $prop Preperty name.
+     * @param string|null $email Email address, will be set in this variable.
+     * @param string|null $name Email name, will be set in this variable.
      *
-     * @return boolean - success when email or name was found, or false otherwise.
+     * @return boolean Success when email or name was found, or false otherwise.
      */
     public static function emailAndNameFromData($data, $prop = null, &$email = null, &$name = null)
     {
@@ -98,7 +98,7 @@ abstract class AbstractMail implements MailInterface
     /**
      * Constructor.
      *
-     * @param array|null $data - Mail data, array with mail subject, text, etc..
+     * @param array|null $data Mail data, array with mail subject, text, etc..
      *
      * @return void
      */

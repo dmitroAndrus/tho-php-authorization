@@ -25,7 +25,7 @@ class MessagesSource implements MessagesSourceInterface
     /**
      * Messages list.
      *
-     * @var array.
+     * @var array
      */
     protected $messages = [];
 

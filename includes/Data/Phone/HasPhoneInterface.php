@@ -21,16 +21,16 @@ interface HasPhoneInterface
     /**
      * Set phone.
      *
-     * @param string $phone - Phone.
+     * @param string $phone Phone.
      *
-     * @return self.
+     * @return self
      */
     public function setPhone($phone);
 
     /**
      * Get phone.
      *
-     * @return string.
+     * @return string
      */
     public function getPhone();
 }

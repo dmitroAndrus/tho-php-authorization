@@ -23,46 +23,46 @@ interface TypeMessagesSourceInterface extends MessagesSourceInterface
     /**
      * Add message of specified type.
      *
-     * @param mixed $message - Message.
-     * @param mixed $type - Message type.
+     * @param mixed $message Message.
+     * @param mixed $type Message type.
      *
-     * @return self.
+     * @return self
      */
     public function addOfType($message, $type = null);
 
     /**
      * Get all message of specified type.
      *
-     * @param mixed $type - Message type.
+     * @param mixed $type Message type.
      *
-     * @return self.
+     * @return self
      */
     public function getByType($type);
 
     /**
      * Get last message of specified type.
      *
-     * @param mixed $type - Message type.
+     * @param mixed $type Message type.
      *
-     * @return self.
+     * @return self
      */
     public function getLastByType($type);
 
     /**
      * Has messages of specified type.
      *
-     * @param mixed $type - Message type.
+     * @param mixed $type Message type.
      *
-     * @return self.
+     * @return self
      */
     public function hasOfType($type);
 
     /**
      * Get the number of messages of specified type.
      *
-     * @param mixed $type - Message type.
+     * @param mixed $type Message type.
      *
-     * @return self.
+     * @return self
      */
     public function countOfType($type);
 }

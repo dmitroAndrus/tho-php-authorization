@@ -28,10 +28,10 @@ class ExitException extends \Exception
     /**
      * Create ExitException object with provided message and data.
      *
-     * @param mixed $message - Error message.
-     * @param array|null $data - Error data.
+     * @param mixed $message Error message.
+     * @param array|null $data Error data.
      *
-     * @return ExitException.
+     * @return ExitException
      */
     public static function create(string $message = "", $data = null)
     {
@@ -42,11 +42,11 @@ class ExitException extends \Exception
     /**
      * Constructor.
      *
-     * @param string $message - Message.
-     * @param integer $code - Code.
-     * @param array|null $data - Data.
+     * @param string $message Message.
+     * @param integer $code Code.
+     * @param array|null $data Data.
      *
-     * @return ExitException.
+     * @return ExitException
      */
     public function __construct(string $message = "", int $code = 0, $data = null)
     {
@@ -59,7 +59,7 @@ class ExitException extends \Exception
     /**
      * Get data.
      *
-     * @return array|null.
+     * @return array|null
      */
     public function getData()
     {

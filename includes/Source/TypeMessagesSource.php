@@ -31,9 +31,9 @@ class TypeMessagesSource extends MessagesSource implements TypeMessagesSourceInt
     /**
      * Constructor
      *
-     * @param mixed $default_type - Default message type.
+     * @param mixed $default_type Default message type.
      *
-     * @return void.
+     * @return void
      */
     public function __construct($default_type = 'default')
     {

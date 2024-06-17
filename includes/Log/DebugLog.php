@@ -24,14 +24,14 @@ class DebugLog extends ErrorLog implements DebugLogInterface
     /**
      * Notice message type.
      *
-     * @var integer.
+     * @var integer
      */
     public const TYPE_NOTICE = 3;
 
     /**
      * Debug message type.
      *
-     * @var integer.
+     * @var integer
      */
     public const TYPE_DEBUG = 4;
 

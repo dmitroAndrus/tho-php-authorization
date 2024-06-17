@@ -23,55 +23,55 @@ interface MailInterface extends HasFromInterface
     /**
      * Set mail subject.
      *
-     * @param string $subject - Email subject.
+     * @param string $subject Email subject.
      *
-     * @return self.
+     * @return self
      */
     public function setSubject($subject);
 
     /**
      * Get mail subject.
      *
-     * @return string.
+     * @return string
      */
     public function getSubject();
 
     /**
      * Set mail text.
      *
-     * @param string $text - Email text.
+     * @param string $text Email text.
      *
-     * @return self.
+     * @return self
      */
     public function setText($text);
 
     /**
      * Get mail text.
      *
-     * @return string.
+     * @return string
      */
     public function getText();
 
     /**
      * Set mail HTML.
      *
-     * @param string $html - Email HTML.
+     * @param string $html Email HTML.
      *
-     * @return self.
+     * @return self
      */
     public function setHTML($html);
 
     /**
      * Get mail html.
      *
-     * @return string.
+     * @return string
      */
     public function getHTML();
 
     /**
      * Has mail html.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasHTML();
 }

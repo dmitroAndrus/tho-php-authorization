@@ -15,8 +15,6 @@ namespace ThoPHPAuthorization\Data\ID;
 
 /**
  * IDTrait is a trait, it contains basic methods to set/get ID, but setting is allowed only once.
- *
- * Implements everything from ThoPHPAuthorization\Data\ID\HasIDInterface.
  */
 trait OnceIDTrait
 {
@@ -30,7 +28,7 @@ trait OnceIDTrait
     /**
      * Get ID.
      *
-     * @return string.
+     * @return string
      */
     public function getID()
     {
@@ -42,7 +40,7 @@ trait OnceIDTrait
      *
      * @param string $id - ID.
      *
-     * @return self.
+     * @return self
      */
     public function setID($id)
     {

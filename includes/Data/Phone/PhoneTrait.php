@@ -18,7 +18,7 @@ use ThoPHPAuthorization\Service\TemplatingService;
 /**
  * PhoneTrait is a trait, it contains basic methods to manipulate phone data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Phone\HasPhoneInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Phone\HasPhoneInterface}.
  */
 trait PhoneTrait
 {
@@ -32,9 +32,9 @@ trait PhoneTrait
     /**
      * Set phone.
      *
-     * @param string $phone - Phone.
+     * @param string $phone Phone.
      *
-     * @return self.
+     * @return self
      */
     public function setPhone($phone)
     {
@@ -45,7 +45,7 @@ trait PhoneTrait
     /**
      * Get phone.
      *
-     * @return string.
+     * @return string
      */
     public function getPhone()
     {

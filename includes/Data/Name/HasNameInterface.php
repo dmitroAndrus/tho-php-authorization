@@ -21,16 +21,16 @@ interface HasNameInterface
     /**
      * Set name.
      *
-     * @param string $name - Name.
+     * @param string $name Name.
      *
-     * @return self.
+     * @return self
      */
     public function setName($name);
 
     /**
      * Get name.
      *
-     * @return string.
+     * @return string
      */
     public function getName();
 }

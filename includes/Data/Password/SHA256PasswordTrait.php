@@ -27,9 +27,9 @@ trait SHA256PasswordTrait
     /**
      * Encrypt password with MD5.
      *
-     * @param string $password - Password.
+     * @param string $password Password.
      *
-     * @return string.
+     * @return string
      */
     public function encryptPassword($password)
     {

@@ -21,16 +21,16 @@ interface HasEmailInterface
     /**
      * Set email.
      *
-     * @param string $email - Email.
+     * @param string $email Email.
      *
-     * @return self.
+     * @return self
      */
     public function setEmail($email);
 
     /**
      * Get email.
      *
-     * @return string.
+     * @return string
      */
     public function getEmail();
 }

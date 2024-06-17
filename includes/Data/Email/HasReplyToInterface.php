@@ -21,43 +21,46 @@ interface HasReplyToInterface
     /**
      * Set reply to email.
      *
-     * @param string $email - Reply to email.
-     * @param string $name - Reply to name.
+     * @param string $email Reply to email.
+     * @param string $name Reply to name.
      *
-     * @return self.
+     * @return self
      */
     public function setReplyTo($email, $name = null);
 
     /**
      * Has reply to.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasReplyTo();
 
     /**
      * Get reply to.
      *
+     * Returns:
+     * ```php
      * [
      *  'name' => 'Name',
      *  'email' => 'email@mail.com'
      * ]
+     * ```
      *
-     * @return array.
+     * @return array
      */
     public function getReplyTo();
 
     /**
      * Get reply to name.
      *
-     * @return string.
+     * @return string
      */
     public function getReplyToName();
 
     /**
      * Get reply to email.
      *
-     * @return string.
+     * @return string
      */
     public function getReplyToEmail();
 }

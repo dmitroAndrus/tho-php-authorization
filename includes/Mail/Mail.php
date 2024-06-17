@@ -48,7 +48,7 @@ class Mail extends AbstractMail implements
     /**
      * Constructor.
      *
-     * @param array|null $data - Mail data, array with mail subject, text, etc..
+     * @param array|null $data Mail data, array with mail subject, text, etc..
      *
      * @return void
      */

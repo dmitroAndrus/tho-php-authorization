@@ -20,6 +20,7 @@ use ThoPHPAuthorization\Data\Type\HasTypeInterface;
  * EmailInterface is an interface to maintain and manipulate email data.
  *
  * Should provides access to email and email type data.
+ *
  * Possible email types: personal, work, private, etc.
  */
 interface EmailInterface extends HasEmailInterface, HasTypeInterface

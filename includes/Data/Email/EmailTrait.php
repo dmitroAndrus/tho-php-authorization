@@ -18,7 +18,7 @@ use ThoPHPAuthorization\Service\TemplatingService;
 /**
  * EmailTrait is a trait, it contains basic methods to manipulate address data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Email\HasEmailInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Email\HasEmailInterface}.
  */
 trait EmailTrait
 {
@@ -32,9 +32,9 @@ trait EmailTrait
     /**
      * Set email.
      *
-     * @param string $email - Email.
+     * @param string $email Email.
      *
-     * @return self.
+     * @return self
      */
     public function setEmail($email)
     {
@@ -45,7 +45,7 @@ trait EmailTrait
     /**
      * Get email.
      *
-     * @return string.
+     * @return string
      */
     public function getEmail()
     {

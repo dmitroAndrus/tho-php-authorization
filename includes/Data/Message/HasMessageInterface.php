@@ -21,16 +21,16 @@ interface HasMessageInterface
     /**
      * Set message.
      *
-     * @param string $text - Message text.
+     * @param string $text Message text.
      *
-     * @return self.
+     * @return self
      */
     public function setMessage($text);
 
     /**
      * Get message.
      *
-     * @return string.
+     * @return string
      */
     public function getMessage();
 }

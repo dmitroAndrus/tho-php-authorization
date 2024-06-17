@@ -23,16 +23,16 @@ interface MailTransportInterface
     /**
      * Mail transport is available.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function isAvailable();
 
     /**
-     * Create mail object.
+     * Create MailInterface mail object.
      *
-     * @param array|MailInterface $mail - Mail data.
+     * @param array|MailInterface $mail Mail data.
      *
-     * @return MailInterface|null.
+     * @return MailInterface|null
      */
     public function createMail($mail);
 
@@ -42,7 +42,7 @@ interface MailTransportInterface
      * It doesn't do $mail validation,
      * it only checks if such $mail type is supported by this mail transport.
      *
-     * @param MailInterface $mail - Mail to validate.
+     * @param MailInterface $mail Mail to validate.
      *
      * @return boolean Mail is supported or not.
      */
@@ -53,7 +53,7 @@ interface MailTransportInterface
      *
      * Validate mail sender, receiver, replier, etc.
      *
-     * @param MailInterface $mail - Mail to validate.
+     * @param MailInterface $mail Mail to validate.
      *
      * @return boolean Validation result.
      */
@@ -62,7 +62,7 @@ interface MailTransportInterface
     /**
      * Create mail message.
      *
-     * @param MailInterface $mail - Mail to send.
+     * @param MailInterface $mail Mail to send.
      *
      * @return string Mail message text.
      */
@@ -71,7 +71,7 @@ interface MailTransportInterface
     /**
      * Send mail.
      *
-     * @param MailInterface $mail - Mail to send.
+     * @param MailInterface $mail Mail to send.
      *
      * @return boolean Mail sending result.
      */

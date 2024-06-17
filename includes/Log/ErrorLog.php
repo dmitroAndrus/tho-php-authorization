@@ -29,14 +29,14 @@ class ErrorLog extends Log implements ErrorLogInterface
     /**
      * Error message type.
      *
-     * @var integer.
+     * @var integer
      */
     public const TYPE_ERROR = 1;
 
     /**
      * Warning message type.
      *
-     * @var integer.
+     * @var integer
      */
     public const TYPE_WARNING = 2;
 
@@ -46,9 +46,9 @@ class ErrorLog extends Log implements ErrorLogInterface
      * TypeMessagesSourceInterface object can be provided or it will create a TypeMessagesSource object,
      * and will store log messages in it.
      *
-     * @param TypeMessagesSourceInterface $source - Messages source.
+     * @param TypeMessagesSourceInterface $source Messages source.
      *
-     * @return void.
+     * @return void
      */
     public function __construct(TypeMessagesSourceInterface $source = null)
     {

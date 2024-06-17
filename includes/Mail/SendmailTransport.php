@@ -27,6 +27,7 @@ class SendmailTransport implements AbstractSendableMailTransport
      * The additional parameters parameter can be used to pass additional flags as command
      * line options to the program configured to be used when sending mail,
      * as defined by the sendmail_path configuration setting.
+     *
      * For example, this can be used to set the envelope sender address
      * when using sendmail with the -f sendmail option.
      *
@@ -37,7 +38,7 @@ class SendmailTransport implements AbstractSendableMailTransport
     /**
      * Constructor.
      *
-     * @param Array|string $config - Sendmail configuration, or string with additional parameters.
+     * @param Array|string $config Sendmail configuration, or string with additional parameters.
      *
      * @return void
      */

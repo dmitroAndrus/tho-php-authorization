@@ -15,6 +15,7 @@ namespace ThoPHPAuthorization\Data\File;
 
 use ThoPHPAuthorization\Data\File\File;
 use ThoPHPAuthorization\Data\File\PathTrait;
+use ThoPHPAuthorization\Data\File\LocalFileInterface;
 use ThoPHPAuthorization\Service\HTTPService;
 use ThoPHPAuthorization\Stream\FileStream;
 
@@ -28,9 +29,9 @@ class LocalFile extends File implements LocalFileInterface
     /**
      * Constructor.
      *
-     * @param string $source - File source.
+     * @param string $source File path.
      *
-     * @return void.
+     * @return void
      */
     public function __construct($source)
     {
@@ -38,7 +39,11 @@ class LocalFile extends File implements LocalFileInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Set path to the file.
+     *
+     * @param string $path Path.
+     *
+     * @return self
      */
     public function setPath($path)
     {

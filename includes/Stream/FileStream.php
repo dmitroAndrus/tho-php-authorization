@@ -27,31 +27,31 @@ class FileStream extends AbstractStream
     /**
      * File reading started message.
      *
-     * @var string.
+     * @var string
      */
     public static $fileReadingStartedMsg = 'Started reading file. File: {stream_name}';
 
     /**
      * File reading finished message.
      *
-     * @var string.
+     * @var string
      */
     public static $fileReadingFinishedMsg = 'Finished reading file. File: {stream_name}';
 
     /**
      * File reading finished message.
      *
-     * @var string.
+     * @var string
      */
     public static $fileReadingErrorMsg = 'Failed to read file. File: {stream_name}';
 
     /**
      * Read file.
      *
-     * @param string $src - File src.
-     * @param DebugLogInterface $log - Log.
+     * @param string $src File src.
+     * @param DebugLogInterface $log Log.
      *
-     * @var mixed - File content.
+     * @var mixed File content.
      */
     public static function readFile(string $src, DebugLogInterface $log = null)
     {
@@ -96,9 +96,9 @@ class FileStream extends AbstractStream
     /**
      * Constructor
      *
-     * @param string $src - File src.
-     * @param mixed $mode - File stream mode.
-     * @param DebugLogInterface $log - Log.
+     * @param string $src File src.
+     * @param mixed $mode File stream mode.
+     * @param DebugLogInterface $log Log.
      *
      * @var void
      */
@@ -142,7 +142,7 @@ class FileStream extends AbstractStream
     /**
      * Read from the stream.
      *
-     * @return string - Stream content.
+     * @return string Stream content.
      */
     protected function readStreamPart()
     {
@@ -153,7 +153,7 @@ class FileStream extends AbstractStream
     /**
      * Rewind the position of the file pointer.
      *
-     * @return boolean - Returns true on success or false on failure.
+     * @return boolean Returns true on success or false on failure.
      */
     public function rewind()
     {
@@ -169,7 +169,7 @@ class FileStream extends AbstractStream
     /**
      * Check if can read stream.
      *
-     * @return self.
+     * @return self
      */
     public function canRead()
     {
@@ -179,9 +179,9 @@ class FileStream extends AbstractStream
     /**
      * Get file content part.
      *
-     * @throws ExitException - When failed to read file.
+     * @throws ExitException When failed to read file.
      *
-     * @return string|null - File content.
+     * @return string|null File content.
      */
     protected function readPart()
     {
@@ -204,9 +204,9 @@ class FileStream extends AbstractStream
     /**
      * Normalize content.
      *
-     * @param string|mixed $content - Content to normalize.
+     * @param string|mixed $content Content to normalize.
      *
-     * @return string|null- Normalized cotent or null.
+     * @return string|null Normalized cotent or null.
      */
     public function normalizeContent($content)
     {
@@ -220,7 +220,7 @@ class FileStream extends AbstractStream
      *
      * Will try to open stream, read all file content and close stream after.
      *
-     * @return string - File content.
+     * @return string File content.
      */
     public function getContent()
     {

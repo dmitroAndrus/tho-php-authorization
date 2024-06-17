@@ -17,48 +17,49 @@ namespace ThoPHPAuthorization\Data\Email;
  * HasBCCReceiversInterface is an interface, it declares a possibility to access to multiple BCC receivers emails data.
  *
  * Used to store/manage Email Blind copy receivers:
- * Blind Carbon Copy or "BCC" indicates that the recipient also received a "copy" of an email
+ * * Blind Carbon Copy or "BCC" indicates that the recipient also received a "copy" of an email
  * that was sent to another recipient, however, the recipients do not know to who the email was copied.
- * The email's header will include only "To".
- * The BCC recipient's email address is not visible to the other recipients.
+ * * The BCC recipient's email address is not visible to the other recipients.
+ *
+ * Be aware! Some mail services may show BCC receivers to all recipients.
  */
 interface HasBCCReceiversInterface
 {
     /**
      * Add BCC receiver email.
      *
-     * @param string $email - Receiver email.
-     * @param string $name - Receiver name.
+     * @param string $email Receiver email.
+     * @param string $name Receiver name.
      *
-     * @return self.
+     * @return self
      */
     public function addBCCReceiver($email, $name = null);
 
     /**
      * Has BCC receivers.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasBCCReceivers();
 
     /**
      * Get BCC receivers.
      *
-     * @return array.
+     * @return array
      */
     public function getBCCReceivers();
 
     /**
      * Get BCC receivers emails.
      *
-     * @return array.
+     * @return array
      */
     public function getBCCReceiversEmails();
 
     /**
      * Get BCC receivers names.
      *
-     * @return array.
+     * @return array
      */
     public function getBCCReceiversNames();
 }

@@ -28,10 +28,10 @@ class Message implements MessageInterface
     /**
      * Constructor
      *
-     * @param mixed $message - Message text.
-     * @param mixed $type - Message type.
+     * @param mixed $message Message text.
+     * @param mixed $type Message type.
      *
-     * @return void.
+     * @return void
      */
     public function __construct($message, $type = null)
     {
@@ -39,6 +39,11 @@ class Message implements MessageInterface
         $this->setType($type);
     }
 
+    /**
+     * Get string representation of object
+     *
+     * @return string
+     */
     public function __toString()
     {
         $message = $this->getMessage();

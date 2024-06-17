@@ -65,9 +65,9 @@ class User extends BasicUser implements
     /**
      * Constructor.
      *
-     * @param array $data - User data.
+     * @param array $data User data.
      *
-     * @return void.
+     * @return void
      */
     public function __construct(array $data = [])
     {

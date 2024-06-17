@@ -21,25 +21,25 @@ interface HasTypeInterface
     /**
      * Set type.
      *
-     * @param mixed $type - Type.
+     * @param mixed $type Type.
      *
-     * @return self.
+     * @return self
      */
     public function setType($type);
 
     /**
      * Get type.
      *
-     * @return mixed.
+     * @return mixed
      */
     public function getType();
 
     /**
      * Check type.
      *
-     * @param mixed $type - Type.
+     * @param mixed $type Type.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function isOfType($type);
 }

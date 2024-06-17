@@ -21,43 +21,46 @@ interface HasReceiverInterface
     /**
      * Set receiver email.
      *
-     * @param string $email - Receiver email.
-     * @param string $name - Receiver name.
+     * @param string $email Receiver email.
+     * @param string $name Receiver name.
      *
-     * @return self.
+     * @return self
      */
     public function setReceiver($email, $name = null);
 
     /**
      * Has receiver.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasReceiver();
 
     /**
      * Get receiver.
      *
+     * Returns:
+     * ```php
      * [
      *  'name' => 'Name',
      *  'email' => 'email@mail.com'
      * ]
+     * ```
      *
-     * @return array.
+     * @return array
      */
     public function getReceiver();
 
     /**
      * Get receiver name.
      *
-     * @return string.
+     * @return string
      */
     public function getReceiverName();
 
     /**
      * Get receiver email.
      *
-     * @return string.
+     * @return string
      */
     public function getReceiverEmail();
 }

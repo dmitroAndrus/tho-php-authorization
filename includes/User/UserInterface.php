@@ -24,11 +24,12 @@ interface UserInterface extends HasIDInterface
      * Set user identity.
      *
      * Can be used to identify user, i.e. on sign in, store/restore from session, etc.
-     * Can be name, nickname, email, phone, etc.
      *
-     * @param mixed $identity - User identity.
+     * User identity can be name, nickname, email, phone, etc.
      *
-     * @return self.
+     * @param mixed $identity User identity.
+     *
+     * @return self
      */
     public function setIdentity($identity);
 
@@ -36,7 +37,8 @@ interface UserInterface extends HasIDInterface
      * Get user identity.
      *
      * Can be used to identify user, i.e. on sign in, store/restore from session, etc.
-     * Can be name, nickname, email, phone, etc.
+     *
+     * User identity can be name, nickname, email, phone, etc.
      *
      * @return mixed User identity.
      */
@@ -46,11 +48,12 @@ interface UserInterface extends HasIDInterface
      * Set user security key.
      *
      * Can be used to identify user, i.e. on sign in, store/restore from session, etc.
-     * Can be encoded password, some service security key, etc.
      *
-     * @param mixed $security - User security data.
+     * User security can be encoded password, some service security key, etc.
      *
-     * @return self.
+     * @param mixed $security User security data.
+     *
+     * @return self
      */
     public function setSecurity($security);
 
@@ -58,7 +61,8 @@ interface UserInterface extends HasIDInterface
      * Get user security key.
      *
      * Can be used to identify user, i.e. on sign in, store/restore from session, etc.
-     * Can be encoded password, some service security key, etc.
+     *
+     * User security can be encoded password, some service security key, etc.
      *
      * @return mixed User security data.
      */
@@ -68,9 +72,10 @@ interface UserInterface extends HasIDInterface
      * Check user identity.
      *
      * Used to identify user, i.e. on sign in, restoring from session, etc.
-     * Can be name, nickname, email, phone, etc., depending on Your needs.
      *
-     * @param mixed $identity - User identity.
+     * User identity can be name, nickname, email, phone, etc., depending on Your needs.
+     *
+     * @param mixed $identity User identity.
      *
      * @return boolean Identity check pass result.
      */
@@ -80,9 +85,10 @@ interface UserInterface extends HasIDInterface
      * Check user security data.
      *
      * Used to identify user, i.e. on sign in, restoring from session, etc.
-     * Can be encoded password, some service security key, etc.
      *
-     * @param mixed $security - User security data.
+     * User security can be encoded password, some service security key, etc.
+     *
+     * @param mixed $security User security data.
      *
      * @return boolean Security check pass result.
      */
@@ -93,8 +99,8 @@ interface UserInterface extends HasIDInterface
      *
      * Used to identify user, i.e. on sign in, restoring from session, etc.
      *
-     * @param mixed $identity - User identity.
-     * @param mixed $security - User security data.
+     * @param mixed $identity User identity.
+     * @param mixed $security User security data.
      *
      * @return mixed Can authorize or not.
      */

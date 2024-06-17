@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\Email;
 /**
  * FromTrait is a trait, it contains basic methods to manipulate from email data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Email\HasFromInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Email\HasFromInterface}.
  */
 trait FromTrait
 {
@@ -37,10 +37,10 @@ trait FromTrait
     /**
      * Set from email.
      *
-     * @param string $name - From name.
-     * @param string $email - From email.
+     * @param string $name From name.
+     * @param string $email From email.
      *
-     * @return self.
+     * @return self
      */
     public function setFrom($email, $name = null)
     {
@@ -56,7 +56,7 @@ trait FromTrait
     /**
      * Has from.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function hasFrom()
     {
@@ -66,12 +66,15 @@ trait FromTrait
     /**
      * Get from.
      *
+     * Returns:
+     * ```php
      * [
      *  'name' => 'Name',
      *  'email' => 'email@mail.com'
      * ]
+     * ```
      *
-     * @return array.
+     * @return array
      */
     public function getFrom()
     {
@@ -91,7 +94,7 @@ trait FromTrait
     /**
      * Get from email.
      *
-     * @return string.
+     * @return string
      */
     public function getFromEmail()
     {
@@ -101,7 +104,7 @@ trait FromTrait
     /**
      * Get from name.
      *
-     * @return string.
+     * @return string
      */
     public function getFromName()
     {

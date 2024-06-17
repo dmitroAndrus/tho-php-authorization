@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\Password;
 /**
  * PasswordTrait is a trait, it contains basic methods to manipulate password data.
  *
- * Implements everything from ThoPHPAuthorization\Data\Password\HasPasswordInterface.
+ * Implements everything from {@see \ThoPHPAuthorization\Data\Password\HasPasswordInterface}.
  */
 trait PasswordTrait
 {
@@ -30,7 +30,7 @@ trait PasswordTrait
     /**
      * Get password.
      *
-     * @return string.
+     * @return string
      */
     public function getPassword()
     {
@@ -40,9 +40,9 @@ trait PasswordTrait
     /**
      * Encrypt password.
      *
-     * @param string $password - Password.
+     * @param string $password Password.
      *
-     * @return string.
+     * @return string
      */
     public function encryptPassword($password)
     {
@@ -52,10 +52,10 @@ trait PasswordTrait
     /**
      * Set password.
      *
-     * @param string $password - Password.
-     * @param boolean $encrypt - Encrypt password.
+     * @param string $password Password.
+     * @param boolean $encrypt Encrypt password.
      *
-     * @return self.
+     * @return self
      */
     public function setPassword($password, $encrypt = true)
     {
@@ -68,7 +68,7 @@ trait PasswordTrait
     /**
      * Check password.
      *
-     * @param $password - Password.
+     * @param $password Password.
      *
      * @return boolen Passed or not password check.
      */

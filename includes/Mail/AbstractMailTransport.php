@@ -27,21 +27,21 @@ abstract class AbstractMailTransport implements MailTransportInterface
     /**
      * Text or HTML mails.
      *
-     * @var integer.
+     * @var integer
      */
     public const MAIL_TYPE_TEXT_OR_HTML = 0;
 
     /**
      * Only text mails.
      *
-     * @var integer.
+     * @var integer
      */
     public const MAIL_TYPE_TEXT_ONLY = 1;
 
     /**
      * Only HTML mails.
      *
-     * @var integer.
+     * @var integer
      */
     public const MAIL_TYPE_HTML_ONLY = 2;
 
@@ -50,49 +50,49 @@ abstract class AbstractMailTransport implements MailTransportInterface
      *
      * Use MAIL_TYPE_<type> constants for refference.
      *
-     * @var integer.
+     * @var integer
      */
     public static $mailType = 0;
 
     /**
      * Minimum email subject lenght.
      *
-     * @var integer.
+     * @var integer
      */
     public static $minSubjectLen = 5;
 
     /**
      * Maximum email subject lenght.
      *
-     * @var integer.
+     * @var integer
      */
     public static $maxSubjectLen = 60;
 
     /**
      * Minimum email name length.
      *
-     * @var integer.
+     * @var integer
      */
     public static $minNameLen = 2;
 
     /**
      * Maximum email name lenght.
      *
-     * @var integer.
+     * @var integer
      */
     public static $maxNameLen = 25;
 
     /**
      * Minimum email text length.
      *
-     * @var integer.
+     * @var integer
      */
     public static $minTextLen = 15;
 
     /**
      * Maximum email text lenght.
      *
-     * @var integer.
+     * @var integer
      */
     public static $maxTextLen = null;
 
@@ -120,9 +120,9 @@ abstract class AbstractMailTransport implements MailTransportInterface
     /**
      * Validate email subject text.
      *
-     * @param string $text - Mail subject text.
+     * @param string $text Mail subject text.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function validateSubject($text)
     {
@@ -135,9 +135,9 @@ abstract class AbstractMailTransport implements MailTransportInterface
     /**
      * Validate email name.
      *
-     * @param string $name - Email name.
+     * @param string $name Email name.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function validateEmailName($name)
     {
@@ -150,9 +150,9 @@ abstract class AbstractMailTransport implements MailTransportInterface
     /**
      * Validate email address.
      *
-     * @param string $email - Email address.
+     * @param string $email Email address.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function validateEmail($email)
     {
@@ -162,9 +162,9 @@ abstract class AbstractMailTransport implements MailTransportInterface
     /**
      * Validate email html.
      *
-     * @param string $html - Html to validate.
+     * @param string $html Html to validate.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function validateHTML($html)
     {
@@ -174,9 +174,9 @@ abstract class AbstractMailTransport implements MailTransportInterface
     /**
      * Validate email text.
      *
-     * @param string $text - Text to validate.
+     * @param string $text Text to validate.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function validateText($text)
     {
@@ -190,14 +190,16 @@ abstract class AbstractMailTransport implements MailTransportInterface
      * Validate email data.
      *
      * Data format:
+     * ```php
      * [
      *  'name' => 'Name',
      *  'email' => 'email@mail.com'
      * ]
+     * ```
      *
-     * @param array $data - Email data.
+     * @param array $data Email data.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function validateEmailData($data)
     {
@@ -217,11 +219,13 @@ abstract class AbstractMailTransport implements MailTransportInterface
      * Format mail text.
      *
      * Result example:
+     * ```
      * ?UTF-8?B?My text?=
+     * ```
      *
-     * @param string $text - Text.
+     * @param string $text Text.
      *
-     * @return string - Formated mail text.
+     * @return string Formated mail text.
      */
     public function formatMailText($text)
     {
@@ -231,9 +235,9 @@ abstract class AbstractMailTransport implements MailTransportInterface
     /**
      * Get valid email.
      *
-     * @param string $email - Email to validate.
+     * @param string $email Email to validate.
      *
-     * @return string|null - Valid email or null.
+     * @return string|null Valid email or null.
      */
     public function getValidEmail($email)
     {
@@ -243,9 +247,9 @@ abstract class AbstractMailTransport implements MailTransportInterface
     /**
      * Filter emails and return valid ones.
      *
-     * @param string[] $email - Emails to validate.
+     * @param string[] $email Emails to validate.
      *
-     * @return string[]|null - List of valid email or null.
+     * @return string[]|null List of valid email or null.
      */
     public function filterValidEmails($emails)
     {
@@ -265,17 +269,23 @@ abstract class AbstractMailTransport implements MailTransportInterface
      * Format email data.
      *
      * Data format:
+     * ```php
      * [
      *  'name' => 'Name',
      *  'email' => 'email@mail.com'
      * ]
+     * ```
      * Result examples:
-     * - =?UTF-8?B?My name?= <my@mail.com>
-     * - my@mail.com
+     * ```
+     * =?UTF-8?B?My name?= <my@mail.com>
+     * ```
+     * ```
+     * my@mail.com
+     * ```
      *
-     * @param array $data - Email data.
+     * @param array $data Email data.
      *
-     * @return string|null - Formated email string or null.
+     * @return string|null Formated email string or null.
      */
     public function formatEmailData($data)
     {
@@ -291,16 +301,20 @@ abstract class AbstractMailTransport implements MailTransportInterface
      * Format multiple emails data.
      *
      * Single email data format:
+     * ```php
      * [
      *  'name' => 'Name',
      *  'email' => 'email@mail.com'
      * ]
+     * ```
      * Result examples:
+     * ```
      * =?UTF-8?B?My name 1?= <my_1@mail.com>, my_2@mail.com, =?UTF-8?B?My name 3?= <my_3@mail.com>
+     * ```
      *
-     * @param array $emails_data - Emails data.
+     * @param array $emails_data Emails data.
      *
-     * @return string|null - Formated email string or null.
+     * @return string|null Formated email string or null.
      */
     public function formatEmailsData($emails_data)
     {
@@ -319,9 +333,9 @@ abstract class AbstractMailTransport implements MailTransportInterface
     /**
      * Validate mail message.
      *
-     * @param MailInterface $mail - Mail to validate.
+     * @param MailInterface $mail Mail to validate.
      *
-     * @return boolean.
+     * @return boolean
      */
     public function validateMessage($mail)
     {

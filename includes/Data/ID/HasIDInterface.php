@@ -21,16 +21,16 @@ interface HasIDInterface
     /**
      * Set id.
      *
-     * @param string $id - ID.
+     * @param string $id ID.
      *
-     * @return self.
+     * @return self
      */
     public function setID($id);
 
     /**
      * Get id.
      *
-     * @return string.
+     * @return string
      */
     public function getID();
 }

@@ -20,6 +20,7 @@ use ThoPHPAuthorization\Data\Type\HasTypeInterface;
  * PhoneInterface is an interface to maintain and manipulate phone data.
  *
  * Should provide access to phone number and phone type data.
+ *
  * Possible phone types: mobile, fax, work phone, etc.
  */
 interface PhoneInterface extends HasPhoneInterface, HasTypeInterface

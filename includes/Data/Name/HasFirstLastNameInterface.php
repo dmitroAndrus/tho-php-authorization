@@ -21,48 +21,48 @@ interface HasFirstLastNameInterface
     /**
      * Set first name.
      *
-     * @param string $firstName - First name.
+     * @param string $firstName First name.
      *
-     * @return self.
+     * @return self
      */
     public function setFirstName($firstName);
 
     /**
      * Get first name.
      *
-     * @return string.
+     * @return string
      */
     public function getFirstName();
 
     /**
      * Set last name.
      *
-     * @param string $lastName - Last name.
+     * @param string $lastName Last name.
      *
-     * @return self.
+     * @return self
      */
     public function setLastName($lastName);
 
     /**
      * Get last name.
      *
-     * @return string.
+     * @return string
      */
     public function getLastName();
 
     /**
      * Get formated name data.
      *
-     * @param string $format - Name format.
+     * @param string $format Name format.
      *
-     * @return string.
+     * @return string
      */
     public function getFormatedName($format);
 
     /**
      * Get full name.
      *
-     * @return string.
+     * @return string
      */
     public function getFullName();
 }

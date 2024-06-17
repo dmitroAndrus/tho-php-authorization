@@ -35,13 +35,13 @@ class MySQLiService implements DBServiceInterface
     /**
      * Constructor.
      *
-     * @param string $hostname - Database host name or IP address.
-     * @param string $database - Database name.
-     * @param string $username - Database user name.
-     * @param string $password - Database user password.
-     * @param integer $port - Database port number.
-     * @param string $socket - Database socket.
-     * @param string $charset - Database charset.
+     * @param string $hostname Database host name or IP address.
+     * @param string $database Database name.
+     * @param string $username Database user name.
+     * @param string $password Database user password.
+     * @param integer $port Database port number.
+     * @param string $socket Database socket.
+     * @param string $charset Database charset.
      *
      * @return void
      */
@@ -80,9 +80,9 @@ class MySQLiService implements DBServiceInterface
     /**
      * Create array of set values strings.
      *
-     * @param array $data - Array of $column_name => $value.
+     * @param array $data Array of $column_name => $value.
      *
-     * @return array - array of set values.
+     * @return array Array of set values.
      */
     public function createSetValues($data)
     {

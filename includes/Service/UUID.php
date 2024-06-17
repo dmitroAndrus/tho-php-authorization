@@ -23,9 +23,9 @@ class UUID
     /**
      * Check UUID is valid.
      *
-     * @param string $uuid - UUID.
+     * @param string $uuid UUID.
      *
-     * @return boolean - Is valid.
+     * @return boolean Is valid.
      */
     public static function isValid($uuid)
     {
@@ -38,9 +38,9 @@ class UUID
     /**
      * Conver UUID to bits.
      *
-     * @param string $uuid - UUID to convert.
+     * @param string $uuid UUID to convert.
      *
-     * @return string - Bits value.
+     * @return string Bits value.
      */
     public static function convertToBits($uuid)
     {
@@ -60,9 +60,9 @@ class UUID
     /**
      * Create UUID from hash.
      *
-     * @param string $uuid - UUID to convert.
+     * @param string $uuid UUID to convert.
      *
-     * @return string - Bits value.
+     * @return string Bits value.
      */
     public static function fromHash($hash)
     {
@@ -88,10 +88,11 @@ class UUID
      * Generates VALID RFC 4211 COMPLIANT Universally Unique IDentifiers (UUID) version 3.
      *
      * Given the same namespace and name, the output is always the same.
+     *
      * Generates with md5 hash help.
      *
-     * @param string $namespace - Valid UUID.
-     * @param string $name - Unique name.
+     * @param string $namespace Valid UUID.
+     * @param string $name Unique name.
      *
      * @return string - UUID.
      */
@@ -113,7 +114,7 @@ class UUID
     /**
      * Generates pseudo-random VALID RFC 4211 COMPLIANT Universally Unique IDentifiers (UUID) version 3.
      *
-     * @return string - UUID.
+     * @return string UUID.
      */
     public static function v4()
     {
@@ -144,10 +145,10 @@ class UUID
      * Given the same namespace and name, the output is always the same.
      * Generates with sha1 hash help.
      *
-     * @param string $namespace - Valid UUID.
-     * @param string $name - Unique name.
+     * @param string $namespace Valid UUID.
+     * @param string $name Unique name.
      *
-     * @return string - UUID.
+     * @return string UUID.
      */
     public static function v5($namespace, $name)
     {

@@ -60,9 +60,9 @@ class UserService
     /**
      * Constructor.
      *
-     * @param UserSourceInterface $source - Source to get users.
-     * @param string $name - Service name, used to store it data in session/cookies.
-     * @param UserSourceInterface $source - Users source.
+     * @param UserSourceInterface $source Source to get users.
+     * @param string $name Service name, used to store it data in session/cookies.
+     * @param UserSourceInterface $source Users source.
      *
      * @return void
      */
@@ -129,11 +129,11 @@ class UserService
     /**
      * Check if can authorize user.
      *
-     * @param mixed|UserInterface $user - User.
-     * @param mixed $identity - User identity.
-     * @param mixed $security - User security data.
+     * @param mixed|UserInterface $user User.
+     * @param mixed $identity User identity.
+     * @param mixed $security User security data.
      *
-     * @return boolean - Authorization result.
+     * @return boolean Authorization result.
      */
     protected function canAuthorize($user, $identity, $security)
     {
@@ -146,11 +146,11 @@ class UserService
      *
      * Keep signed in is possible only if $this->userSource is of UserKeepInterface.
      *
-     * @param mixed $identity - User identity.
-     * @param mixed $security - User security data.
-     * @param mixed $keep_signed - Keep user signed in.
+     * @param mixed $identity User identity.
+     * @param mixed $security User security data.
+     * @param mixed $keep_signed Keep user signed in.
      *
-     * @return boolean - Authorization result.
+     * @return boolean Authorization result.
      */
     public function authorize($identity, $security, $keep_signed = false)
     {
@@ -162,9 +162,9 @@ class UserService
     /**
      * Sign up user.
      *
-     * @param mixed $data - User data.
+     * @param mixed $data User data.
      *
-     * @return boolean - Sign up result.
+     * @return boolean Sign up result.
      */
     public function signUp($data)
     {
@@ -180,12 +180,13 @@ class UserService
      * Sign in user.
      *
      * Keep in mind that provided user should be re-attainable from $this->userSource.
+     *
      * Keep signed in is possible only if $this->userSource is of UserKeepInterface.
      *
-     * @param UserInterface $user - User.
-     * @param mixed $keep_signed - Keep user signed in.
+     * @param UserInterface $user User.
+     * @param mixed $keep_signed Keep user signed in.
      *
-     * @return boolean - Sign in result.
+     * @return boolean Sign in result.
      */
     public function signIn(UserInterface $user, $keep_signed = false)
     {
@@ -210,7 +211,7 @@ class UserService
     /**
      * Sign out active user.
      *
-     * @return boolean - Sign out result.
+     * @return boolean Sign out result.
      */
     public function signOut()
     {
@@ -236,9 +237,9 @@ class UserService
     /**
      * Keep user.
      *
-     * @param UserInterface $user - User.
+     * @param UserInterface $user User.
      *
-     * @return boolean - Sign out result.
+     * @return boolean Sign out result.
      */
     public function keep($user)
     {

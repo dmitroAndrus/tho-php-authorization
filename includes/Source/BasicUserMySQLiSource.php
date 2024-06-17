@@ -34,9 +34,9 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     /**
      * Get user data from DB by User ID.
      *
-     * @param integer|string $id - User ID.
+     * @param integer|string $id User ID.
      *
-     * @return array|null - User data.
+     * @return array|null User data.
      */
     protected function getDataByID($id)
     {
@@ -53,9 +53,9 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     /**
      * Get user data from DB by User name.
      *
-     * @param string $ame - User name.
+     * @param string $ame User name.
      *
-     * @return array|null - User data.
+     * @return array|null User data.
      */
     protected function getDataByName($name)
     {
@@ -161,10 +161,10 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     /**
      * Generate UUID.
      *
-     * @param mixed $id - Keep record id.
-     * @param string $name - Unique name.
+     * @param mixed $id Keep record id.
+     * @param string $name Unique name.
      *
-     * @return string - UUID.
+     * @return string UUID.
      */
     protected function getUUID(&$id, $name)
     {
