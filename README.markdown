@@ -7,7 +7,7 @@ User authorization PHP library. Includes code to manage users: sign up, sign in,
 + [What's new](#whats-new)
 + [Features](#features)
 + [Install](#simple-example)
-+ [Example](#examples)
++ [Examples](#examples)
 + [Simple example](#simple-example)
 + [Generic example](#generic-example)
 + [License](#license)
@@ -53,7 +53,7 @@ Simple example of user authorization with user name and password.
 
 #### Autoload
 By default it includes all required PHP files in `examples/simple/includes.php`.
-To make it autoload PHP classes from ThoPHPAuthorization namespace you can change `require_once('./includes/start.php');` in all files to `require_once('./includes/start-autoload.php');`
+To make it autoload PHP classes from ThoPHPAuthorization namespace you can change `require_once('./includes/start.php');` to `require_once('./includes/start-autoload.php');` in all files
 
 
 ### Generic example
@@ -62,7 +62,7 @@ To make it autoload PHP classes from ThoPHPAuthorization namespace you can chang
 Example of generic user authorization.
 User has all gereric fields: user name, First and Last name, birthday, email, phone number and address fields.
 User can sign in with user name, email or phone number.
-On sign up notification mail is sent to admin and user email.
+Notification mail is sent to admin and user email on sign up.
 It has example of attaching file to mail letter for user.
 
 *It outoloads PHP classes from ThoPHPAuthorization namespace*

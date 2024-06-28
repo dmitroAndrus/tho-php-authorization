@@ -7,7 +7,7 @@
  * Basic example. Loads only necessary Classes.
  * To load automaticaly use start-autoload.php instead.
  *
- * @category SimpleExample
+ * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3

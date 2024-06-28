@@ -1,10 +1,10 @@
 <?php
 
 /**
- * This file contains example of simple user authorization.
+ * This file contains example of generic user authorization.
  * php version 7.4
  *
- * @category SimpleExample
+ * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
@@ -19,7 +19,7 @@ use ThoPHPAuthorization\Service\TemplatingService;
 $user = $user_service->getActiveUser();
 
 if ($user) {
-    HTTPService::redirectToPage('/examples/simple/index.php');
+    HTTPService::redirectToPage('/examples/generic/index.php');
 }
 $success = false;
 $errors = [];

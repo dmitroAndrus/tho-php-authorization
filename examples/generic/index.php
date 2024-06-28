@@ -1,10 +1,10 @@
 <?php
 
 /**
- * This file contains example of simple user authorization.
+ * This file contains example of generic user authorization.
  * php version 7.4
  *
- * @category SimpleExample
+ * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
@@ -113,7 +113,8 @@ if (!$user) {
                         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
                         <hr class="my-4">
                         <small class="text-body-secondary">
-                            Don't have user? <a href="./sign-up.php">Sign up</a>
+                            Don't have user? <a href="./sign-up.php">Sign up</a><br/>
+                            <a href="./forgot-password.php">Forgot password?</a>
                         </small>
                     </form>
                 </div>

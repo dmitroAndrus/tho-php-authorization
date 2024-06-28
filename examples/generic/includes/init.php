@@ -4,7 +4,7 @@
  * Initialize all necessary data.
  * php version 7.4
  *
- * @category SimpleExample
+ * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
@@ -17,6 +17,8 @@ use ThoPHPAuthorization\User\User;
 use ThoPHPAuthorization\Source\UserMySQLiSource;
 use ThoPHPAuthorization\Service\UserService;
 use ThoPHPAuthorization\Service\MailService;
+use ThoPHPAuthorization\Source\UserAccessSource;
+use ThoPHPAuthorization\Service\UserAccessService;
 
 // Start session
 HTTPService::initSession();
@@ -57,3 +59,9 @@ $mail_settings = [
     'timeout' => SMTP_TIMEOUT,
 ];
 $mail_service->addTransport('smtp', $mail_settings, true);
+
+// User access source.
+$user_access_source = new UserAccessSource($user_source);
+
+// User access service.
+$user_access_service = new UserAccessService($user_access_source);

@@ -6,7 +6,7 @@
  *
  * Basic example of how you can add required Classes.
  *
- * @category SimpleExample
+ * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
