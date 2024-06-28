@@ -14,6 +14,6 @@
  * @link     https://github.com/dmitroAndrus/tho-php-authorization
  */
 
-require_once('./includes/settings-test.php');
+require_once('./includes/settings.php');
 require_once('./includes/autoload.php');
 require_once('./includes/init.php');

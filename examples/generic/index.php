@@ -54,20 +54,23 @@ if (!$user) {
 <body>
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <?php if ($user) { ?>
-            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-5">Hello <?= $user->getIdentity() ?></h1>
-            <p class="col-lg-10 fs-4 mb-5">
-                This is generic example of User Authorization.<br/>
-                You are signed in! Thank You for testing this project!
-            </p>
-            <p class="col-lg-10 fs-5 mb-5">
-                <span class="fs-4">Your details:</span><br/>
-                Full Name: <strong><?= $user->getFullName() ?></strong><br/>
-                Birthday: <strong><?= $user->getBirthday('Y-m-d') ?></strong><br/>
-                Email: <strong><?= $user->getEmail() ?></strong><br/>
-                Phone: <strong><?= $user->getPhone() ?></strong><br/>
-                Address: <strong><?= $user->getFullAddress() ?></strong>
-            </p>
-            <a href="./sign-out.php" class="btn btn-lg btn-primary">Sign out</a>
+            <?php $active_tab = 'details'; ?>
+            <?php include('parts/user-tabs.php'); ?>
+            <div>
+                <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-5">Hello <?= $user->getIdentity() ?></h1>
+                <p class="col-lg-10 fs-4 mb-5">
+                    This is generic example of User Authorization.<br/>
+                    You are signed in! Thank You for testing this project!
+                </p>
+                <p class="col-lg-10 fs-5 mb-5">
+                    <span class="fs-4">Your details:</span><br/>
+                    Full Name: <strong><?= $user->getFullName() ?></strong><br/>
+                    Birthday: <strong><?= $user->getBirthday('Y-m-d') ?></strong><br/>
+                    Email: <strong><?= $user->getEmail() ?></strong><br/>
+                    Phone: <strong><?= $user->getPhone() ?></strong><br/>
+                    Address: <strong><?= $user->getFullAddress() ?></strong>
+                </p>
+            </div>
         <?php } else { ?>
             <div class="row g-lg-5 py-5">
                 <div class="col-lg-7 text-center text-lg-start">
