@@ -70,7 +70,7 @@ trait PasswordTrait
      *
      * @param $password Password.
      *
-     * @return boolen Passed or not password check.
+     * @return boolean Passed or not password check.
      */
     public function checkPassword($password)
     {

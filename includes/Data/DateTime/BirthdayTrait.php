@@ -14,7 +14,6 @@
 namespace ThoPHPAuthorization\Data\DateTime;
 
 use ThoPHPAuthorization\Service\DateTimeService;
-use \DateTimeInterface as DateTimeInterface;
 
 /**
  * BirthdayTrait is a trait, it contains basic methods to manipulate birthday data.

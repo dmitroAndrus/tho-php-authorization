@@ -60,7 +60,6 @@ class UserService
     /**
      * Constructor.
      *
-     * @param UserSourceInterface $source Source to get users.
      * @param string $name Service name, used to store it data in session/cookies.
      * @param UserSourceInterface $source Users source.
      *

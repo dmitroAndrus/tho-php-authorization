@@ -65,7 +65,7 @@ abstract class AbstractUserDBSource implements UserSourceInterface
      */
     public function getEditData(UserInterface &$user)
     {
-        return $this->getStoreData();
+        return $this->getStoreData($user);
     }
 
     /**

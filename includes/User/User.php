@@ -26,7 +26,7 @@ use ThoPHPAuthorization\Data\DateTime\HasBirthdayInterface;
 use ThoPHPAuthorization\Data\DateTime\BirthdayTrait;
 
 /**
- * BasicUser is an class that provides all basic User data.
+ * User is an class that provides all basic User data.
  */
 class User extends BasicUser implements
     HasFirstLastNameInterface,
