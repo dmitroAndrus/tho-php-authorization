@@ -13,6 +13,8 @@
 
 namespace ThoPHPAuthorization\Service;
 
+use ThoPHPAuthorization\Service\UUID;
+
 /**
  * MySQLiService is a class, that contains functionality to work with MySQL database.
  */
@@ -74,7 +76,7 @@ class MySQLiService implements DBServiceInterface
      */
     public function getTableName($table_name)
     {
-        return "{$this->table_prefix}{$this->escape($table_name)}";
+        return $this->escape("{$this->table_prefix}{$this->escape($table_name)}");
     }
 
     /**
@@ -119,6 +121,57 @@ class MySQLiService implements DBServiceInterface
             WHERE {$this->escape($_id_column)} = '{$this->escape($id)}'
         ";
         return $this->connection->query($query) === true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getById(string $table_name, $id, $id_column = null)
+    {
+        $_id_column = empty($id_column) ? 'id' : $id_column;
+        $query = "
+            SELECT *
+            FROM `{$this->getTableName($table_name)}`
+            WHERE {$this->escape($_id_column)} = '{$this->escape($id)}'
+        ";
+        $result = $this->connection->query($query);
+        return $result && $result->num_rows
+            ? $result->fetch_assoc()
+            : null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeById(string $table_name, $id, $id_column = null)
+    {
+        $_id_column = empty($id_column) ? 'id' : $id_column;
+        $query = "
+            DELETE *
+            FROM `{$this->getTableName($table_name)}`
+            WHERE {$this->escape($_id_column)} = '{$this->escape($id)}'
+        ";
+        return $this->connection->query($query) === true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUUID(string $table_name, $id_column = null)
+    {
+        $id_column = $this->dbService->escape(empty($id_column) ? 'id' : $id_column);
+        $table_name = $this->getTableName($table_name);
+        do {
+            $id = UUID::v4();
+            $result = $this->dbService->queryFirst("
+                SELECT *
+                FROM {$table_name}
+                WHERE
+                    '{$id_column}' = '{$this->dbService->escape($id)}'
+                LIMIT 1
+            ");
+        } while ($result);
+        return $id;
     }
 
     /**

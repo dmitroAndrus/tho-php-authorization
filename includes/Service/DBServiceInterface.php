@@ -52,6 +52,38 @@ interface DBServiceInterface
     public function update(string $table_name, $id, $data, $id_column = null);
 
     /**
+     * Get record from database by id.
+     *
+     * @param string $table_name Database table to update data at.
+     * @param mixed $id ID of the record.
+     * @param string $id_column ID column name.
+     *
+     * @return mixed
+     */
+    public function getById(string $table_name, $id, $id_column = null);
+
+    /**
+     * Remove record from database by id.
+     *
+     * @param string $table_name Database table to update data at.
+     * @param mixed $id ID of the record to remove.
+     * @param string $id_column ID column name.
+     *
+     * @return boolean Remove is successful or not.
+     */
+    public function removeById(string $table_name, $id, $id_column = null);
+
+    /**
+     * Get UUID for specified table.
+     *
+     * @param string $table_name Database table to update data at.
+     * @param string $id_column ID column name.
+     *
+     * @return string UUID.
+     */
+    public function getUUID(string $table_name, $id_column = null);
+
+    /**
      * Get the value generated for an AUTO_INCREMENT column by the last query.
      *
      * @return mixed

@@ -50,9 +50,28 @@ class UserMySQLiSource extends BasicUserMySQLiSource
     }
 
     /**
-     * Validate email.
+     * Get user by email.
      *
      * @param string $email Phone number.
+     *
+     * @return UserInterface|null
+     */
+    public function getByEmail($email)
+    {
+        $esc_email = $this->dbService->escape($email);
+        $result = $this->dbService->queryFirst("
+            SELECT *
+            FROM {$this->dbService->getTableName($this->tableName)}
+            WHERE email = '{$esc_email}'
+            LIMIT 1
+        ");
+        return $result ? $this->create($result) : null;
+    }
+
+    /**
+     * Validate email.
+     *
+     * @param string $email Email address.
      *
      * @return boolean Email is valid or not.
      */

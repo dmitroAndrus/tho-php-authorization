@@ -159,29 +159,6 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     }
 
     /**
-     * Generate UUID.
-     *
-     * @param mixed $id Keep record id.
-     * @param string $name Unique name.
-     *
-     * @return string UUID.
-     */
-    protected function getUUID(&$id, $name)
-    {
-        do {
-            $id = UUID::v4();
-            $result = $this->dbService->queryFirst("
-                SELECT *
-                FROM {$this->dbService->getTableName($this->keepTableName)}
-                WHERE
-                    id = '{$this->dbService->escape($id)}'
-                LIMIT 1
-            ");
-        } while ($result);
-        return UUID::v5($id, $name);
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function keep(UserInterface $user, $valid_until, $name = null)
@@ -189,12 +166,11 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
         if (empty($name)) {
             $name = 'default';
         }
-        $id = null;
-        $security = $this->getUUID($id, $name);
+        $id = $this->dbService->getUUID($this->keepTableName);
         $data = [
             'id' => $id,
             'user_id' => $user->getID(),
-            'security' => $security,
+            'security' => UUID::v5($id, $name),
             'valid_until' => date('Y-m-d h:i:s', $valid_until),
         ];
         if (!$this->dbService->insert($this->keepTableName, $data)) {
