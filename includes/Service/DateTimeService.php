@@ -39,11 +39,16 @@ class DateTimeService
             // Return current datetime.
             return new \DateTime();
         }
+        // Get time zone.
+        $timezone = static::createTimeZone(is_null($timezone)
+            ? date_default_timezone_get()
+            : $timezone);
+        if (is_integer($source)) {
+            $datetime =  new \DateTime('@' . $source);
+            $datetime->setTimezone($timezone);
+            return $datetime;
+        }
         if (is_string($source)) {
-            // Get time zone.
-            $timezone = is_null($timezone)
-                ? $timezone
-                : static::createTimeZone($timezone);
             // Try to parse datetime.
             try {
                 if (!empty($format) && is_string($format)) {
