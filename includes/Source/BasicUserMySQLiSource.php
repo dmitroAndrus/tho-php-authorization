@@ -112,12 +112,13 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
     /**
      * {@inheritdoc}
      */
-    public function userExists(UserInterface &$user)
+    public function userExists(UserInterface $user)
     {
+        $user_id = $user->getID();
         $where = [
             'name' => "name = '{$this->dbService->escape($user->getName())}'"
         ];
-        if ($user->getID()) {
+        if ($user_id) {
             $where['id'] = "id = '{$this->dbService->escape($user->getID())}'";
         }
         $result = $this->dbService->queryFirst("
@@ -127,6 +128,31 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
             LIMIT 1
         ");
         return !!$result;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function userUnique(UserInterface $user, $data = null)
+    {
+        $name = $user->getName();
+        if (is_array($data)) {
+            if (isset($data['name'])) {
+                $name = $data['name'];
+            }
+        }
+        $where_str = "name = '{$this->dbService->escape($name)}'";
+        $user_id = $user->getID();
+        if ($user_id) {
+            $where_str = "id <> '{$user_id}' AND ({$where_str})";
+        }
+        $result = $this->dbService->queryFirst("
+            SELECT *
+            FROM {$this->dbService->getTableName($this->tableName)}
+            WHERE {$where_str}
+            LIMIT 1
+        ");
+        return !$result;
     }
 
     /**

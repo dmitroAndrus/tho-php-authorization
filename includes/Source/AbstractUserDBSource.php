@@ -98,7 +98,10 @@ abstract class AbstractUserDBSource implements UserSourceInterface
     public function renew(UserInterface &$user, $id = null)
     {
         $user_id = $user->getID();
-        if (!($id || $user_id) || ($user_id && $id != $user_id)) {
+        if (
+            !($id || $user_id)
+            || (!is_null($id) && $user_id && $id != $user_id)
+        ) {
             return false;
         }
         if (is_null($user_id)) {
@@ -128,23 +131,22 @@ abstract class AbstractUserDBSource implements UserSourceInterface
     /**
      * {@inheritdoc}
      */
-    public function store(UserInterface &$user)
+    public function store(UserInterface &$user, $renew = true)
     {
-        if ($this->userExists($user)) {
-            return false;
-        }
         $store_data = $this->getStoreData($user);
-        if ($this->validateData($store_data) && $this->dbService->insert($this->tableName, $store_data)) {
+        $result = $this->validateData($store_data) && $this->dbService->insert($this->tableName, $store_data);
+        if ($result && $renew) {
             return $this->renew($user, $this->dbService->getLastID());
         }
-        return false;
+        return $result;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function edit(UserInterface &$user, $data = null)
+    public function edit(UserInterface &$user, $data = null, $renew = true)
     {
+        // Check if user with such id exists.
         if (!$this->editData($user, $data)) {
             return false;
         }

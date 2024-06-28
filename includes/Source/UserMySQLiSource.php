@@ -118,12 +118,13 @@ class UserMySQLiSource extends BasicUserMySQLiSource
     /**
      * {@inheritdoc}
      */
-    public function userExists(UserInterface &$user)
+    public function userExists(UserInterface $user)
     {
+        $user_id = $user->getID();
         $where = [
             'name' => "name = '{$this->dbService->escape($user->getName())}'",
         ];
-        if ($user->getID()) {
+        if ($user_id) {
             $where['id'] = "id = '{$this->dbService->escape($user->getID())}'";
         }
         $email = $user->getEmail();
@@ -141,6 +142,48 @@ class UserMySQLiSource extends BasicUserMySQLiSource
             LIMIT 1
         ");
         return !!$result;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function userUnique(UserInterface $user, $data = null)
+    {
+        $name = $user->getName();
+        $email = $user->getEmail();
+        $phone = $user->getPhone();
+        if (is_array($data)) {
+            if (isset($data['name'])) {
+                $name = $data['name'];
+            }
+            if (isset($data['email'])) {
+                $email = $data['email'];
+            }
+            if (isset($data['phone'])) {
+                $phone = $data['phone'];
+            }
+        }
+        $where = [
+            'name' => "name = '{$this->dbService->escape($name)}'",
+        ];
+        if ($this->validateEmail($email)) {
+            $where['email'] = "email = '{$this->dbService->escape($email)}'";
+        }
+        if ($this->validatePhone($phone)) {
+            $where['phone'] = "phone = '{$this->dbService->escape($phone)}'";
+        }
+        $where_str = implode(' OR ', $where);
+        $user_id = $user->getID();
+        if ($user_id) {
+            $where_str = "id <> '{$user_id}' AND ({$where_str})";
+        }
+        $result = $this->dbService->queryFirst("
+            SELECT *
+            FROM {$this->dbService->getTableName($this->tableName)}
+            WHERE {$where_str}
+            LIMIT 1
+        ");
+        return !$result;
     }
 
     /**

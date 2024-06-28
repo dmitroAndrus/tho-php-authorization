@@ -151,7 +151,7 @@ class MySQLiService implements DBServiceInterface
             FROM `{$this->getTableName($table_name)}`
             WHERE {$this->escape($_id_column)} = '{$this->escape($id)}'
         ";
-        return $this->connection->query($query) === true;
+        return $this->connection->query($query) === true && $this->connection->affected_rows > 0;
     }
 
     /**

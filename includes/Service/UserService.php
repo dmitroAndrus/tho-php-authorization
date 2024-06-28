@@ -169,10 +169,27 @@ class UserService
     {
         // Create user.
         $user = $this->userSource->create($data);
-        if (!$user) {
+        if (!$user || $this->userSource->userExists($user)) {
             return false;
         }
         return $this->userSource->store($user);
+    }
+
+    /**
+     * Edit user.
+     *
+     * @param UserInterface $user User.
+     * @param mixed $data New user data.
+     *
+     * @return boolean User edit result.
+     */
+    public function edit(UserInterface $user, $data)
+    {
+        // Check if user exist, by checking only key user data.
+        if ($this->userSource->userUnique($user, $data)) {
+            return $this->userSource->edit($user, $data);
+        }
+        return false;
     }
 
     /**

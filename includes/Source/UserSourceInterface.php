@@ -63,24 +63,39 @@ interface UserSourceInterface
      *
      * @return boolean User exists or not.
      */
-    public function userExists(UserInterface &$user);
+    public function userExists(UserInterface $user);
+
+    /**
+     * Check if user is unique.
+     *
+     * When `$data` is provides, checks if user with such `$data` is unique.
+     * Can be used when editing user, to make sure new user data is unique and can be updated.
+     *
+     * @param UserInterface $user User object.
+     * @param array|null $data User alternative data.
+     *
+     * @return boolean User exists or not.
+     */
+    public function userUnique(UserInterface $user, $data = null);
 
     /**
      * Store user.
      *
      * @param UserInterface $user User object.
+     * @param boolean $renew Renew user object.
      *
      * @return boolean Storing successful or not.
      */
-    public function store(UserInterface &$user);
+    public function store(UserInterface &$user, $renew = true);
 
     /**
      * Edit user.
      *
      * @param UserInterface $user User object.
      * @param array|null $data User data.
+     * @param boolean $renew Renew user object.
      *
      * @return boolean Editing successful or not.
      */
-    public function edit(UserInterface &$user, $data = null);
+    public function edit(UserInterface &$user, $data = null, $renew = true);
 }
