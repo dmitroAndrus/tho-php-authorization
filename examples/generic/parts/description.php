@@ -14,7 +14,7 @@
 ?>
 <p class="col-lg-10 fs-4">
     This is a generic example of User Authorization.<br/>
-    The form built with <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> form controls.<br/>
+    The form is built with <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> form controls.<br/>
     It uses <a href="https://flatpickr.js.org/getting-started/" target="_blank">flatpickr</a> for datetime picker.
 </p>
 <p>

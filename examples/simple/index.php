@@ -83,7 +83,7 @@ if (!$user) {
                     <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-4">Simple example of User Authorization</h1>
                     <p class="col-lg-10 fs-4">
                         This is an example of Sign In form.
-                        The form built entirely with Bootstrap’s form controls.
+                        The form is built entirely with Bootstrap’s form controls.
                     </p>
                     <p>
                         You can sign in with user name only.<br/>

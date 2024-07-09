@@ -74,7 +74,7 @@ Notification mail is sent to admin and user email on sign up.
 It has example of attaching file to mail letter for user.
 
 
-*It outoloads PHP classes from ThoPHPAuthorization namespace*
+*It autoloads PHP classes from ThoPHPAuthorization namespace*
 
 [Example folder -->](examples/generic)
 

@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-4">Simple example of User Authorization</h1>
                     <p class="col-lg-10 fs-4">
                         This is an example of Sign Up form.
-                        The form built entirely with Bootstrap’s form controls.
+                        The form is built entirely with Bootstrap’s form controls.
                     </p>
                     <p>
                         You will be able to sign in with user name only.<br/>
