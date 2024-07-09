@@ -4,6 +4,23 @@
  * This file contains example of generic user authorization.
  * php version 7.4
  *
+ * Sign up user form.
+ *
+ * Form fields:
+ * * User name
+ * * Password
+ * * Confirm password
+ * * First name
+ * * Last name
+ * * Email
+ * * Phone
+ * * Birthday
+ * * Country
+ * * State
+ * * City
+ * * Zip code
+ * * Address
+ *
  * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
@@ -16,14 +33,22 @@ require_once('./includes/start-autoload.php');
 use ThoPHPAuthorization\Service\HTTPService;
 use ThoPHPAuthorization\Service\TemplatingService;
 
+// Get active user.
 $user = $user_service->getActiveUser();
 
+// If there is active user - redirect to index.php page.
 if ($user) {
     HTTPService::redirectToPage('/examples/generic/index.php');
 }
+
+// Sign up result.
 $success = false;
+// Sign up errors.
 $errors = [];
+
+// Check if sing up form was submited.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get form data from the POST request.
     $form_data = [
         'name' => HTTPService::getPostValue('name'),
         'password' => HTTPService::getPostValue('password'),
@@ -39,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'address' => HTTPService::getPostValue('address'),
         'zip' => HTTPService::getPostValue('zip'),
     ];
+    // Validate form data.
     if (empty($form_data['name'])) {
         $errors['name'] = "Please enter user name.";
     }
@@ -77,6 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($form_data['zip'])) {
         $errors['zip'] = "Please enter Your ZIP code.";
     }
+    // If there were no errors - try to sign up user.
     if (empty($errors)) {
         if ($user_service->signUp($form_data)) {
             $success = true;
@@ -106,10 +133,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ];
             $mail_service->send($mail_data);
         } else {
+            // Sign up failed.
             $errors['form'] = "Failed to create user or user with such name already exists.";
         }
     }
 } else {
+    // Set default form data.
     $form_data = [
         'name' => '',
         'password' => '',

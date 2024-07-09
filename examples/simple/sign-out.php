@@ -4,6 +4,8 @@
  * This file contains example of simple user authorization.
  * php version 7.4
  *
+ * Sign out active user.
+ *
  * @category SimpleExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>

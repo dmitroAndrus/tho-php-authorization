@@ -4,6 +4,15 @@
  * This file contains example of generic user authorization.
  * php version 7.4
  *
+ * Edit signed in user contact data.
+ * Will require current user password to do so.
+ *
+ * Form fields:
+ * * User name
+ * * Email
+ * * Phone
+ * * Current password
+ *
  * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
@@ -16,21 +25,31 @@ require_once('./includes/start-autoload.php');
 use ThoPHPAuthorization\Service\HTTPService;
 use ThoPHPAuthorization\Service\TemplatingService;
 
+// Get active user.
 $user = $user_service->getActiveUser();
 
+// If there is no active user - redirect to index.php page.
 if (!$user) {
     HTTPService::redirectToPage('/examples/generic/index.php');
 }
-$success = false;
+
+// Current active tab.
 $active_tab = 'edit-contacts';
+// Edit form result.
+$success = false;
+// Edit form errors.
 $errors = [];
+
+// Check if form was submited.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get form data from the POST request.
     $form_data = [
         'name' => HTTPService::getPostValue('name'),
         'email' => HTTPService::getPostValue('email'),
         'phone' => HTTPService::getPostValue('phone'),
         'validate_password' => HTTPService::getPostValue('validate_password'),
     ];
+    // Validate form data.
     if (empty($form_data['name'])) {
         $errors['name'] = "Please enter user name.";
     }
@@ -40,12 +59,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($form_data['phone'])) {
         $errors['phone'] = "Please enter Your phone number.";
     }
-    // Check user password.
+    // Check current user password.
     if (empty($form_data['validate_password'])) {
         $errors['validate_password'] = "Please enter user password.";
     } elseif (!empty($form_data['password']) && $user->checkSecurity($form_data['password'])) {
         $errors['validate_password'] = "Wrong password. Please enter correct password.";
     }
+    // If there were no errors - try to edit user.
     if (empty($errors)) {
         if ($user_service->edit($user, $form_data)) {
             $success = true;
@@ -57,10 +77,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'validate_password' => '',
             ];
         } else {
+            // User edit failed failed.
             $errors['form'] = "Failed to edit user. User with such name or email may already exist.";
         }
     }
 } else {
+    // Set default form data.
     $form_data = [
         'name' => $user->getName(),
         'email' => $user->getEmail(),

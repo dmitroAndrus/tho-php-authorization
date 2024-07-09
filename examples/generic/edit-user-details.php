@@ -4,6 +4,18 @@
  * This file contains example of generic user authorization.
  * php version 7.4
  *
+ * Edit signed in user details.
+ *
+ * Form fields:
+ * * First name
+ * * Last name
+ * * Birthday
+ * * Country
+ * * State
+ * * City
+ * * Zip code
+ * * Address
+ *
  * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
@@ -16,15 +28,24 @@ require_once('./includes/start-autoload.php');
 use ThoPHPAuthorization\Service\HTTPService;
 use ThoPHPAuthorization\Service\TemplatingService;
 
+// Get active user.
 $user = $user_service->getActiveUser();
 
+// If there is no active user - redirect to index.php page.
 if (!$user) {
     HTTPService::redirectToPage('/examples/generic/index.php');
 }
-$success = false;
+
+// Current active tab.
 $active_tab = 'edit-details';
+// Edit form result.
+$success = false;
+// Edit form errors.
 $errors = [];
+
+// Check if form was submited.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get form data from the POST request.
     $form_data = [
         'first_name' => HTTPService::getPostValue('first_name'),
         'last_name' => HTTPService::getPostValue('last_name'),
@@ -35,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'address' => HTTPService::getPostValue('address'),
         'zip' => HTTPService::getPostValue('zip'),
     ];
+    // Validate form data.
     if (empty($form_data['first_name'])) {
         $errors['first_name'] = "Please enter Your First name.";
     }
@@ -56,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($form_data['zip'])) {
         $errors['zip'] = "Please enter Your ZIP code.";
     }
+    // If there were no errors - try to edit user.
     if (empty($errors)) {
         if ($user_service->edit($user, $form_data)) {
             $success = true;
@@ -71,10 +94,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'zip' => $user->getZIP(),
             ];
         } else {
+            // User edit failed failed.
             $errors['form'] = "Failed to edit user.";
         }
     }
 } else {
+    // Set default form data.
     $form_data = [
         'first_name' => $user->getFirstName(),
         'last_name' => $user->getLastName(),

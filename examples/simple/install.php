@@ -4,6 +4,8 @@
  * This file contains example of simple user authorization.
  * php version 7.4
  *
+ * Install all required Database tables.
+ *
  * @category SimpleExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>

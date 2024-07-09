@@ -4,6 +4,8 @@
  * This file contains example of generic user authorization.
  * php version 7.4
  *
+ * Sign out active user.
+ *
  * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>

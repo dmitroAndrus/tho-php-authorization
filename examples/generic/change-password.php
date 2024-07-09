@@ -4,6 +4,9 @@
  * This file contains example of generic user authorization.
  * php version 7.4
  *
+ * Change signed in user password.
+ * Will require current user password to do so.
+ *
  * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
@@ -16,26 +19,36 @@ require_once('./includes/start-autoload.php');
 use ThoPHPAuthorization\Service\HTTPService;
 use ThoPHPAuthorization\Service\TemplatingService;
 
+// Get active user.
 $user = $user_service->getActiveUser();
 
+// If there is no active user - redirect to index.php page.
 if (!$user) {
     HTTPService::redirectToPage('/examples/generic/index.php');
 }
-$success = false;
+
+// Current active tab.
 $active_tab = 'change-password';
+// Change password result.
+$success = false;
+// Change password erros.
 $errors = [];
+
+// Check if forgot password form was submited.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get form data from the POST request.
     $form_data = [
         'validate_password' => HTTPService::getPostValue('validate_password'),
         'password' => HTTPService::getPostValue('password'),
         'confirm_password' => HTTPService::getPostValue('confirm_password'),
     ];
-    // Check user password.
+    // Check current user password.
     if (empty($form_data['validate_password'])) {
         $errors['validate_password'] = "Please enter current user password.";
     } elseif (!empty($form_data['password']) && $user->checkSecurity($form_data['password'])) {
         $errors['validate_password'] = "Wrong current password. Please enter correct password.";
     }
+    // Check new user password.
     if (empty($form_data['password'])) {
         $errors['password'] = "Please enter user password.";
     }
@@ -44,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!empty($form_data['password']) && $form_data['confirm_password'] !== $form_data['password']) {
         $errors['confirm_password'] = "Password and confirm password missmatch.";
     }
+    // If there were no errors - try to edit user and set new password.
     if (empty($errors)) {
         if ($user_service->edit($user, $form_data)) {
             $success = true;
@@ -54,10 +68,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'confirm_password' => '',
             ];
         } else {
+            // User edit failed failed.
             $errors['form'] = "Failed to change user password.";
         }
     }
 } else {
+    // Set default form data.
     $form_data = [
         'validate_password' => '',
         'password' => '',

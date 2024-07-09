@@ -4,6 +4,8 @@
  * This file contains example of simple user authorization.
  * php version 7.4
  *
+ * Output sign in form, or user details for signed in users.
+ *
  * @category SimpleExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
@@ -15,30 +17,40 @@ require_once('./includes/start.php');
 
 use ThoPHPAuthorization\Service\HTTPService;
 
+// Get active user.
 $user = $user_service->getActiveUser();
 
+// If there is no active user - set sign in form data.
 if (!$user) {
+    // Form errors.
     $errors = [];
+    // Check if form was submited.
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Get form data from the POST request.
         $form_data = [
             'identity' => HTTPService::getPostValue('identity'),
             'password' => HTTPService::getPostValue('password'),
             'keep_signed' => !!HTTPService::getPostValue('keep_signed'),
         ];
+        // Validate form data.
         if (empty($form_data['identity'])) {
             $errors['identity'] = "Please enter user name.";
         }
         if (empty($form_data['password'])) {
             $errors['password'] = "Please enter user password.";
         }
+        // If there were no errors - try to authorize user.
         if (empty($errors)) {
             if ($user_service->authorize($form_data['identity'], $form_data['password'], $form_data['keep_signed'])) {
+                // Get active user.
                 $user = $user_service->getActiveUser();
             } else {
+                // Authorization failed.
                 $errors['form'] = "User with such name or password doesn't exists.";
             }
         }
     } else {
+        // Set default form data.
         $form_data = [
             'identity' => '',
             'password' => '',

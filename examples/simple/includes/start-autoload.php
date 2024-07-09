@@ -4,8 +4,7 @@
  * Start all necessary scripts.
  * php version 7.4
  *
- * Basic example. Loads only necessary Classes.
- * To load automaticaly use start-autoload.php instead.
+ * Automaticaly loads classes from ThoPHPAuthorization namespace.
  *
  * @category SimpleExample
  * @package  ThoPHPAuthorization

@@ -28,6 +28,8 @@ User authorization PHP library. Includes code to manage users: sign up, sign in,
 - User sign out
 - User keep signed in/remember me
 - Mail sending (sendmail/SMTP) with ability to provide CC, BCC, sender, reply to, file attachments
+- Forgot password
+- User editing
 
 ## Examples
 For refference there are a few examples of how it can be done, but You are not limited to these examples and can use it as base for Your requirements.
@@ -55,6 +57,12 @@ Simple example of user authorization with user name and password.
 By default it includes all required PHP files in `examples/simple/includes.php`.
 To make it autoload PHP classes from ThoPHPAuthorization namespace you can change `require_once('./includes/start.php');` to `require_once('./includes/start-autoload.php');` in all files
 
+#### Pages
+- `install.php` - adds all required tables to the database;
+- `index.php` - page with sign in form, or user details for signed in users;
+- `sign-up.php` - user sign up form;
+- `sign-out.php` - user sign out page, will sign out user and redirect to `index.php`.
+
 
 ### Generic example
 *For this example You will need working web server/hosting with PHP and MySQL installed.*
@@ -65,6 +73,7 @@ User can sign in with user name, email or phone number.
 Notification mail is sent to admin and user email on sign up.
 It has example of attaching file to mail letter for user.
 
+
 *It outoloads PHP classes from ThoPHPAuthorization namespace*
 
 [Example folder -->](examples/generic)
@@ -74,6 +83,17 @@ It has example of attaching file to mail letter for user.
 2. Open in text editor `examples/generic/settings.php` and change **ALL** settings constats values to Yours
 3. Add all required database tables by opening in browser `examples/generic/install.php`
 4. Open in browser `examples/generic/index.php` everything should work now
+
+#### Pages
+- `install.php` - adds all required tables to the database;
+- `index.php` - page with sign in form, or user details for signed in users;
+- `sign-up.php` - user sign up form, will send admin and user email on successful sign up;
+- `forgot-password.php` - forgot password form, when existing user email is entered: it will send email with a link to `restore-password.php` page with unique security key to change user password;
+- `restore-password.php` - restore password form, requires valid security key to access;
+- `edit-user-details.php` - edit signed in user details (first and last name, birthday, address);
+- `edit-user-contacts.php` - edit signed in user contact data (username, email, phone number), it will require current user password to do so;
+- `change-password.php` - change signed in user password, it will require current user password to do so;
+- `sign-out` - user sign out page, will sign out user and redirect to `index.php`.
 
 ## License
 

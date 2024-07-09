@@ -4,6 +4,10 @@
  * This file contains example of simple user authorization.
  * php version 7.4
  *
+ * Sign up user form.
+ *
+ * Form fields: user name, password.
+ *
  * @category SimpleExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
@@ -15,19 +19,28 @@ require_once('./includes/start.php');
 
 use ThoPHPAuthorization\Service\HTTPService;
 
+// Get active user.
 $user = $user_service->getActiveUser();
 
+// If there is active user - redirect to index.php page.
 if ($user) {
     HTTPService::redirectToPage('/examples/simple/index.php');
 }
+
+// Sign up result.
 $success = false;
+// Sign up errors.
 $errors = [];
+
+// Check if sing up form was submited.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get form data from the POST request.
     $form_data = [
         'name' => HTTPService::getPostValue('name'),
         'password' => HTTPService::getPostValue('password'),
         'confirm_password' => HTTPService::getPostValue('confirm_password'),
     ];
+    // Validate form data.
     if (empty($form_data['name'])) {
         $errors['name'] = "Please enter user name.";
     }
@@ -39,14 +52,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!empty($form_data['password']) && $form_data['confirm_password'] !== $form_data['password']) {
         $errors['confirm_password'] = "Password and confirm password missmatch.";
     }
+    // If there were no errors - try to sign up user.
     if (empty($errors)) {
         if ($user_service->signUp($form_data)) {
             $success = true;
         } else {
+            // Sign up failed.
             $errors['form'] = "Failed to create user or user with such name already exists.";
         }
     }
 } else {
+    // Set default form data.
     $form_data = [
         'name' => '',
         'password' => '',

@@ -4,6 +4,10 @@
  * This file contains example of generic user authorization.
  * php version 7.4
  *
+ * Forgot password form.
+ * When existing user email is entered: it will send email with a link to `restore-password.php`
+ * page with unique security key to change user password.
+ *
  * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
@@ -16,46 +20,62 @@ require_once('./includes/start-autoload.php');
 use ThoPHPAuthorization\Service\HTTPService;
 use ThoPHPAuthorization\Service\TemplatingService;
 
+// Get active user.
 $user = $user_service->getActiveUser();
 
+// If there is active user - redirect to index.php page.
 if ($user) {
     HTTPService::redirectToPage('/examples/generic/index.php');
 }
+
+// Forgot password form result.
 $success = false;
+// Forgot password form errors.
 $errors = [];
+
+// Check if form was submited.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get form data from the POST request.
     $form_data = [
         'email' => HTTPService::getPostValue('email'),
     ];
     if (empty($form_data['email'])) {
         $errors['email'] = "Please enter Your email.";
     }
+    // Validate form data.
     if (empty($errors)) {
+        // try to get user by provided email.
         $user = $user_source->getByEmail($form_data['email']);
+        // If user found - send email with link to restore pessword.
         if ($user) {
             $success = true;
+            // Create forgot password request.
             $request = $user_access_service->createForgotPasswordRequest($user);
-            $mail_data = [
+            // Set mail template data.
+            $template_data = [
                 'url' => HTTPService::relativeToURL(
                     "/examples/generic/restore-password.php?key={$request->getSecurity()}"
                 )
             ];
-            // Send user email
+            // Set mail data.
             $mail_data = [
                 'subject' => 'Restore password request',
-                'text' => TemplatingService::readTemplateFile(realpath('./mail/forgot-password.txt'), $mail_data),
-                'html' => TemplatingService::readTemplateFile(realpath('./mail/forgot-password.html'), $mail_data),
+                'text' => TemplatingService::readTemplateFile(realpath('./mail/forgot-password.txt'), $template_data),
+                'html' => TemplatingService::readTemplateFile(realpath('./mail/forgot-password.html'), $template_data),
                 'from' => SMTP_SENDER_EMAIL,
                 'sender' => SMTP_SENDER_EMAIL,
                 'receiver' => $user->getEmail(),
                 'reply_to' => SMTP_REPLYTO_EMAIL
             ];
+            // Send mail to user.
             $mail_service->send($mail_data);
         } else {
+            // User not found error.
             $errors['form'] = "User with such email not found.";
         }
     }
 } else {
+    // Set default form data.
     $form_data = [
         'email' => '',
     ];

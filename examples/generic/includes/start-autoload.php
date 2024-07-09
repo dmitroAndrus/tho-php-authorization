@@ -4,8 +4,7 @@
  * Start all necessary scripts.
  * php version 7.4
  *
- * Basic example. Loads only necessary Classes.
- * To load automaticaly use start-autoload.php instead.
+ * Automaticaly loads classes from ThoPHPAuthorization namespace.
  *
  * @category GenericExample
  * @package  ThoPHPAuthorization
@@ -14,6 +13,6 @@
  * @link     https://github.com/dmitroAndrus/tho-php-authorization
  */
 
-require_once('./includes/settings.php');
+require_once('./includes/settings-test.php');
 require_once('./includes/autoload.php');
 require_once('./includes/init.php');

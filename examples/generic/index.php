@@ -4,6 +4,8 @@
  * This file contains example of generic user authorization.
  * php version 7.4
  *
+ * Output sign in form, or user details for signed in users.
+ *
  * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
@@ -15,36 +17,49 @@ require_once('./includes/start-autoload.php');
 
 use ThoPHPAuthorization\Service\HTTPService;
 
+// Get active user.
 $user = $user_service->getActiveUser();
 
+// If there is no active user - set sign in form data.
 if (!$user) {
+    // Form errors.
     $errors = [];
+    // Check if form was submited.
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Get form data from the POST request.
         $form_data = [
             'identity' => HTTPService::getPostValue('identity'),
             'password' => HTTPService::getPostValue('password'),
             'keep_signed' => !!HTTPService::getPostValue('keep_signed'),
         ];
+        // Validate form data.
         if (empty($form_data['identity'])) {
             $errors['identity'] = "Please enter user name, email or phone number.";
         }
         if (empty($form_data['password'])) {
             $errors['password'] = "Please enter user password.";
         }
+        // If there were no errors - try to authorize user.
         if (empty($errors)) {
             if ($user_service->authorize($form_data['identity'], $form_data['password'], $form_data['keep_signed'])) {
+                // Get active user.
                 $user = $user_service->getActiveUser();
             } else {
+                // Authorization failed.
                 $errors['form'] = "User with such name or password doesn't exists.";
             }
         }
     } else {
+        // Set default form data.
         $form_data = [
             'identity' => '',
             'password' => '',
             'keep_signed' => false,
         ];
     }
+} else {
+    // Set active tab.
+    $active_tab = 'details';
 }
 
 ?>
@@ -54,7 +69,6 @@ if (!$user) {
 <body>
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <?php if ($user) { ?>
-            <?php $active_tab = 'details'; ?>
             <?php include('parts/user-tabs.php'); ?>
             <div>
                 <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-5">Hello <?= $user->getIdentity() ?></h1>

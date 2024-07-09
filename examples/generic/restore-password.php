@@ -4,6 +4,9 @@
  * This file contains example of generic user authorization.
  * php version 7.4
  *
+ * Restore password form.
+ * Requires valid security key to access.
+ *
  * @category GenericExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
@@ -15,28 +18,39 @@ require_once('./includes/start-autoload.php');
 
 use ThoPHPAuthorization\Service\HTTPService;
 use ThoPHPAuthorization\Service\TemplatingService;
+use ThoPHPAuthorization\Data\User\UserForgotPasswordRequest;
 
+// Get active user.
 $user = $user_service->getActiveUser();
+// Get security key.
 $key = HTTPService::getValue('key');
 
-// If user is signed in or there is no security key - redirect to main page.
+// If user is signed in or there is no security key - redirect to index.php page.
 if ($user || !$key) {
     HTTPService::redirectToPage('/examples/generic/index.php');
 }
 
+// Get user request by security key.
 $request = $user_access_service->getBySecurity($key);
-// If can't get user request or it expired - redirect to main page.
-if (!$request || $request->expired()) {
+
+// If can't get user request or it's invalid - redirect to index.php page.
+if (!$request || !($request instanceof UserForgotPasswordRequest) || $request->expired()) {
     HTTPService::redirectToPage('/examples/generic/index.php');
 }
 
+// Restore password form result.
 $success = false;
+// Restore password form errors.
 $errors = [];
+
+// Check if form was submited.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get form data from the POST request.
     $form_data = [
         'password' => HTTPService::getPostValue('password'),
         'confirm_password' => HTTPService::getPostValue('confirm_password'),
     ];
+    // Validate form data.
     if (empty($form_data['password'])) {
         $errors['password'] = "Please enter user password.";
     }
@@ -45,15 +59,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (!empty($form_data['password']) && $form_data['confirm_password'] !== $form_data['password']) {
         $errors['confirm_password'] = "Password and confirm password missmatch.";
     }
+    // If there were no errors - try to resolve forgot password request.
     if (empty($errors)) {
         $success = true;
         if ($user_access_service->resolveRequest($request, $form_data)) {
             $success = true;
         } else {
+            // Failed to resolve forgot password request.
             $errors['form'] = "Failed to change password.";
         }
     }
 } else {
+    // Set default form data.
     $form_data = [
         'password' => '',
         'confirm_password' => '',
