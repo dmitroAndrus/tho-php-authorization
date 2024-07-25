@@ -27,7 +27,7 @@ $key = HTTPService::getValue('key');
 
 // If user is signed in or there is no security key - redirect to index.php page.
 if ($user || !$key) {
-    HTTPService::redirectToPage('/examples/generic/index.php');
+    HTTPService::redirectToPage(URL_PATH . 'index.php');
 }
 
 // Get user request by security key.
@@ -35,7 +35,7 @@ $request = $user_access_service->getBySecurity($key);
 
 // If can't get user request or it's invalid - redirect to index.php page.
 if (!$request || !($request instanceof UserForgotPasswordRequest) || $request->expired()) {
-    HTTPService::redirectToPage('/examples/generic/index.php');
+    HTTPService::redirectToPage(URL_PATH . 'index.php');
 }
 
 // Restore password form result.

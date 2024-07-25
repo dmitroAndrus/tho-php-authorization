@@ -11,6 +11,9 @@
  * @link     https://github.com/dmitroAndrus/tho-php-authorization
  */
 
+// URL to this example.
+define('URL_PATH', '/examples/simple/');
+
 // Path to the ThoPHPAuthorization library.
 define('AUTH_LIB_PATH', __DIR__ . '/../../../');
 

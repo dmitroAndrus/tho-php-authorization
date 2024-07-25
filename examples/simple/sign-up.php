@@ -24,7 +24,7 @@ $user = $user_service->getActiveUser();
 
 // If there is active user - redirect to index.php page.
 if ($user) {
-    HTTPService::redirectToPage('/examples/simple/index.php');
+    HTTPService::redirectToPage(URL_PATH . 'index.php');
 }
 
 // Sign up result.

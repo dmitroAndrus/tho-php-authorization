@@ -33,7 +33,7 @@ $user = $user_service->getActiveUser();
 
 // If there is no active user - redirect to index.php page.
 if (!$user) {
-    HTTPService::redirectToPage('/examples/generic/index.php');
+    HTTPService::redirectToPage(URL_PATH . 'index.php');
 }
 
 // Current active tab.

@@ -25,7 +25,7 @@ $user = $user_service->getActiveUser();
 
 // If there is active user - redirect to index.php page.
 if ($user) {
-    HTTPService::redirectToPage('/examples/generic/index.php');
+    HTTPService::redirectToPage(URL_PATH . 'index.php');
 }
 
 // Forgot password form result.
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Set mail template data.
             $template_data = [
                 'url' => HTTPService::relativeToURL(
-                    "/examples/generic/restore-password.php?key={$request->getSecurity()}"
+                    URL_PATH . "restore-password.php?key={$request->getSecurity()}"
                 )
             ];
             // Set mail data.

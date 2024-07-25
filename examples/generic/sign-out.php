@@ -19,4 +19,4 @@ use ThoPHPAuthorization\Service\HTTPService;
 
 $user_service->signOut();
 
-HTTPService::redirectToPage('/examples/generic/index.php');
+HTTPService::redirectToPage(URL_PATH . 'index.php');

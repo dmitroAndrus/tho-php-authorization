@@ -57,7 +57,9 @@ if (!$user) {
             'keep_signed' => false,
         ];
     }
-} else {
+}
+
+if ($user) {
     // Set active tab.
     $active_tab = 'details';
 }
