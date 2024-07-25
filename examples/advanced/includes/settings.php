@@ -12,7 +12,7 @@
  */
 
 // URL to this example.
-define('URL_PATH', '/examples/generic/');
+define('URL_PATH', '/examples/advanced/');
 
 // Path to the ThoPHPAuthorization library.
 define('AUTH_LIB_PATH', __DIR__ . '/../../../');
@@ -33,7 +33,7 @@ define('DB_PASSWORD', 'password');
 // Database name.
 define('DB_DATABASE', 'tho_authorization');
 // Database tables prefix.
-define('DB_PREFIX', 'tho_generic_');
+define('DB_PREFIX', 'tho_advanced_');
 // Database charset or null.
 define('DB_CHARSET', null);
 
@@ -52,3 +52,6 @@ define('SMTP_TIMEOUT', 5);
 // SMTP authorization user name and password.
 define('SMTP_USERNAME', 'username');
 define('SMTP_PASSWORD', 'password');
+
+// Path to the current ThoPHPAuthorization example includes (classes).
+define('THOPHPAUTHORIZATIONEXAMPLE_AUTOLOAD', __DIR__);
