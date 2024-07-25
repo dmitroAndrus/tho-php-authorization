@@ -98,4 +98,13 @@ interface UserSourceInterface
      * @return boolean Editing successful or not.
      */
     public function edit(UserInterface &$user, $data = null, $renew = true);
+
+    /**
+     * Remove user.
+     *
+     * @param UserInterface $user User object.
+     *
+     * @return boolean Remove successful or not.
+     */
+    public function remove($user);
 }

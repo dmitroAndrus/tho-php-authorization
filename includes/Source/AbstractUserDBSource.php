@@ -29,6 +29,13 @@ abstract class AbstractUserDBSource implements UserSourceInterface
     protected $tableName = 'user';
 
     /**
+     * Last inserted user id.
+     *
+     * @var mixed
+     */
+    protected $insertedUserID;
+
+    /**
      * Database service.
      *
      * @var DBServiceInterface
@@ -129,14 +136,41 @@ abstract class AbstractUserDBSource implements UserSourceInterface
     }
 
     /**
+     * Insert user data to database.
+     *
+     * @param array $data User data.
+     *
+     * @return boolean Successful or not.
+     */
+    protected function insert($data)
+    {
+        $result = $this->dbService->insert($this->tableName, $data);
+        $this->insertedUserID = $this->dbService->getLastID();
+        return $result;
+    }
+
+    /**
+     * Insert user data to database.
+     *
+     * @param mixed $id User id.
+     * @param array $data User data.
+     *
+     * @return boolean Successful or not.
+     */
+    protected function update($id, $data)
+    {
+        return $this->dbService->update($this->tableName, $id, $data);
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function store(UserInterface &$user, $renew = true)
     {
         $store_data = $this->getStoreData($user);
-        $result = $this->validateData($store_data) && $this->dbService->insert($this->tableName, $store_data);
+        $result = $this->validateData($store_data) && $this->insert($store_data);
         if ($result && $renew) {
-            return $this->renew($user, $this->dbService->getLastID());
+            return $this->renew($user, $this->insertedUserID);
         }
         return $result;
     }
@@ -153,10 +187,18 @@ abstract class AbstractUserDBSource implements UserSourceInterface
         $store_data = $this->getEditData($user);
         if (
             $this->validateData($store_data)
-            && $this->dbService->update($this->tableName, $user->getID(), $store_data)
+            && $this->update($user->getID(), $store_data)
         ) {
             return $this->renew($user);
         }
         return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function remove($user)
+    {
+        return $this->dbService->removeById($this->tableName, $user->getID());
     }
 }
