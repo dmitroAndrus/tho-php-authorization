@@ -30,6 +30,27 @@ interface DBServiceInterface
     public function getTableName(string $table_name);
 
     /**
+     * Starts a transaction.
+     *
+     * @return boolean Returns true on success or false on failure.
+     */
+    public function startTransaction();
+
+    /**
+     * Commits the current transaction.
+     *
+     * @return boolean Returns true on success or false on failure.
+     */
+    public function commit();
+
+    /**
+     * Rolls back current transaction.
+     *
+     * @return boolean Returns true on success or false on failure.
+     */
+    public function rollback();
+
+    /**
      * Insert new data to database.
      *
      * @param string $table_name Database table to insert data at.

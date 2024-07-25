@@ -80,6 +80,30 @@ class MySQLiService implements DBServiceInterface
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function startTransaction()
+    {
+        return $this->connection->begin_transaction();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function commit()
+    {
+        return $this->connection->commit();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function rollback()
+    {
+        return $this->connection->rollback();
+    }
+
+    /**
      * Create array of set values strings.
      *
      * @param array $data Array of $column_name => $value.
