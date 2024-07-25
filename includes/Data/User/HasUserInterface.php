@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\User;
 use ThoPHPAuthorization\User\UserInterface;
 
 /**
- * HasUserInterface is an interface, it declares a possibility to access to user object.
+ * HasUser is an interface, it declares a possibility to access to user object.
  */
 interface HasUserInterface
 {
