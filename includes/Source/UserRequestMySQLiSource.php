@@ -16,8 +16,8 @@ namespace ThoPHPAuthorization\Source;
 use ThoPHPAuthorization\Service\UUID;
 use ThoPHPAuthorization\User\UserInterface;
 use ThoPHPAuthorization\User\BasicUser;
-use ThoPHPAuthorization\Source\DBSourceTrait;
-use ThoPHPAuthorization\Source\UserKeepInterface;
+use ThoPHPAuthorization\Data\User\UserRequestInterface;
+use ThoPHPAuthorization\Data\User\UserForgotPasswordRequest;
 
 /**
  * UserRequestMySQLiSource is a class, that contains basic methods to get/store/edit user requests in MySQL Database.
@@ -25,26 +25,28 @@ use ThoPHPAuthorization\Source\UserKeepInterface;
 class UserRequestMySQLiSource extends AbstractUserRequestDBSource
 {
     /**
-     * Name to use in UUID v5.
+     * Decode encoded data
      *
-     * When generating UUID v5, user request type could be added as part of name.
+     * @param string $string Encoded data.
      *
-     * @var string
+     * @return string|null Decoded data or null.
      */
-    protected $name = 'user_request_source';
+    public function decode($string)
+    {
+        $result = base64_decode($string, true);
+        return $result ?: null;
+    }
 
     /**
-     * Constructor.
+     * Encode data
      *
-     * @param DBServiceInterface $db_service Database service.
-     * @param UserSourceInterface $user_source User source.
+     * @param string $string Encoded data.
      *
-     * @return void
+     * @return string
      */
-    public function __construct(DBServiceInterface $db_service, UserSourceInterface $user_source, $name = null)
+    public function encode($string)
     {
-        parent::__construct($db_service, $user_source);
-        $this->name = $name;
+        return base64_encode($string);
     }
 
     /**
@@ -80,7 +82,7 @@ class UserRequestMySQLiSource extends AbstractUserRequestDBSource
             SELECT *
             FROM {$this->dbService->getTableName($this->tableName)}
             WHERE
-                security = '{$this->dbService->escape($security)}'
+                security = '{$this->dbService->escape($this->decode($security))}'
             LIMIT 1
         ");
         if (!$result) {
@@ -93,14 +95,24 @@ class UserRequestMySQLiSource extends AbstractUserRequestDBSource
     /**
      * {@inheritdoc}
      */
+    public function validateData($data)
+    {
+        return isset($data['id']) && !empty($data['id'])
+            && isset($data['security']) && !empty($data['security']);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function create(UserInterface $user, $data = null)
     {
         $create_data = is_array($data) ? $data : [];
         $create_data['user'] = $user;
         $type = isset($data['type']) ? $data['type'] : null;
-        switch ($type) {
+        switch ((string) $type) {
             case UserForgotPasswordRequest::TYPE:
-                return $this->createForgotPasswordRequest($create_data);
+            case '1':
+                return new UserForgotPasswordRequest($create_data);
         }
         return null;
     }
@@ -110,8 +122,27 @@ class UserRequestMySQLiSource extends AbstractUserRequestDBSource
      */
     public function exists(UserRequestInterface &$request)
     {
+        if (!$request->getID()) {
+            return false;
+        }
         $result = $this->dbService->getById($this->tableName, $request->getID());
         return !!$result;
+    }
+
+    /**
+     * Get type value to store.
+     *
+     * @param DBServiceInterface $db_service Database service.
+     *
+     * @return void
+     */
+    protected function getStoreDataType(UserRequestInterface $request)
+    {
+        switch ($request::TYPE) {
+            case UserForgotPasswordRequest::TYPE:
+                return 1;
+        }
+        return null;
     }
 
     /**
@@ -119,13 +150,15 @@ class UserRequestMySQLiSource extends AbstractUserRequestDBSource
      */
     public function getStoreData(UserRequestInterface &$request)
     {
-        $id = $this->dbService->getUUID($this->keepTableName);
+        $id = $this->dbService->getUUID($this->tableName);
+        $user = $request->getUser();
         $data = [
             'id' => $id,
+            'user_id' => $user ? $user->getID() : null,
             'security' => UUID::v5($id, $this->name . $request::TYPE),
-            'created' => $user->getCreated('Y-m-d h:i:s'),
-            'valid_until' => $user->getValidUntil('Y-m-d h:i:s'),
-            'type' => $request::TYPE
+            'created' => $request->getCreated('Y-m-d h:i:s'),
+            'valid_until' => $request->getValidUntil('Y-m-d h:i:s'),
+            'type' => $this->getStoreDataType($request)
         ];
         return $data;
     }
@@ -135,12 +168,14 @@ class UserRequestMySQLiSource extends AbstractUserRequestDBSource
      */
     public function getEditData(UserRequestInterface &$request)
     {
+        $user = $request->getUser();
         return [
             'id' => $request->getID(),
-            'security' => $request->getSecurity(),
+            'user_id' => $user ? $user->getID() : null,
+            'security' => $this->decode($request->getSecurity()),
             'created' => $request->getCreated('Y-m-d h:i:s'),
             'valid_until' => $request->getValidUntil('Y-m-d h:i:s'),
-            'type' => $request::TYPE
+            'type' => $this->getStoreDataType($request)
         ];
     }
 
@@ -160,7 +195,7 @@ class UserRequestMySQLiSource extends AbstractUserRequestDBSource
         }
         // Security key.
         if (isset($data['security'])) {
-            $request->setSecurity($data['security']);
+            $request->setSecurity($this->encode($data['security']));
         }
         // Valid until.
         if (isset($data['valid_until']) && !empty($data['valid_until'])) {
@@ -174,5 +209,55 @@ class UserRequestMySQLiSource extends AbstractUserRequestDBSource
             );
         }
         return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function resolve(UserRequestInterface $request, $data = null)
+    {
+        $user = $request->getUser();
+        switch ($request::TYPE) {
+            case UserForgotPasswordRequest::TYPE:
+                return isset($data['password'])
+                    ? $this->userSource->edit(
+                        $user,
+                        [
+                            'password' => $data['password']
+                        ]
+                    )
+                    : false;
+        }
+        return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeExpired()
+    {
+        $query = "
+            DELETE
+            FROM `{$this->dbService->getTableName($this->tableName)}`
+            WHERE valid_until IS NOT NULL AND valid_until <= NOW()
+        ";
+        return $this->dbService->query($query) === true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function cleanupBeforeStore($data)
+    {
+        if (!in_array($data['type'], array('1'))) {
+            return true;
+        }
+        $query = "
+            DELETE
+            FROM `{$this->dbService->getTableName($this->tableName)}`
+            WHERE user_id = '{$this->dbService->escape($data['user_id'])}'
+                AND type = '{$this->dbService->escape($data['type'])}'
+        ";
+        return $this->dbService->query($query) === true;
     }
 }

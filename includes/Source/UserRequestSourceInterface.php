@@ -13,7 +13,7 @@
 
 namespace ThoPHPAuthorization\Source;
 
-use ThoPHPAuthorization\User\UserAccessSourceInterface;
+use ThoPHPAuthorization\Source\UserAccessSourceInterface;
 use ThoPHPAuthorization\User\UserInterface;
 use ThoPHPAuthorization\Data\User\UserRequestInterface;
 
@@ -44,20 +44,22 @@ interface UserRequestSourceInterface extends UserAccessSourceInterface
      * Store user request.
      *
      * @param UserRequestInterface $request User request object.
+     * @param boolean $renew Renew user request object.
      *
      * @return boolean Storing successful or not.
      */
-    public function store(UserRequestInterface &$request);
+    public function store(UserRequestInterface &$request, $renew);
 
     /**
      * Edit user request.
      *
-     * @param UserRequestInterface $request User object.
-     * @param array|null $data User data.
+     * @param UserRequestInterface $request User request object.
+     * @param array|null $data User request data.
+     * @param boolean $renew Renew user request object.
      *
      * @return boolean Editing successful or not.
      */
-    public function edit(UserInterface &$request, $data = null);
+    public function edit(UserRequestInterface &$request, $data = null, $renew = true);
 
     /**
      * Remove user request.

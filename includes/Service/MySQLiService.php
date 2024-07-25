@@ -171,7 +171,7 @@ class MySQLiService implements DBServiceInterface
     {
         $_id_column = empty($id_column) ? 'id' : $id_column;
         $query = "
-            DELETE *
+            DELETE
             FROM `{$this->getTableName($table_name)}`
             WHERE {$this->escape($_id_column)} = '{$this->escape($id)}'
         ";
@@ -183,15 +183,15 @@ class MySQLiService implements DBServiceInterface
      */
     public function getUUID(string $table_name, $id_column = null)
     {
-        $id_column = $this->dbService->escape(empty($id_column) ? 'id' : $id_column);
+        $id_column = $this->escape(empty($id_column) ? 'id' : $id_column);
         $table_name = $this->getTableName($table_name);
         do {
             $id = UUID::v4();
-            $result = $this->dbService->queryFirst("
+            $result = $this->queryFirst("
                 SELECT *
                 FROM {$table_name}
                 WHERE
-                    '{$id_column}' = '{$this->dbService->escape($id)}'
+                    '{$id_column}' = '{$this->escape($id)}'
                 LIMIT 1
             ");
         } while ($result);

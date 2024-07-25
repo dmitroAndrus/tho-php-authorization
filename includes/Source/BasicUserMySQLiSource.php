@@ -16,7 +16,6 @@ namespace ThoPHPAuthorization\Source;
 use ThoPHPAuthorization\Service\UUID;
 use ThoPHPAuthorization\User\UserInterface;
 use ThoPHPAuthorization\User\BasicUser;
-use ThoPHPAuthorization\Source\DBSourceTrait;
 use ThoPHPAuthorization\Source\UserKeepInterface;
 
 /**

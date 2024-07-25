@@ -15,6 +15,7 @@ namespace ThoPHPAuthorization\Source;
 
 use ThoPHPAuthorization\User\UserInterface;
 use ThoPHPAuthorization\Service\DBServiceInterface;
+use ThoPHPAuthorization\Data\User\UserRequestInterface;
 
 /**
  * AbstractUserDBSource is an abstract class, that contains basic methods to get/store/edit user in Database.
@@ -180,18 +181,15 @@ abstract class AbstractUserDBSource implements UserSourceInterface
      */
     public function edit(UserInterface &$user, $data = null, $renew = true)
     {
-        // Check if user with such id exists.
         if (!$this->editData($user, $data)) {
             return false;
         }
         $store_data = $this->getEditData($user);
-        if (
-            $this->validateData($store_data)
-            && $this->update($user->getID(), $store_data)
-        ) {
+        $result = $this->validateData($store_data) && $this->update($user->getID(), $store_data);
+        if ($result && $renew) {
             return $this->renew($user);
         }
-        return false;
+        return $result;
     }
 
     /**
@@ -199,6 +197,11 @@ abstract class AbstractUserDBSource implements UserSourceInterface
      */
     public function remove($user)
     {
-        return $this->dbService->removeById($this->tableName, $user->getID());
+        return $this->dbService->removeById(
+            $this->tableName,
+            $user instanceof UserInterface
+                ? $user->getID()
+                : $user
+        );
     }
 }

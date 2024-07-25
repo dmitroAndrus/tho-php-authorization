@@ -31,7 +31,7 @@ abstract class AbstractUserRequestDBSource implements UserRequestSourceInterface
      *
      * @var string
      */
-    protected $name = 'user_access';
+    protected $name = 'user_request_source';
 
     /**
      * User request table name.
@@ -39,6 +39,13 @@ abstract class AbstractUserRequestDBSource implements UserRequestSourceInterface
      * @var string
      */
     protected $tableName = 'user_request';
+
+    /**
+     * Last inserted user request id.
+     *
+     * @var mixed
+     */
+    protected $insertedRequestID;
 
     /**
      * Database service.
@@ -62,10 +69,13 @@ abstract class AbstractUserRequestDBSource implements UserRequestSourceInterface
      *
      * @return void
      */
-    public function __construct(DBServiceInterface $db_service, UserSourceInterface $user_source)
+    public function __construct(DBServiceInterface $db_service, UserSourceInterface $user_source, $name = null)
     {
         $this->dbService = $db_service;
         $this->userSource = $user_source;
+        if (!is_null($name)) {
+            $this->name = $name;
+        }
     }
 
     /**
@@ -109,6 +119,18 @@ abstract class AbstractUserRequestDBSource implements UserRequestSourceInterface
     abstract protected function getDataByID($id);
 
     /**
+     * Remove old request before adding new ones, if needed.
+     *
+     * @param array $data User request data.
+     *
+     * @return boolean Successful or not.
+     */
+    protected function cleanupBeforeStore($data)
+    {
+        return true;
+    }
+
+    /**
      * Renew user request data.
      *
      * @param UserRequestInterface $request User request object.
@@ -119,7 +141,10 @@ abstract class AbstractUserRequestDBSource implements UserRequestSourceInterface
     public function renew(UserRequestInterface &$request, $id = null)
     {
         $request_id = $request->getID();
-        if (!($id || $request_id) || ($request_id && $id != $request_id)) {
+        if (
+            !($id || $request_id)
+            || (!is_null($id) && $request_id && $id != $request_id)
+        ) {
             return false;
         }
         if (is_null($request_id)) {
@@ -147,36 +172,61 @@ abstract class AbstractUserRequestDBSource implements UserRequestSourceInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Insert user data to database.
+     *
+     * @param array $data User request data.
+     *
+     * @return boolean Successful or not.
      */
-    public function store(UserRequestInterface &$request)
+    protected function insert($data)
     {
-        if ($this->exists($request)) {
-            return false;
-        }
-        $store_data = $this->getStoreData($request);
-        if ($this->validateData($store_data) && $this->dbService->insert($this->tableName, $store_data)) {
-            return $this->renew($request, $this->dbService->getLastID());
-        }
-        return false;
+        $result = $this->dbService->insert($this->tableName, $data);
+        $this->insertedRequestID = $data['id'];
+        return $result;
+    }
+
+    /**
+     * Insert user data to database.
+     *
+     * @param mixed $id User request id.
+     * @param array $data User request data.
+     *
+     * @return boolean Successful or not.
+     */
+    protected function update($id, $data)
+    {
+        return $this->dbService->update($this->tableName, $id, $data);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function edit(UserRequestInterface &$request, $data = null)
+    public function store(UserRequestInterface &$request, $renew = true)
+    {
+        $store_data = $this->getStoreData($request);
+        $result = $this->validateData($store_data)
+            && $this->cleanupBeforeStore($store_data)
+            && $this->insert($store_data);
+        if ($result && $renew) {
+            return $this->renew($request, $this->insertedRequestID);
+        }
+        return $result;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function edit(UserRequestInterface &$request, $data = null, $renew = true)
     {
         if (!$this->editData($request, $data)) {
             return false;
         }
         $store_data = $this->getEditData($request);
-        if (
-            $this->validateData($store_data)
-            && $this->dbService->update($this->tableName, $request->getID(), $store_data)
-        ) {
+        $result = $this->validateData($store_data) && $this->update($request->getID(), $store_data);
+        if ($result && $renew) {
             return $this->renew($request);
         }
-        return false;
+        return $result;
     }
 
     /**

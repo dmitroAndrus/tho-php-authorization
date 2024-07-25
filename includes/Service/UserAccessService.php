@@ -66,8 +66,13 @@ class UserAccessService
             'created' => new \DateTime(),
             'valid_until' => strtotime(static::$forgotPasswordDuration, time())
         ]);
-        if ($request && ($this->accessSource instanceof UserRequestSourceInterface)) {
-            $this->accessSource->store($request);
+        if (
+            $request
+            && ($this->accessSource instanceof UserRequestSourceInterface)
+        ) {
+            if ($this->accessSource->exists($request) || !$this->accessSource->store($request)) {
+                return null;
+            }
         }
         return $request;
     }
