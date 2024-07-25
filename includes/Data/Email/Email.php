@@ -30,6 +30,25 @@ class Email implements EmailInterface
     use TypeTrait;
 
     /**
+     * Constructor.
+     *
+     * @param array $data Email data.
+     *
+     * @return void
+     */
+    public function __construct(array $data = [])
+    {
+        // Set type.
+        if (isset($data['type']) && !empty($data['type'])) {
+            $this->setType($data['type']);
+        }
+        // Set email.
+        if (isset($data['email']) && !empty($data['email'])) {
+            $this->setEmail($data['email']);
+        }
+    }
+
+    /**
      * Get a string representation of the object.
      *
      * @return string

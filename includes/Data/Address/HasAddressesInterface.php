@@ -21,6 +21,24 @@ use ThoPHPAuthorization\Data\Address\AddressInterface;
 interface HasAddressesInterface
 {
     /**
+     * Set addresses.
+     *
+     * @param AddressInterface[]|mixed $addresses Addresses list.
+     *
+     * @return self
+     */
+    public function setAddresses($addresses);
+
+    /**
+     * Add addresses.
+     *
+     * @param AddressInterface[]|mixed $addresses Addresses list.
+     *
+     * @return self
+     */
+    public function addAddresses($addresses);
+
+    /**
      * Add address.
      *
      * @param mixed $address Address.

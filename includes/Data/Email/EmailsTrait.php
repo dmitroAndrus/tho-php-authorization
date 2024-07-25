@@ -30,6 +30,34 @@ trait EmailsTrait
     protected $emails = [];
 
     /**
+     * Set emails.
+     *
+     * @param EmailInterface[]|mixed $emails Emails list.
+     *
+     * @return self
+     */
+    public function setEmails($emails)
+    {
+        $this->emails = [];
+        return $this->addEmails($emails);
+    }
+
+    /**
+     * Add emails.
+     *
+     * @param EmailInterface[]|mixed $emails Emails list.
+     *
+     * @return self
+     */
+    public function addEmails($emails)
+    {
+        foreach ($emails as $email) {
+            $this->addEmail($email);
+        }
+        return $this;
+    }
+
+    /**
      * Add email.
      *
      * @param mixed $email Email.
@@ -66,7 +94,7 @@ trait EmailsTrait
     public function getEmailsByType($type)
     {
         $emails = [];
-        foreach ($this->emails as $email) {
+        foreach ($this->getEmails() as $email) {
             if ($email->isOfType($type)) {
                 $emails[] = $email;
             }
@@ -85,7 +113,7 @@ trait EmailsTrait
      */
     public function getFirstEmailByType($type)
     {
-        foreach ($this->emails as $email) {
+        foreach ($this->getEmails() as $email) {
             if ($email->isOfType($type)) {
                 return $email;
             }
@@ -104,7 +132,7 @@ trait EmailsTrait
      */
     public function hasEmailType($type)
     {
-        foreach ($this->emails as $email) {
+        foreach ($this->getEmails() as $email) {
             if ($email->isOfType($type)) {
                 return true;
             }

@@ -30,6 +30,34 @@ trait PhonesTrait
     protected $phones = [];
 
     /**
+     * Set phones.
+     *
+     * @param PhoneInterface[]|mixed $phones Phones list.
+     *
+     * @return self
+     */
+    public function setPhones($phones)
+    {
+        $this->phones = [];
+        return $this->addPhones($phones);
+    }
+
+    /**
+     * Add phones.
+     *
+     * @param PhoneInterface[]|mixed $phones Phones list.
+     *
+     * @return self
+     */
+    public function addPhones($phones)
+    {
+        foreach ($phones as $phone) {
+            $this->addPhone($phone);
+        }
+        return $this;
+    }
+
+    /**
      * Add phone.
      *
      * @param mixed $phone Phone.

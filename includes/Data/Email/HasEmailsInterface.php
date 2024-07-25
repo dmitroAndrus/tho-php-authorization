@@ -21,6 +21,24 @@ use ThoPHPAuthorization\Data\Email\EmailInterface;
 interface HasEmailsInterface
 {
     /**
+     * Set emails.
+     *
+     * @param EmailInterface[]|mixed $emails Emails list.
+     *
+     * @return self
+     */
+    public function setEmails($emails);
+
+    /**
+     * Add emails.
+     *
+     * @param EmailInterface[]|mixed $emails Emails list.
+     *
+     * @return self
+     */
+    public function addEmails($emails);
+
+    /**
      * Add email.
      *
      * @param mixed $email Email.

@@ -30,6 +30,25 @@ class Phone implements PhoneInterface
     use TypeTrait;
 
     /**
+     * Constructor.
+     *
+     * @param array $data Phone data.
+     *
+     * @return void
+     */
+    public function __construct(array $data = [])
+    {
+        // Set type.
+        if (isset($data['type']) && !empty($data['type'])) {
+            $this->setType($data['type']);
+        }
+        // Set phone.
+        if (isset($data['phone']) && !empty($data['phone'])) {
+            $this->setPhone($data['phone']);
+        }
+    }
+
+    /**
      * Get a string representation of the object.
      *
      * @return string

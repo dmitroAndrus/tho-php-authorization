@@ -31,6 +31,34 @@ trait AddressesTrait
     protected $addresses = [];
 
     /**
+     * Set addresses.
+     *
+     * @param AddressInterface[]|mixed $addresses Addresses list.
+     *
+     * @return self
+     */
+    public function setAddresses($addresses)
+    {
+        $this->addresses = [];
+        return $this->addAddresses($addresses);
+    }
+
+    /**
+     * Add addresses.
+     *
+     * @param AddressInterface[]|mixed $addresses Addresses list.
+     *
+     * @return self
+     */
+    public function addAddresses($addresses)
+    {
+        foreach ($addresses as $address) {
+            $this->addAddress($address);
+        }
+        return $this;
+    }
+
+    /**
      * Add address.
      *
      * @param AddressInterface|mixed $address Address.
@@ -67,7 +95,7 @@ trait AddressesTrait
     public function getAddressesByType($type)
     {
         $addresses = [];
-        foreach ($this->addresses as $address) {
+        foreach ($this->getAddresses() as $address) {
             if ($address->isOfType($type)) {
                 $addresses[] = $address;
             }
@@ -86,7 +114,7 @@ trait AddressesTrait
      */
     public function getFirstAddressByType($type)
     {
-        foreach ($this->addresses as $address) {
+        foreach ($this->getAddresses() as $address) {
             if ($address->isOfType($type)) {
                 return $address;
             }
@@ -105,7 +133,7 @@ trait AddressesTrait
      */
     public function hasAddressType($type)
     {
-        foreach ($this->addresses as $address) {
+        foreach ($this->getAddresses() as $address) {
             if ($address->isOfType($type)) {
                 return true;
             }

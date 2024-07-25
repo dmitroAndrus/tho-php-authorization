@@ -29,6 +29,41 @@ class Address implements AddressInterface
     use TypeTrait;
 
     /**
+     * Constructor.
+     *
+     * @param array $data Address data.
+     *
+     * @return void
+     */
+    public function __construct(array $data = [])
+    {
+        // Set type.
+        if (isset($data['type']) && !empty($data['type'])) {
+            $this->setType($data['type']);
+        }
+        // Set Country.
+        if (isset($data['country']) && !empty($data['country'])) {
+            $this->setCountry($data['country']);
+        }
+        // Set State.
+        if (isset($data['state']) && !empty($data['state'])) {
+            $this->setState($data['state']);
+        }
+        // Set City.
+        if (isset($data['city']) && !empty($data['city'])) {
+            $this->setCity($data['city']);
+        }
+        // Set Address.
+        if (isset($data['address']) && !empty($data['address'])) {
+            $this->setAddress($data['address']);
+        }
+        // Set ZIP.
+        if (isset($data['zip']) && !empty($data['zip'])) {
+            $this->setZIP($data['zip']);
+        }
+    }
+
+    /**
      * Get a string representation of the object.
      *
      * @return string String representation of the object.

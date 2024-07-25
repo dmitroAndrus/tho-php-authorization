@@ -21,6 +21,24 @@ use ThoPHPAuthorization\Data\Phone\PhoneInterface;
 interface HasPhonesInterface
 {
     /**
+     * Set phones.
+     *
+     * @param PhoneInterface[]|mixed $phones Phones list.
+     *
+     * @return self
+     */
+    public function setPhones($phones);
+
+    /**
+     * Add phones.
+     *
+     * @param PhoneInterface[]|mixed $phones Phones list.
+     *
+     * @return self
+     */
+    public function addPhones($phones);
+
+    /**
      * Add phone.
      *
      * @param mixed $phone Phone.
