@@ -16,7 +16,7 @@ User authorization PHP library. Includes code to manage users: sign up, sign in,
 ## What's new
 - Added ability to work with files/streams
 - Added ability to send emails via sendmail/SMTP
-- Added Birthday, E-Mail, File, Message related PHP traits, interfaces and clases in Data
+- Added Birthday, E-Mail, File, Message related PHP traits, interfaces and classes in Data
 - Added ExitException - exception to exit to closest try..catch
 - Added Log PHP classes to preserve log messages
 
