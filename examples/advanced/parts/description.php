@@ -27,6 +27,8 @@
     - Password<br/>
     - First name, Last name<br/>
     - Email<br/>
+    - Additional emails<br/>
     - Phone number<br/>
-    - Country, State, City, Address, ZIP
+    - Additional phone numbers<br/>
+    - Multiple addresses sets of: Country, State, City, Address, ZIP
 </p>

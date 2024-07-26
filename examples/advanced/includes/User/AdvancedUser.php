@@ -132,7 +132,9 @@ class AdvancedUser extends BasicUser implements
     public function setEmails($emails)
     {
         // Try to add lazy load.
-        if (!$this->addLazyLoad('emails', $emails)) {
+        if ($this->addLazyLoad('emails', $emails)) {
+            $this->setDirectEmails(null);
+        } else {
             $this->removeLazyLoad('emails');
             $this->setDirectEmails($emails);
         }
@@ -158,7 +160,9 @@ class AdvancedUser extends BasicUser implements
     public function setPhones($phones)
     {
         // Try to add lazy load.
-        if (!$this->addLazyLoad('phones', $phones)) {
+        if ($this->addLazyLoad('phones', $phones)) {
+            $this->setDirectPhones(null);
+        } else {
             $this->removeLazyLoad('phones');
             $this->setDirectPhones($phones);
         }
@@ -184,7 +188,9 @@ class AdvancedUser extends BasicUser implements
     public function setAddresses($addresses)
     {
         // Try to add lazy load.
-        if (!$this->addLazyLoad('addresses', $addresses)) {
+        if ($this->addLazyLoad('addresses', $addresses)) {
+            $this->setDirectAddresses(null);
+        } else {
             $this->removeLazyLoad('addresses');
             $this->setDirectAddresses($addresses);
         }
