@@ -198,10 +198,10 @@ class BasicUserMySQLiSource extends AbstractUserDBSource implements UserKeepInte
             'security' => UUID::v5($id, $name),
             'valid_until' => date('Y-m-d h:i:s', $valid_until),
         ];
-        if (!$this->dbService->insert($this->keepTableName, $data)) {
-            return false;
+        if ($this->dbService->insert($this->keepTableName, $data)) {
+            return $data['security'];
         }
-        return $security;
+        return false;
     }
 
     /**
