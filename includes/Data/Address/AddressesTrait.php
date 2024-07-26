@@ -52,8 +52,10 @@ trait AddressesTrait
      */
     public function addAddresses($addresses)
     {
-        foreach ($addresses as $address) {
-            $this->addAddress($address);
+        if (is_array($addresses)) {
+            foreach ($addresses as $address) {
+                $this->addAddress($address);
+            }
         }
         return $this;
     }

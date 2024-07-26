@@ -51,8 +51,10 @@ trait EmailsTrait
      */
     public function addEmails($emails)
     {
-        foreach ($emails as $email) {
-            $this->addEmail($email);
+        if (is_array($emails)) {
+            foreach ($emails as $email) {
+                $this->addEmail($email);
+            }
         }
         return $this;
     }

@@ -51,8 +51,10 @@ trait PhonesTrait
      */
     public function addPhones($phones)
     {
-        foreach ($phones as $phone) {
-            $this->addPhone($phone);
+        if (is_array($phones)) {
+            foreach ($phones as $phone) {
+                $this->addPhone($phone);
+            }
         }
         return $this;
     }
