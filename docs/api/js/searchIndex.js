@@ -6,6 +6,11 @@ Search.appendIndex(
             "summary": "Address\u0020is\u0020a\u0020class\u0020to\u0020manipulate\u0020address\u0020data.",
             "url": "classes/ThoPHPAuthorization-Data-Address-Address.html"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Address\\Address\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/ThoPHPAuthorization-Data-Address-Address.html#method___construct"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Data\\Address\\Address\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
             "summary": "Get\u0020a\u0020string\u0020representation\u0020of\u0020the\u0020object.",
@@ -15,6 +20,16 @@ Search.appendIndex(
             "name": "AddressesTrait",
             "summary": "AddressesTrait\u0020is\u0020a\u0020trait,\u0020it\u0020contains\u0020basic\u0020methods\u0020to\u0020manipulate\u0020multiple\u0020addresses\u0020data.",
             "url": "classes/ThoPHPAuthorization-Data-Address-AddressesTrait.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Address\\AddressesTrait\u003A\u003AsetAddresses\u0028\u0029",
+            "name": "setAddresses",
+            "summary": "Set\u0020addresses.",
+            "url": "classes/ThoPHPAuthorization-Data-Address-AddressesTrait.html#method_setAddresses"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Address\\AddressesTrait\u003A\u003AaddAddresses\u0028\u0029",
+            "name": "addAddresses",
+            "summary": "Add\u0020addresses.",
+            "url": "classes/ThoPHPAuthorization-Data-Address-AddressesTrait.html#method_addAddresses"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Data\\Address\\AddressesTrait\u003A\u003AaddAddress\u0028\u0029",
             "name": "addAddress",
@@ -165,6 +180,16 @@ Search.appendIndex(
             "name": "HasAddressesInterface",
             "summary": "HasAddressesInterface\u0020is\u0020an\u0020interface,\u0020it\u0020declares\u0020a\u0020possibility\u0020to\u0020access\u0020multiple\u0020addresses\u0020data.",
             "url": "classes/ThoPHPAuthorization-Data-Address-HasAddressesInterface.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Address\\HasAddressesInterface\u003A\u003AsetAddresses\u0028\u0029",
+            "name": "setAddresses",
+            "summary": "Set\u0020addresses.",
+            "url": "classes/ThoPHPAuthorization-Data-Address-HasAddressesInterface.html#method_setAddresses"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Address\\HasAddressesInterface\u003A\u003AaddAddresses\u0028\u0029",
+            "name": "addAddresses",
+            "summary": "Add\u0020addresses.",
+            "url": "classes/ThoPHPAuthorization-Data-Address-HasAddressesInterface.html#method_addAddresses"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Data\\Address\\HasAddressesInterface\u003A\u003AaddAddress\u0028\u0029",
             "name": "addAddress",
@@ -366,6 +391,11 @@ Search.appendIndex(
             "summary": "Email\u0020is\u0020a\u0020class\u0020to\u0020manipulate\u0020email\u0020data.",
             "url": "classes/ThoPHPAuthorization-Data-Email-Email.html"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Email\\Email\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/ThoPHPAuthorization-Data-Email-Email.html#method___construct"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Data\\Email\\Email\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
             "summary": "Get\u0020a\u0020string\u0020representation\u0020of\u0020the\u0020object.",
@@ -380,6 +410,16 @@ Search.appendIndex(
             "name": "EmailsTrait",
             "summary": "EmailsTrait\u0020is\u0020a\u0020trait,\u0020it\u0020contains\u0020basic\u0020methods\u0020to\u0020manipulate\u0020multiple\u0020emails\u0020data.",
             "url": "classes/ThoPHPAuthorization-Data-Email-EmailsTrait.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Email\\EmailsTrait\u003A\u003AsetEmails\u0028\u0029",
+            "name": "setEmails",
+            "summary": "Set\u0020emails.",
+            "url": "classes/ThoPHPAuthorization-Data-Email-EmailsTrait.html#method_setEmails"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Email\\EmailsTrait\u003A\u003AaddEmails\u0028\u0029",
+            "name": "addEmails",
+            "summary": "Add\u0020emails.",
+            "url": "classes/ThoPHPAuthorization-Data-Email-EmailsTrait.html#method_addEmails"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Data\\Email\\EmailsTrait\u003A\u003AaddEmail\u0028\u0029",
             "name": "addEmail",
@@ -550,6 +590,16 @@ Search.appendIndex(
             "name": "HasEmailsInterface",
             "summary": "HasEmailsInterface\u0020is\u0020an\u0020interface,\u0020it\u0020declares\u0020a\u0020possibility\u0020to\u0020access\u0020multiple\u0020emails\u0020data.",
             "url": "classes/ThoPHPAuthorization-Data-Email-HasEmailsInterface.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Email\\HasEmailsInterface\u003A\u003AsetEmails\u0028\u0029",
+            "name": "setEmails",
+            "summary": "Set\u0020emails.",
+            "url": "classes/ThoPHPAuthorization-Data-Email-HasEmailsInterface.html#method_setEmails"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Email\\HasEmailsInterface\u003A\u003AaddEmails\u0028\u0029",
+            "name": "addEmails",
+            "summary": "Add\u0020emails.",
+            "url": "classes/ThoPHPAuthorization-Data-Email-HasEmailsInterface.html#method_addEmails"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Data\\Email\\HasEmailsInterface\u003A\u003AaddEmail\u0028\u0029",
             "name": "addEmail",
@@ -1451,6 +1501,16 @@ Search.appendIndex(
             "summary": "HasPhonesInterface\u0020is\u0020an\u0020interface,\u0020it\u0020declares\u0020a\u0020possibility\u0020to\u0020access\u0020multiple\u0020phones\u0020data.",
             "url": "classes/ThoPHPAuthorization-Data-Phone-HasPhonesInterface.html"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Phone\\HasPhonesInterface\u003A\u003AsetPhones\u0028\u0029",
+            "name": "setPhones",
+            "summary": "Set\u0020phones.",
+            "url": "classes/ThoPHPAuthorization-Data-Phone-HasPhonesInterface.html#method_setPhones"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Phone\\HasPhonesInterface\u003A\u003AaddPhones\u0028\u0029",
+            "name": "addPhones",
+            "summary": "Add\u0020phones.",
+            "url": "classes/ThoPHPAuthorization-Data-Phone-HasPhonesInterface.html#method_addPhones"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Data\\Phone\\HasPhonesInterface\u003A\u003AaddPhone\u0028\u0029",
             "name": "addPhone",
             "summary": "Add\u0020phone.",
@@ -1481,6 +1541,11 @@ Search.appendIndex(
             "summary": "Phone\u0020is\u0020a\u0020class\u0020to\u0020manipulate\u0020phone\u0020data.",
             "url": "classes/ThoPHPAuthorization-Data-Phone-Phone.html"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Phone\\Phone\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/ThoPHPAuthorization-Data-Phone-Phone.html#method___construct"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Data\\Phone\\Phone\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
             "summary": "Get\u0020a\u0020string\u0020representation\u0020of\u0020the\u0020object.",
@@ -1495,6 +1560,16 @@ Search.appendIndex(
             "name": "PhonesTrait",
             "summary": "PhonesTrait\u0020is\u0020a\u0020trait,\u0020it\u0020contains\u0020basic\u0020methods\u0020to\u0020manipulate\u0020multiple\u0020phones\u0020data.",
             "url": "classes/ThoPHPAuthorization-Data-Phone-PhonesTrait.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Phone\\PhonesTrait\u003A\u003AsetPhones\u0028\u0029",
+            "name": "setPhones",
+            "summary": "Set\u0020phones.",
+            "url": "classes/ThoPHPAuthorization-Data-Phone-PhonesTrait.html#method_setPhones"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Phone\\PhonesTrait\u003A\u003AaddPhones\u0028\u0029",
+            "name": "addPhones",
+            "summary": "Add\u0020phones.",
+            "url": "classes/ThoPHPAuthorization-Data-Phone-PhonesTrait.html#method_addPhones"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Data\\Phone\\PhonesTrait\u003A\u003AaddPhone\u0028\u0029",
             "name": "addPhone",
@@ -2606,6 +2681,21 @@ Search.appendIndex(
             "summary": "Get\u0020table\u0020name.",
             "url": "classes/ThoPHPAuthorization-Service-DBServiceInterface.html#method_getTableName"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\DBServiceInterface\u003A\u003AstartTransaction\u0028\u0029",
+            "name": "startTransaction",
+            "summary": "Starts\u0020a\u0020transaction.",
+            "url": "classes/ThoPHPAuthorization-Service-DBServiceInterface.html#method_startTransaction"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\DBServiceInterface\u003A\u003Acommit\u0028\u0029",
+            "name": "commit",
+            "summary": "Commits\u0020the\u0020current\u0020transaction.",
+            "url": "classes/ThoPHPAuthorization-Service-DBServiceInterface.html#method_commit"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\DBServiceInterface\u003A\u003Arollback\u0028\u0029",
+            "name": "rollback",
+            "summary": "Rolls\u0020back\u0020current\u0020transaction.",
+            "url": "classes/ThoPHPAuthorization-Service-DBServiceInterface.html#method_rollback"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Service\\DBServiceInterface\u003A\u003Ainsert\u0028\u0029",
             "name": "insert",
             "summary": "Insert\u0020new\u0020data\u0020to\u0020database.",
@@ -2615,6 +2705,21 @@ Search.appendIndex(
             "name": "update",
             "summary": "Edit\/update\u0020existing\u0020data\u0020in\u0020database.",
             "url": "classes/ThoPHPAuthorization-Service-DBServiceInterface.html#method_update"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\DBServiceInterface\u003A\u003AgetById\u0028\u0029",
+            "name": "getById",
+            "summary": "Get\u0020record\u0020from\u0020database\u0020by\u0020id.",
+            "url": "classes/ThoPHPAuthorization-Service-DBServiceInterface.html#method_getById"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\DBServiceInterface\u003A\u003AremoveById\u0028\u0029",
+            "name": "removeById",
+            "summary": "Remove\u0020record\u0020from\u0020database\u0020by\u0020id.",
+            "url": "classes/ThoPHPAuthorization-Service-DBServiceInterface.html#method_removeById"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\DBServiceInterface\u003A\u003AgetUUID\u0028\u0029",
+            "name": "getUUID",
+            "summary": "Get\u0020UUID\u0020for\u0020specified\u0020table.",
+            "url": "classes/ThoPHPAuthorization-Service-DBServiceInterface.html#method_getUUID"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Service\\DBServiceInterface\u003A\u003AgetLastID\u0028\u0029",
             "name": "getLastID",
@@ -2776,6 +2881,21 @@ Search.appendIndex(
             "summary": "Get\u0020table\u0020name.",
             "url": "classes/ThoPHPAuthorization-Service-MySQLiService.html#method_getTableName"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\MySQLiService\u003A\u003AstartTransaction\u0028\u0029",
+            "name": "startTransaction",
+            "summary": "Starts\u0020a\u0020transaction.",
+            "url": "classes/ThoPHPAuthorization-Service-MySQLiService.html#method_startTransaction"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\MySQLiService\u003A\u003Acommit\u0028\u0029",
+            "name": "commit",
+            "summary": "Commits\u0020the\u0020current\u0020transaction.",
+            "url": "classes/ThoPHPAuthorization-Service-MySQLiService.html#method_commit"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\MySQLiService\u003A\u003Arollback\u0028\u0029",
+            "name": "rollback",
+            "summary": "Rolls\u0020back\u0020current\u0020transaction.",
+            "url": "classes/ThoPHPAuthorization-Service-MySQLiService.html#method_rollback"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Service\\MySQLiService\u003A\u003AcreateSetValues\u0028\u0029",
             "name": "createSetValues",
             "summary": "Create\u0020array\u0020of\u0020set\u0020values\u0020strings.",
@@ -2790,6 +2910,21 @@ Search.appendIndex(
             "name": "update",
             "summary": "Edit\/update\u0020existing\u0020data\u0020in\u0020database.",
             "url": "classes/ThoPHPAuthorization-Service-MySQLiService.html#method_update"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\MySQLiService\u003A\u003AgetById\u0028\u0029",
+            "name": "getById",
+            "summary": "Get\u0020record\u0020from\u0020database\u0020by\u0020id.",
+            "url": "classes/ThoPHPAuthorization-Service-MySQLiService.html#method_getById"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\MySQLiService\u003A\u003AremoveById\u0028\u0029",
+            "name": "removeById",
+            "summary": "Remove\u0020record\u0020from\u0020database\u0020by\u0020id.",
+            "url": "classes/ThoPHPAuthorization-Service-MySQLiService.html#method_removeById"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\MySQLiService\u003A\u003AgetUUID\u0028\u0029",
+            "name": "getUUID",
+            "summary": "Get\u0020UUID\u0020for\u0020specified\u0020table.",
+            "url": "classes/ThoPHPAuthorization-Service-MySQLiService.html#method_getUUID"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Service\\MySQLiService\u003A\u003AgetLastID\u0028\u0029",
             "name": "getLastID",
@@ -2916,6 +3051,11 @@ Search.appendIndex(
             "summary": "Sign\u0020up\u0020user.",
             "url": "classes/ThoPHPAuthorization-Service-UserService.html#method_signUp"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\UserService\u003A\u003Aedit\u0028\u0029",
+            "name": "edit",
+            "summary": "Edit\u0020user.",
+            "url": "classes/ThoPHPAuthorization-Service-UserService.html#method_edit"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Service\\UserService\u003A\u003AsignIn\u0028\u0029",
             "name": "signIn",
             "summary": "Sign\u0020in\u0020user.",
@@ -3031,6 +3171,16 @@ Search.appendIndex(
             "summary": "Renew\u0020user\u0020data.",
             "url": "classes/ThoPHPAuthorization-Source-AbstractUserDBSource.html#method_renew"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserDBSource\u003A\u003Ainsert\u0028\u0029",
+            "name": "insert",
+            "summary": "Insert\u0020user\u0020data\u0020to\u0020database.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserDBSource.html#method_insert"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserDBSource\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Insert\u0020user\u0020data\u0020to\u0020database.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserDBSource.html#method_update"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserDBSource\u003A\u003Astore\u0028\u0029",
             "name": "store",
             "summary": "Store\u0020user.",
@@ -3041,10 +3191,20 @@ Search.appendIndex(
             "summary": "Edit\u0020user.",
             "url": "classes/ThoPHPAuthorization-Source-AbstractUserDBSource.html#method_edit"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserDBSource\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "Remove\u0020user.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserDBSource.html#method_remove"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserDBSource\u003A\u003A\u0024tableName",
             "name": "tableName",
             "summary": "User\u0020table\u0020name.",
             "url": "classes/ThoPHPAuthorization-Source-AbstractUserDBSource.html#property_tableName"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserDBSource\u003A\u003A\u0024insertedUserID",
+            "name": "insertedUserID",
+            "summary": "Last\u0020inserted\u0020user\u0020id.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserDBSource.html#property_insertedUserID"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserDBSource\u003A\u003A\u0024dbService",
             "name": "dbService",
@@ -3091,6 +3251,11 @@ Search.appendIndex(
             "summary": "\u007B\u0040inheritdoc\u007D",
             "url": "classes/ThoPHPAuthorization-Source-BasicUserMySQLiSource.html#method_userExists"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\BasicUserMySQLiSource\u003A\u003AuserUnique\u0028\u0029",
+            "name": "userUnique",
+            "summary": "\u007B\u0040inheritdoc\u007D",
+            "url": "classes/ThoPHPAuthorization-Source-BasicUserMySQLiSource.html#method_userUnique"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Source\\BasicUserMySQLiSource\u003A\u003AgetStoreData\u0028\u0029",
             "name": "getStoreData",
             "summary": "Get\u0020data\u0020to\u0020store\u0020user.",
@@ -3100,11 +3265,6 @@ Search.appendIndex(
             "name": "editData",
             "summary": "Edit\u0020user\u0020data.",
             "url": "classes/ThoPHPAuthorization-Source-BasicUserMySQLiSource.html#method_editData"
-        },                {
-            "fqsen": "\\ThoPHPAuthorization\\Source\\BasicUserMySQLiSource\u003A\u003AgetUUID\u0028\u0029",
-            "name": "getUUID",
-            "summary": "Generate\u0020UUID.",
-            "url": "classes/ThoPHPAuthorization-Source-BasicUserMySQLiSource.html#method_getUUID"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Source\\BasicUserMySQLiSource\u003A\u003Akeep\u0028\u0029",
             "name": "keep",
@@ -3301,6 +3461,11 @@ Search.appendIndex(
             "summary": "\u007B\u0040inheritdoc\u007D",
             "url": "classes/ThoPHPAuthorization-Source-UserMySQLiSource.html#method_getByIdentity"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserMySQLiSource\u003A\u003AgetByEmail\u0028\u0029",
+            "name": "getByEmail",
+            "summary": "Get\u0020user\u0020by\u0020email.",
+            "url": "classes/ThoPHPAuthorization-Source-UserMySQLiSource.html#method_getByEmail"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Source\\UserMySQLiSource\u003A\u003AvalidateEmail\u0028\u0029",
             "name": "validateEmail",
             "summary": "Validate\u0020email.",
@@ -3325,6 +3490,11 @@ Search.appendIndex(
             "name": "userExists",
             "summary": "\u007B\u0040inheritdoc\u007D",
             "url": "classes/ThoPHPAuthorization-Source-UserMySQLiSource.html#method_userExists"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserMySQLiSource\u003A\u003AuserUnique\u0028\u0029",
+            "name": "userUnique",
+            "summary": "\u007B\u0040inheritdoc\u007D",
+            "url": "classes/ThoPHPAuthorization-Source-UserMySQLiSource.html#method_userUnique"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Source\\UserMySQLiSource\u003A\u003AgetStoreData\u0028\u0029",
             "name": "getStoreData",
@@ -3366,6 +3536,11 @@ Search.appendIndex(
             "summary": "Check\u0020if\u0020such\u0020user\u0020exists.",
             "url": "classes/ThoPHPAuthorization-Source-UserSourceInterface.html#method_userExists"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserSourceInterface\u003A\u003AuserUnique\u0028\u0029",
+            "name": "userUnique",
+            "summary": "Check\u0020if\u0020user\u0020is\u0020unique.",
+            "url": "classes/ThoPHPAuthorization-Source-UserSourceInterface.html#method_userUnique"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Source\\UserSourceInterface\u003A\u003Astore\u0028\u0029",
             "name": "store",
             "summary": "Store\u0020user.",
@@ -3375,6 +3550,11 @@ Search.appendIndex(
             "name": "edit",
             "summary": "Edit\u0020user.",
             "url": "classes/ThoPHPAuthorization-Source-UserSourceInterface.html#method_edit"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserSourceInterface\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "Remove\u0020user.",
+            "url": "classes/ThoPHPAuthorization-Source-UserSourceInterface.html#method_remove"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Stream\\AbstractSMTPStream",
             "name": "AbstractSMTPStream",
@@ -3948,7 +4128,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ThoPHPAuthorization\\User\\User",
             "name": "User",
-            "summary": "BasicUser\u0020is\u0020an\u0020class\u0020that\u0020provides\u0020all\u0020basic\u0020User\u0020data.",
+            "summary": "User\u0020is\u0020an\u0020class\u0020that\u0020provides\u0020all\u0020basic\u0020User\u0020data.",
             "url": "classes/ThoPHPAuthorization-User-User.html"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\User\\User\u003A\u003A__construct\u0028\u0029",
@@ -4016,6 +4196,576 @@ Search.appendIndex(
             "summary": "Check\u0020if\u0020user\u0020can\u0020authorize.",
             "url": "classes/ThoPHPAuthorization-User-UserInterface.html#method_canAuthorize"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\CreatedTrait",
+            "name": "CreatedTrait",
+            "summary": "CreatedTrait\u0020is\u0020a\u0020trait,\u0020it\u0020contains\u0020basic\u0020methods\u0020to\u0020manipulate\u0020created\u0020date\u0020and\u0020time\u0020data.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-CreatedTrait.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\CreatedTrait\u003A\u003AsetCreated\u0028\u0029",
+            "name": "setCreated",
+            "summary": "Set\u0020created\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-CreatedTrait.html#method_setCreated"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\CreatedTrait\u003A\u003AgetCreated\u0028\u0029",
+            "name": "getCreated",
+            "summary": "Get\u0020created\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-CreatedTrait.html#method_getCreated"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\CreatedTrait\u003A\u003A\u0024created",
+            "name": "created",
+            "summary": "Created\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-CreatedTrait.html#property_created"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\HasCreatedInterface",
+            "name": "HasCreatedInterface",
+            "summary": "HasCreatedInterface\u0020is\u0020an\u0020interface,\u0020it\u0020declares\u0020a\u0020possibility\u0020to\u0020access\u0020to\u0020the\u0020created\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-HasCreatedInterface.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\HasCreatedInterface\u003A\u003AsetCreated\u0028\u0029",
+            "name": "setCreated",
+            "summary": "Set\u0020created\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-HasCreatedInterface.html#method_setCreated"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\HasCreatedInterface\u003A\u003AgetCreated\u0028\u0029",
+            "name": "getCreated",
+            "summary": "Get\u0020created\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-HasCreatedInterface.html#method_getCreated"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\HasValidUntilInterface",
+            "name": "HasValidUntilInterface",
+            "summary": "HasValidUntilInterface\u0020is\u0020an\u0020interface,\u0020it\u0020declares\u0020a\u0020possibility\u0020to\u0020access\u0020to\u0020the\u0020valid\u0020until\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-HasValidUntilInterface.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\HasValidUntilInterface\u003A\u003AsetValidUntil\u0028\u0029",
+            "name": "setValidUntil",
+            "summary": "Set\u0020valid\u0020until\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-HasValidUntilInterface.html#method_setValidUntil"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\HasValidUntilInterface\u003A\u003AgetValidUntil\u0028\u0029",
+            "name": "getValidUntil",
+            "summary": "Get\u0020valid\u0020until\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-HasValidUntilInterface.html#method_getValidUntil"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\ValidUntilTrait",
+            "name": "ValidUntilTrait",
+            "summary": "ValidUntilTrait\u0020is\u0020a\u0020trait,\u0020it\u0020contains\u0020basic\u0020methods\u0020to\u0020manipulate\u0020valid\u0020until\u0020date\u0020and\u0020time\u0020data.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-ValidUntilTrait.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\ValidUntilTrait\u003A\u003AsetValidUntil\u0028\u0029",
+            "name": "setValidUntil",
+            "summary": "Set\u0020valid\u0020until\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-ValidUntilTrait.html#method_setValidUntil"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\ValidUntilTrait\u003A\u003AgetValidUntil\u0028\u0029",
+            "name": "getValidUntil",
+            "summary": "Get\u0020valid\u0020until\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-ValidUntilTrait.html#method_getValidUntil"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\DateTime\\ValidUntilTrait\u003A\u003A\u0024validUntil",
+            "name": "validUntil",
+            "summary": "Valid\u0020until\u0020date\u0020and\u0020time.",
+            "url": "classes/ThoPHPAuthorization-Data-DateTime-ValidUntilTrait.html#property_validUntil"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\LazyLoad\\LazyLoadTrait",
+            "name": "LazyLoadTrait",
+            "summary": "LazyLoadTrait\u0020is\u0020a\u0020trait,\u0020it\u0020contains\u0020methods\u0020to\u0020load\u0020property\u0020data\u0020only\u0020when\u0020required.",
+            "url": "classes/ThoPHPAuthorization-Data-LazyLoad-LazyLoadTrait.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\LazyLoad\\LazyLoadTrait\u003A\u003AaddLazyLoad\u0028\u0029",
+            "name": "addLazyLoad",
+            "summary": "Add\u0020lazy\u0020load.",
+            "url": "classes/ThoPHPAuthorization-Data-LazyLoad-LazyLoadTrait.html#method_addLazyLoad"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\LazyLoad\\LazyLoadTrait\u003A\u003AhasLazyLoad\u0028\u0029",
+            "name": "hasLazyLoad",
+            "summary": "Has\u0020lazy\u0020load.",
+            "url": "classes/ThoPHPAuthorization-Data-LazyLoad-LazyLoadTrait.html#method_hasLazyLoad"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\LazyLoad\\LazyLoadTrait\u003A\u003AremoveLazyLoad\u0028\u0029",
+            "name": "removeLazyLoad",
+            "summary": "Remove\u0020lazy\u0020load.",
+            "url": "classes/ThoPHPAuthorization-Data-LazyLoad-LazyLoadTrait.html#method_removeLazyLoad"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\LazyLoad\\LazyLoadTrait\u003A\u003AcleanupLazyLoad\u0028\u0029",
+            "name": "cleanupLazyLoad",
+            "summary": "Remove\u0020all\u0020lazy\u0020load\u0020callables.",
+            "url": "classes/ThoPHPAuthorization-Data-LazyLoad-LazyLoadTrait.html#method_cleanupLazyLoad"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\LazyLoad\\LazyLoadTrait\u003A\u003ArunLazyLoad\u0028\u0029",
+            "name": "runLazyLoad",
+            "summary": "Load\u0020property\u0020data.",
+            "url": "classes/ThoPHPAuthorization-Data-LazyLoad-LazyLoadTrait.html#method_runLazyLoad"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\LazyLoad\\LazyLoadTrait\u003A\u003A\u0024lazyLoad",
+            "name": "lazyLoad",
+            "summary": "Lazy\u0020load\u0020data.",
+            "url": "classes/ThoPHPAuthorization-Data-LazyLoad-LazyLoadTrait.html#property_lazyLoad"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Password\\HasSecurityKeyInterface",
+            "name": "HasSecurityKeyInterface",
+            "summary": "HasSecurityKeyInterface\u0020is\u0020an\u0020interface,\u0020it\u0020declares\u0020access\u0020to\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Data-Password-HasSecurityKeyInterface.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Password\\HasSecurityKeyInterface\u003A\u003AgetSecurity\u0028\u0029",
+            "name": "getSecurity",
+            "summary": "Get\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Data-Password-HasSecurityKeyInterface.html#method_getSecurity"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Password\\HasSecurityKeyInterface\u003A\u003AsetSecurity\u0028\u0029",
+            "name": "setSecurity",
+            "summary": "Set\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Data-Password-HasSecurityKeyInterface.html#method_setSecurity"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Password\\HasSecurityKeyInterface\u003A\u003AcheckSecurity\u0028\u0029",
+            "name": "checkSecurity",
+            "summary": "Check\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Data-Password-HasSecurityKeyInterface.html#method_checkSecurity"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Password\\SecurityKeyTrait",
+            "name": "SecurityKeyTrait",
+            "summary": "SecurityKeyTrait\u0020is\u0020a\u0020trait\u0020that\u0020provides\u0020access\u0020to\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Data-Password-SecurityKeyTrait.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Password\\SecurityKeyTrait\u003A\u003AgetSecurity\u0028\u0029",
+            "name": "getSecurity",
+            "summary": "Get\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Data-Password-SecurityKeyTrait.html#method_getSecurity"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Password\\SecurityKeyTrait\u003A\u003AsetSecurity\u0028\u0029",
+            "name": "setSecurity",
+            "summary": "Set\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Data-Password-SecurityKeyTrait.html#method_setSecurity"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Password\\SecurityKeyTrait\u003A\u003AcheckSecurity\u0028\u0029",
+            "name": "checkSecurity",
+            "summary": "Check\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Data-Password-SecurityKeyTrait.html#method_checkSecurity"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\Password\\SecurityKeyTrait\u003A\u003A\u0024security",
+            "name": "security",
+            "summary": "Security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Data-Password-SecurityKeyTrait.html#property_security"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\AbstractUserRequest",
+            "name": "AbstractUserRequest",
+            "summary": "AbstractUserRequest\u0020is\u0020an\u0020abstract\u0020class\u0020that\u0020provides\u0020access\u0020to\u0020user\u0020requests.",
+            "url": "classes/ThoPHPAuthorization-Data-User-AbstractUserRequest.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\AbstractUserRequest\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/ThoPHPAuthorization-Data-User-AbstractUserRequest.html#method___construct"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\AbstractUserRequest\u003A\u003Aexpired\u0028\u0029",
+            "name": "expired",
+            "summary": "Check\u0020if\u0020request\u0020expired.",
+            "url": "classes/ThoPHPAuthorization-Data-User-AbstractUserRequest.html#method_expired"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\HasUserInterface",
+            "name": "HasUserInterface",
+            "summary": "HasUser\u0020is\u0020an\u0020interface,\u0020it\u0020declares\u0020a\u0020possibility\u0020to\u0020access\u0020to\u0020user\u0020object.",
+            "url": "classes/ThoPHPAuthorization-Data-User-HasUserInterface.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\HasUserInterface\u003A\u003AsetUser\u0028\u0029",
+            "name": "setUser",
+            "summary": "Set\u0020user.",
+            "url": "classes/ThoPHPAuthorization-Data-User-HasUserInterface.html#method_setUser"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\HasUserInterface\u003A\u003AgetUser\u0028\u0029",
+            "name": "getUser",
+            "summary": "Get\u0020user.",
+            "url": "classes/ThoPHPAuthorization-Data-User-HasUserInterface.html#method_getUser"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserAddress",
+            "name": "UserAddress",
+            "summary": "UserAddress\u0020is\u0020a\u0020class\u0020to\u0020manipulate\u0020user\u0020address\u0020data.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserAddress.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserAddress\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserAddress.html#method___construct"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserEmail",
+            "name": "UserEmail",
+            "summary": "UserEmail\u0020is\u0020a\u0020class\u0020to\u0020manipulate\u0020user\u0020email\u0020data.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserEmail.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserEmail\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserEmail.html#method___construct"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserForgotPasswordRequest",
+            "name": "UserForgotPasswordRequest",
+            "summary": "UserForgotPasswordRequest\u0020is\u0020a\u0020class\u0020that\u0020provides\u0020access\u0020to\u0020user\u0020forgot\u0020password\u0020requests.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserForgotPasswordRequest.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserForgotPasswordRequest\u003A\u003ATYPE",
+            "name": "TYPE",
+            "summary": "User\u0020request\u0020type.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserForgotPasswordRequest.html#constant_TYPE"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserPhone",
+            "name": "UserPhone",
+            "summary": "UserPhone\u0020is\u0020a\u0020class\u0020to\u0020manipulate\u0020user\u0020phone\u0020data.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserPhone.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserPhone\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserPhone.html#method___construct"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserRequestInterface",
+            "name": "UserRequestInterface",
+            "summary": "User\u0020request\u0020interface\u0020to\u0020define\u0020basic\u0020user\u0020request\u0020related\u0020methods.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserRequestInterface.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserRequestInterface\u003A\u003Aexpired\u0028\u0029",
+            "name": "expired",
+            "summary": "Check\u0020if\u0020request\u0020expired.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserRequestInterface.html#method_expired"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserTrait",
+            "name": "UserTrait",
+            "summary": "UserTrait\u0020is\u0020a\u0020trait,\u0020it\u0020contains\u0020basic\u0020methods\u0020to\u0020provide\u0020acccess\u0020to\u0020user\u0020object.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserTrait.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserTrait\u003A\u003AsetUser\u0028\u0029",
+            "name": "setUser",
+            "summary": "Set\u0020user.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserTrait.html#method_setUser"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserTrait\u003A\u003AgetUser\u0028\u0029",
+            "name": "getUser",
+            "summary": "Get\u0020user.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserTrait.html#method_getUser"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User\\UserTrait\u003A\u003A\u0024user",
+            "name": "user",
+            "summary": "User.",
+            "url": "classes/ThoPHPAuthorization-Data-User-UserTrait.html#property_user"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\UserAccessService",
+            "name": "UserAccessService",
+            "summary": "UserAccessService\u0020is\u0020a\u0020class,\u0020that\u0020contains\u0020functionality\u0020to\u0020work\u0020with\u0020user\u0020access\u0020requests.",
+            "url": "classes/ThoPHPAuthorization-Service-UserAccessService.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\UserAccessService\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/ThoPHPAuthorization-Service-UserAccessService.html#method___construct"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\UserAccessService\u003A\u003AcreateForgotPasswordRequest\u0028\u0029",
+            "name": "createForgotPasswordRequest",
+            "summary": "Create\u0020forgot\u0020password\u0020access\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Service-UserAccessService.html#method_createForgotPasswordRequest"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\UserAccessService\u003A\u003AresolveRequest\u0028\u0029",
+            "name": "resolveRequest",
+            "summary": "Resolve\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Service-UserAccessService.html#method_resolveRequest"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\UserAccessService\u003A\u003AgetBySecurity\u0028\u0029",
+            "name": "getBySecurity",
+            "summary": "Get\u0020user\u0020request\u0020by\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Service-UserAccessService.html#method_getBySecurity"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\UserAccessService\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "Remove\u0020user\u0020request\u0020by\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Service-UserAccessService.html#method_remove"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\UserAccessService\u003A\u003AremoveExpired\u0028\u0029",
+            "name": "removeExpired",
+            "summary": "Remove\u0020all\u0020expired\u0020requests.",
+            "url": "classes/ThoPHPAuthorization-Service-UserAccessService.html#method_removeExpired"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\UserAccessService\u003A\u003A\u0024accessSource",
+            "name": "accessSource",
+            "summary": "Source\u0020to\u0020get\u0020users\u0020from.",
+            "url": "classes/ThoPHPAuthorization-Service-UserAccessService.html#property_accessSource"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Service\\UserAccessService\u003A\u003A\u0024forgotPasswordDuration",
+            "name": "forgotPasswordDuration",
+            "summary": "User\u0020forgot\u0020password\u0020request\u0020duration.",
+            "url": "classes/ThoPHPAuthorization-Service-UserAccessService.html#property_forgotPasswordDuration"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource",
+            "name": "AbstractUserRequestDBSource",
+            "summary": "AbstractUserRequestDBSource\u0020is\u0020an\u0020abstract\u0020class,\nthat\u0020contains\u0020basic\u0020methods\u0020to\u0020get\/store\/edit\u0020user\u0020requests\u0020in\u0020Database.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method___construct"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003AgetStoreData\u0028\u0029",
+            "name": "getStoreData",
+            "summary": "Get\u0020data\u0020to\u0020store\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method_getStoreData"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003AgetEditData\u0028\u0029",
+            "name": "getEditData",
+            "summary": "Get\u0020data\u0020to\u0020edit\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method_getEditData"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003AeditData\u0028\u0029",
+            "name": "editData",
+            "summary": "Edit\u0020user\u0020request\u0020data.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method_editData"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003AgetDataByID\u0028\u0029",
+            "name": "getDataByID",
+            "summary": "Get\u0020user\u0020request\u0020data\u0020from\u0020DB\u0020by\u0020request\u0020ID.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method_getDataByID"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003AcleanupBeforeStore\u0028\u0029",
+            "name": "cleanupBeforeStore",
+            "summary": "Remove\u0020old\u0020request\u0020before\u0020adding\u0020new\u0020ones,\u0020if\u0020needed.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method_cleanupBeforeStore"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003Arenew\u0028\u0029",
+            "name": "renew",
+            "summary": "Renew\u0020user\u0020request\u0020data.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method_renew"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003Ainsert\u0028\u0029",
+            "name": "insert",
+            "summary": "Insert\u0020user\u0020data\u0020to\u0020database.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method_insert"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Insert\u0020user\u0020data\u0020to\u0020database.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method_update"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003Astore\u0028\u0029",
+            "name": "store",
+            "summary": "Store\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method_store"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003Aedit\u0028\u0029",
+            "name": "edit",
+            "summary": "Edit\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method_edit"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "Remove\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#method_remove"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "Name\u0020to\u0020use\u0020in\u0020UUID\u0020v5.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#property_name"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003A\u0024tableName",
+            "name": "tableName",
+            "summary": "User\u0020request\u0020table\u0020name.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#property_tableName"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003A\u0024insertedRequestID",
+            "name": "insertedRequestID",
+            "summary": "Last\u0020inserted\u0020user\u0020request\u0020id.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#property_insertedRequestID"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003A\u0024dbService",
+            "name": "dbService",
+            "summary": "Database\u0020service.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#property_dbService"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\AbstractUserRequestDBSource\u003A\u003A\u0024userSource",
+            "name": "userSource",
+            "summary": "User\u0020source\u0020service.",
+            "url": "classes/ThoPHPAuthorization-Source-AbstractUserRequestDBSource.html#property_userSource"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSource",
+            "name": "UserAccessSource",
+            "summary": "UserAccessSource\u0020is\u0020a\u0020class,\u0020that\u0020contains\u0020methods\u0020to\u0020work\u0020with\u0020user\u0020access\u0020requests.",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSource.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSource\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSource.html#method___construct"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSource\u003A\u003Adecode\u0028\u0029",
+            "name": "decode",
+            "summary": "Decode\u0020encoded\u0020data",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSource.html#method_decode"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSource\u003A\u003Aencode\u0028\u0029",
+            "name": "encode",
+            "summary": "Encode\u0020data",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSource.html#method_encode"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSource\u003A\u003AcreateSecurity\u0028\u0029",
+            "name": "createSecurity",
+            "summary": "Create\u0020security\u0020key",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSource.html#method_createSecurity"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSource\u003A\u003AgetBySecurity\u0028\u0029",
+            "name": "getBySecurity",
+            "summary": "Get\u0020user\u0020request\u0020by\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSource.html#method_getBySecurity"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSource\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Create\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSource.html#method_create"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSource\u003A\u003Aresolve\u0028\u0029",
+            "name": "resolve",
+            "summary": "Resolve\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSource.html#method_resolve"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSource\u003A\u003A\u0024userSource",
+            "name": "userSource",
+            "summary": "User\u0020source\u0020service.",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSource.html#property_userSource"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSource\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "Name\u0020to\u0020use\u0020in\u0020UUID\u0020v5.",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSource.html#property_name"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSourceInterface",
+            "name": "UserAccessSourceInterface",
+            "summary": "UserAccessSourceInterface\u0020is\u0020an\u0020interface,\u0020it\u0020declares\u0020a\u0020possibility\u0020to\u0020work\u0020with\u0020user\u0020access\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSourceInterface.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSourceInterface\u003A\u003AgetBySecurity\u0028\u0029",
+            "name": "getBySecurity",
+            "summary": "Get\u0020user\u0020request\u0020by\u0020security\u0020key.",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSourceInterface.html#method_getBySecurity"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSourceInterface\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Create\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSourceInterface.html#method_create"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserAccessSourceInterface\u003A\u003Aresolve\u0028\u0029",
+            "name": "resolve",
+            "summary": "Resolve\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-UserAccessSourceInterface.html#method_resolve"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource",
+            "name": "UserRequestMySQLiSource",
+            "summary": "UserRequestMySQLiSource\u0020is\u0020a\u0020class,\u0020that\u0020contains\u0020basic\u0020methods\u0020to\u0020get\/store\/edit\u0020user\u0020requests\u0020in\u0020MySQL\u0020Database.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003Adecode\u0028\u0029",
+            "name": "decode",
+            "summary": "Decode\u0020encoded\u0020data",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_decode"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003Aencode\u0028\u0029",
+            "name": "encode",
+            "summary": "Encode\u0020data",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_encode"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003AgetDataByID\u0028\u0029",
+            "name": "getDataByID",
+            "summary": "Get\u0020user\u0020request\u0020data\u0020from\u0020DB\u0020by\u0020request\u0020ID.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_getDataByID"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003AgetByID\u0028\u0029",
+            "name": "getByID",
+            "summary": "\u007B\u0040inheritdoc\u007D",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_getByID"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003AgetBySecurity\u0028\u0029",
+            "name": "getBySecurity",
+            "summary": "\u007B\u0040inheritdoc\u007D",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_getBySecurity"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003AvalidateData\u0028\u0029",
+            "name": "validateData",
+            "summary": "\u007B\u0040inheritdoc\u007D",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_validateData"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "\u007B\u0040inheritdoc\u007D",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_create"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003Aexists\u0028\u0029",
+            "name": "exists",
+            "summary": "\u007B\u0040inheritdoc\u007D",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_exists"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003AgetStoreDataType\u0028\u0029",
+            "name": "getStoreDataType",
+            "summary": "Get\u0020type\u0020value\u0020to\u0020store.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_getStoreDataType"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003AgetStoreData\u0028\u0029",
+            "name": "getStoreData",
+            "summary": "Get\u0020data\u0020to\u0020store\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_getStoreData"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003AgetEditData\u0028\u0029",
+            "name": "getEditData",
+            "summary": "Get\u0020data\u0020to\u0020edit\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_getEditData"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003AeditData\u0028\u0029",
+            "name": "editData",
+            "summary": "Edit\u0020user\u0020request\u0020data.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_editData"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003Aresolve\u0028\u0029",
+            "name": "resolve",
+            "summary": "\u007B\u0040inheritdoc\u007D",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_resolve"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003AremoveExpired\u0028\u0029",
+            "name": "removeExpired",
+            "summary": "\u007B\u0040inheritdoc\u007D",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_removeExpired"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestMySQLiSource\u003A\u003AcleanupBeforeStore\u0028\u0029",
+            "name": "cleanupBeforeStore",
+            "summary": "Remove\u0020old\u0020request\u0020before\u0020adding\u0020new\u0020ones,\u0020if\u0020needed.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestMySQLiSource.html#method_cleanupBeforeStore"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestSourceInterface",
+            "name": "UserRequestSourceInterface",
+            "summary": "UserRequestSourceInterface\u0020is\u0020an\u0020interface,\u0020it\u0020declares\u0020a\u0020possibility\u0020to\u0020work\u0020with\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestSourceInterface.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestSourceInterface\u003A\u003AgetByID\u0028\u0029",
+            "name": "getByID",
+            "summary": "Get\u0020user\u0020request\u0020by\u0020ID.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestSourceInterface.html#method_getByID"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestSourceInterface\u003A\u003Aexists\u0028\u0029",
+            "name": "exists",
+            "summary": "Check\u0020if\u0020such\u0020user\u0020request\u0020exists.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestSourceInterface.html#method_exists"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestSourceInterface\u003A\u003Astore\u0028\u0029",
+            "name": "store",
+            "summary": "Store\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestSourceInterface.html#method_store"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestSourceInterface\u003A\u003Aedit\u0028\u0029",
+            "name": "edit",
+            "summary": "Edit\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestSourceInterface.html#method_edit"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestSourceInterface\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "Remove\u0020user\u0020request.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestSourceInterface.html#method_remove"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Source\\UserRequestSourceInterface\u003A\u003AremoveExpired\u0028\u0029",
+            "name": "removeExpired",
+            "summary": "Remove\u0020all\u0020expired\u0020requests.",
+            "url": "classes/ThoPHPAuthorization-Source-UserRequestSourceInterface.html#method_removeExpired"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -4056,6 +4806,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/thophpauthorization-data-id.html"
         },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\LazyLoad",
+            "name": "LazyLoad",
+            "summary": "",
+            "url": "namespaces/thophpauthorization-data-lazyload.html"
+        },                {
             "fqsen": "\\ThoPHPAuthorization\\Data\\Message",
             "name": "Message",
             "summary": "",
@@ -4080,6 +4835,11 @@ Search.appendIndex(
             "name": "Type",
             "summary": "",
             "url": "namespaces/thophpauthorization-data-type.html"
+        },                {
+            "fqsen": "\\ThoPHPAuthorization\\Data\\User",
+            "name": "User",
+            "summary": "",
+            "url": "namespaces/thophpauthorization-data-user.html"
         },                {
             "fqsen": "\\ThoPHPAuthorization\\Exception",
             "name": "Exception",
