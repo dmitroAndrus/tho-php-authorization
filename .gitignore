@@ -1,4 +1,5 @@
 .phpdoc
 sublime
 examples/test
+examples/*-test/**
 examples/**/*-test.php

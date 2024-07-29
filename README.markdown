@@ -17,7 +17,7 @@ User authorization PHP library. Includes code to manage users: sign up, sign in,
 ## What's new
 - Added code for database transactions - start, commit, rollback transaction;
 - Added data lazy load - load data when it required, i.e. load additional data from database on request
-- Added advanced example (#advanced-example)
+- Added [advanced example](#advanced-example)
 
 ## Features
 - Users can be stored in MySQL database
