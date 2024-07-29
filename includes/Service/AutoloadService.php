@@ -107,7 +107,7 @@ class AutoloadService
      * @param string $name Namespace root.
      * @param string $path Path to the file.
      *
-     * @return boolean Path exists.
+     * @return boolean PHP file exists and loaded.
      */
     public static function loadPathOnce(string $name, string $path)
     {
@@ -116,6 +116,7 @@ class AutoloadService
             $file_path = $root_path . DIRECTORY_SEPARATOR . trim($path, '/\\') . '.php';
             if (file_exists($file_path)) {
                 require_once($file_path);
+                return true;
             }
         }
         return false;
@@ -139,10 +140,11 @@ class AutoloadService
      *
      * All paths to classes root directories should be added with `addPath` method of this class
      * or defined as constant. Check `addPathFromAutoloadConst` method for the constant format.
+     * According to PSR-4 authoload should not return value.
      *
      * @param string $class Class name.
      *
-     * @return boolean Class found and loaded.
+     * @return void
      */
     public static function autoload($class)
     {
@@ -152,8 +154,7 @@ class AutoloadService
             && (static::hasPath($parts[0])
                 || static::addPathFromAutoloadConst($parts[0]))
         ) {
-            return static::loadPathOnce($parts[0], static::joinSubPath($parts));
+            static::loadPathOnce($parts[0], static::joinSubPath($parts));
         }
-        return false;
     }
 }
