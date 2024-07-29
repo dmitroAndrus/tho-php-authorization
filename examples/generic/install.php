@@ -30,7 +30,7 @@ require_once('./includes/install.php');
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-4">Generic example of User Authorization</h1>
         <p class="col-lg-10 fs-4">
-            Hopefuly everithing is installed and no errors poppud up.
+            Hopefuly everithing is installed and no errors popped up.
         </p>
 </body>
 </html>
