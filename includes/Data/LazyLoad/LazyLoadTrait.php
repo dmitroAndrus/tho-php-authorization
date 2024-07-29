@@ -16,7 +16,7 @@ namespace ThoPHPAuthorization\Data\LazyLoad;
 /**
  * LazyLoadTrait is a trait, it contains methods to load property data only when required.
  *
- * Implements everything from {@see \ThoPHPAuthorization\Data\LazyLoad\HasLazyLoadInterface}.
+ * Can be used to load data from some source (i.e. database) on request.
  */
 trait LazyLoadTrait
 {
