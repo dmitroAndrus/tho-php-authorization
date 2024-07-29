@@ -258,7 +258,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             is-invalid
                                         <?php } ?>"
                                         id="sign-up-birthday" placeholder="Birthday"
-                                        value="<?= $form_data['birthday'] ?>">
+                                        value="<?= $form_data['birthday'] ?>"
+                                        data-flatpickr>
                                     <label for="sign-up-birthday">Birthday</label>
                                     <?php if (isset($errors['birthday'])) { ?>
                                         <div class="invalid-feedback"><?= $errors['birthday'] ?></div>

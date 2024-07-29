@@ -1,8 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const birthday_input = document.getElementById("sign-up-birthday");
-    if (birthday_input) {
-        flatpickr(birthday_input, {
+const setup_elements = (root_el) => {
+    const root = root_el instanceof Element
+        ? root_el
+        : document;
+    root.querySelectorAll('[data-flatpickr]').forEach((element) => {
+        flatpickr(element, {
             maxDate: 'today'
         });
-    }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setup_elements();
 });
