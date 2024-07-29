@@ -6,7 +6,7 @@
  *
  * Output sign in form, or user details for signed in users.
  *
- * @category GenericExample
+ * @category AdvancedExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3

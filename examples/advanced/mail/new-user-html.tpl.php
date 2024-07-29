@@ -1,3 +1,17 @@
+<?php
+
+/**
+ * This file contains email template for new user.
+ * php version 7.4
+ *
+ * @category AdvancedExample
+ * @package  ThoPHPAuthorization
+ * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
+ * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
+ * @link     https://github.com/dmitroAndrus/tho-php-authorization
+ */
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -310,17 +324,33 @@
                             <td class="wrapper">
                                 <p>New user has been registered!</p>
                                 <p>
-                                    User name: {name}<br/>
-                                    First name: {first_name}<br/>
-                                    Last name: {last_name}<br/>
-                                    Birthday: {birthday}<br/>
-                                    E-mail: {email}<br/>
-                                    Phone: {phone}<br/>
-                                    Country: {country}<br/>
-                                    State: {state}<br/>
-                                    City: {city}<br/>
-                                    Address: {address}<br/>
-                                    Zip code: {zip}<br/>
+                                    User name: <?= $data['name'] ?><br/>
+                                    First name: <?= $data['first_name'] ?><br/>
+                                    Last name: <?= $data['last_name'] ?><br/>
+                                    Birthday: <?= $data['birthday'] ?><br/>
+                                    E-mail: <?= $data['email'] ?><br/>
+                                    <?php if (!empty($data['emails'])) { ?>
+                                        <?php foreach ($data['emails'] as $item) { ?>
+                                            E-mail (<?= $item['type']; ?>): <?= $item['email']; ?><br/>
+                                        <?php } ?>
+                                    <?php } ?>
+                                    Phone: <?= $data['phone'] ?><br/>
+                                    <?php if (!empty($data['phones'])) { ?>
+                                        <?php foreach ($data['phones'] as $item) { ?>
+                                            Phone (<?= $item['type']; ?>): <?= $item['phone']; ?><br/>
+                                        <?php } ?>
+                                    <?php } ?>
+                                    <?php if (!empty($data['addresses'])) { ?>
+                                        <?php foreach ($data['addresses'] as $item) { ?>
+                                            <br/>
+                                            Address (<?= $item['type']; ?>)<br/>
+                                            Country: <?= $item['country'] ?><br/>
+                                            State: <?= $item['state'] ?><br/>
+                                            City: <?= $item['city'] ?><br/>
+                                            Address: <?= $item['address'] ?><br/>
+                                            Zip code: <?= $item['zip'] ?><br/>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </p>
                             </td>
                         </tr>

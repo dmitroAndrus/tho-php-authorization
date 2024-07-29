@@ -6,7 +6,7 @@
  *
  * Basic example of how you can add required Classes.
  *
- * @category GenericExample
+ * @category AdvancedExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
@@ -15,7 +15,8 @@
 
 // Path to the ThoPHPAuthorization library includes (classes).
 define('THOPHPAUTHORIZATION_AUTOLOAD', AUTH_LIB_PATH . 'includes/');
-// UUID service.
+
+// Authoload service.
 require_once(THOPHPAUTHORIZATION_AUTOLOAD . 'Service/AutoloadService.php');
 
 spl_autoload_register('ThoPHPAuthorization\Service\AutoloadService::autoload');

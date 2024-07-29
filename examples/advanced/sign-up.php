@@ -21,7 +21,7 @@
  * * Zip code
  * * Address
  *
- * @category GenericExample
+ * @category AdvancedExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
@@ -150,11 +150,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($user_service->signUp($form_data)) {
             $success = true;
 
+
             // Send admin email.
             $mail_data = [
                 'subject' => 'New user',
-                'text' => TemplatingService::readTemplateFile(realpath('./mail/new-user.txt'), $form_data),
-                'html' => TemplatingService::readTemplateFile(realpath('./mail/new-user.html'), $form_data),
+                'text' => TemplatingService::readPHPTemplateFile(realpath('./mail/new-user-text.tpl.php'), $form_data),
+                'html' => TemplatingService::readPHPTemplateFile(realpath('./mail/new-user-html.tpl.php'), $form_data),
                 'from' => SMTP_SENDER_EMAIL,
                 'sender' => SMTP_SENDER_EMAIL,
                 'receiver' => SMTP_ADMIN_EMAIL,
@@ -165,8 +166,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Send user email
             $mail_data = [
                 'subject' => 'Your user has been created',
-                'text' => TemplatingService::readTemplateFile(realpath('./mail/sign-up.txt'), $form_data),
-                'html' => TemplatingService::readTemplateFile(realpath('./mail/sign-up.html'), $form_data),
+                'text' => TemplatingService::readPHPTemplateFile(realpath('./mail/sign-up-text.tpl.php'), $form_data),
+                'html' => TemplatingService::readPHPTemplateFile(realpath('./mail/sign-up-html.tpl.php'), $form_data),
                 'from' => SMTP_SENDER_EMAIL,
                 'sender' => SMTP_SENDER_EMAIL,
                 'receiver' => $form_data['email'],

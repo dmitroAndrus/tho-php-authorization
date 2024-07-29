@@ -8,7 +8,7 @@
  * When existing user email is entered: it will send email with a link to `restore-password.php`
  * page with unique security key to change user password.
  *
- * @category GenericExample
+ * @category AdvancedExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3

@@ -146,7 +146,7 @@ class AdvancedUser extends BasicUser implements
      */
     public function getEmails()
     {
-        // If there is laze load - load property data.
+        // If there is lazy load - load property data.
         if ($this->hasLazyLoad('emails')) {
             $emails = $this->runLazyLoad('emails');
             $this->addEmails($emails);
@@ -174,7 +174,7 @@ class AdvancedUser extends BasicUser implements
      */
     public function getPhones()
     {
-        // If there is laze load - load property data.
+        // If there is lazy load - load property data.
         if ($this->hasLazyLoad('phones')) {
             $phones = $this->runLazyLoad('phones');
             $this->addPhones($phones);
@@ -202,7 +202,7 @@ class AdvancedUser extends BasicUser implements
      */
     public function getAddresses()
     {
-        // If there is laze load - load property data.
+        // If there is lazy load - load property data.
         if ($this->hasLazyLoad('addresses')) {
             $addresses = $this->runLazyLoad('addresses');
             $this->addAddresses($addresses);

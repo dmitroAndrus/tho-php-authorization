@@ -7,7 +7,7 @@
  * Change signed in user password.
  * Will require current user password to do so.
  *
- * @category GenericExample
+ * @category AdvancedExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check current user password.
     if (empty($form_data['validate_password'])) {
         $errors['validate_password'] = "Please enter current user password.";
-    } elseif (!empty($form_data['password']) && $user->checkSecurity($form_data['password'])) {
+    } elseif (!$user->checkSecurity($form_data['validate_password'])) {
         $errors['validate_password'] = "Wrong current password. Please enter correct password.";
     }
     // Check new user password.

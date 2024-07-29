@@ -95,9 +95,9 @@ class AdvancedUserMySQLiSource extends BasicUserMySQLiSource
      */
     public function getUserEmails($user)
     {
-        $esc_id = $user instanceof UserInterface
+        $esc_id = $this->dbService->escape($user instanceof UserInterface
             ? $user->getID()
-            : $this->dbService->escape($user);
+            : $user);
         $result = $this->dbService->queryAll("
             SELECT *
             FROM {$this->dbService->getTableName($this->emailsTableName)}
@@ -115,9 +115,9 @@ class AdvancedUserMySQLiSource extends BasicUserMySQLiSource
      */
     public function getUserPhones($user)
     {
-        $esc_id = $user instanceof UserInterface
+        $esc_id = $this->dbService->escape($user instanceof UserInterface
             ? $user->getID()
-            : $this->dbService->escape($user);
+            : $user);
         $result = $this->dbService->queryAll("
             SELECT *
             FROM {$this->dbService->getTableName($this->phonesTableName)}
@@ -135,9 +135,9 @@ class AdvancedUserMySQLiSource extends BasicUserMySQLiSource
      */
     public function getUserAddresses($user)
     {
-        $esc_id = $user instanceof UserInterface
+        $esc_id = $this->dbService->escape($user instanceof UserInterface
             ? $user->getID()
-            : $this->dbService->escape($user);
+            : $user);
         $result = $this->dbService->queryAll("
             SELECT *
             FROM {$this->dbService->getTableName($this->addressesTableName)}
@@ -256,16 +256,19 @@ class AdvancedUserMySQLiSource extends BasicUserMySQLiSource
     {
         if ($this->validateData($data)) {
             $source = $this;
+            // If there is emails data set it, else add lazy load function.
             $data['emails'] = isset($data['emails'])
                 ? $this->createUserEmails($data['emails'])
                 : function ($obj) use ($source) {
                     return $source->getUserEmails($obj);
                 };
+            // If there is emails data set it, else add lazy load function.
             $data['phones'] = isset($data['phones'])
                 ? $this->createUserPhones($data['phones'])
                 : function ($obj) use ($source) {
                     return $source->getUserPhones($obj);
                 };
+            // If there is emails data set it, else add lazy load function.
             $data['addresses'] = isset($data['addresses'])
                 ? $this->createUserAddresses($data['addresses'])
                 : function ($obj) use ($source) {

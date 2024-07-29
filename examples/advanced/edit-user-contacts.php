@@ -13,7 +13,7 @@
  * * Phone
  * * Current password
  *
- * @category GenericExample
+ * @category AdvancedExample
  * @package  ThoPHPAuthorization
  * @author   Dmitro Andrus <dmitro.andrus.dev@gmail.com>
  * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check current user password.
     if (empty($form_data['validate_password'])) {
         $errors['validate_password'] = "Please enter user password.";
-    } elseif (!empty($form_data['password']) && $user->checkSecurity($form_data['password'])) {
+    } elseif (!$user->checkSecurity($form_data['validate_password'])) {
         $errors['validate_password'] = "Wrong password. Please enter correct password.";
     }
     // If there were no errors - try to edit user.
