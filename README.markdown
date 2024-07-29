@@ -35,7 +35,8 @@ User authorization PHP library. Includes code to manage users: sign up, sign in,
 For refference there are a few examples of how it can be done, but You are not limited to these examples and can use it as base for Your requirements.
 
 - [Simple example](#simple-example) - very basic example, that provides only user name and password example
-- [Generic example](#generic-example) - example with all generic data data, mail sending on user sign up
+- [Generic example](#generic-example) - example with all generic data, mail sending on user sign up
+- [Advanced example](#advanced-example) - example with advanced user data (additional emails, phones, multiple addresses)
 
 You can find all examples at [Examples folder](examples)
 
