@@ -114,4 +114,29 @@ class TemplatingService
         ob_end_clean();
         return $data ? static::parseSimpleTemplate($result, $data) : $result;
     }
+
+    /**
+     * Read php template file.
+     *
+     * Template should end with '.tpl.php'.
+     * You can provide $data to use in the template.
+     *
+     * @param string $path Template path.
+     * @param string $data Template data.
+     *
+     * @return string|null Template content or null on failure.
+     */
+    public static function readPHPTemplateFile(string $path, array $data = null)
+    {
+        $real = realpath($path);
+        // Check file exsists and if file extension is allowed.
+        if (!$real || substr($real, -8) !== '.tpl.php') {
+            return null;
+        }
+        ob_start();
+        include $real;
+        $result = ob_get_contents();
+        ob_end_clean();
+        return $result;
+    }
 }
